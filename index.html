@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnica Facial Revolucionária para Pele Madura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            background-color: #0f0f0f;
+            color: #f1f1f1;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding: 56.25% 0 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .custom-video-container {
+            position: relative;
+            width: 100%;
+            padding: 133.33333333333331% 0 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff8a00, #e52e71);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .like-dislike-bar {
+            height: 4px;
+            background-color: #3d3d3d;
+            position: relative;
+            border-radius: 2px;
+        }
+        
+        .like-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 90%;
+            background: linear-gradient(90deg, #065fd4, #00a6ff);
+            border-radius: 2px;
+        }
+        
+        .highlight-text {
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+        
+        .scroll-to-video {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background-color: #333;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+        
+        .channel-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ff8a00;
+        }
+        
+        #thumb_6824fe5c90fae30c0902e7b2,
+        #backdrop_6824fe5c90fae30c0902e7b2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+        
+        #thumb_6824fe5c90fae30c0902e7b2 {
+            object-fit: cover;
+            display: block;
+        }
+        
+        #backdrop_6824fe5c90fae30c0902e7b2 {
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+        
+        #vid_6824fe5c90fae30c0902e7b2 {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        /* Oferta Especial */
+        .offer-container {
+            display: none;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid #ff8a00;
+            box-shadow: 0 10px 30px rgba(255, 138, 0, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .offer-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+        }
+        
+        .new-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .before-after-img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .benefits-list {
+            margin: 20px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .benefit-icon {
+            color: #4CAF50;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .buy-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, #4CAF50, #2E7D32);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+        }
+        
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        .timer-badge {
+            background: #e52e71;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-100">
+    <!-- Header -->
+    <header class="bg-black shadow-sm sticky top-0 z-10">
+        <div class="flex items-center justify-between px-4 py-2">
+            <div class="flex items-center">
+                <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center mr-4 cursor-pointer hover:bg-gray-600 transition">
+                    <i class="fas fa-bars text-gray-300"></i>
+                </div>
+            </div>
+            <div class="flex-1 max-w-xl mx-4">
+                <div class="relative">
+                    <input type="text" placeholder="Pesquisar" class="w-full bg-gray-900 border border-gray-700 rounded-l-full px-4 py-2 focus:outline-none focus:border-blue-500 text-white placeholder-gray-400">
+                    <button class="absolute right-0 top-0 h-full bg-gray-700 border border-l-0 border-gray-700 rounded-r-full px-4 text-gray-300 hover:bg-gray-600 transition">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="w-10 h-10 rounded-full hover:bg-gray-700 flex items-center justify-center transition">
+                    <i class="fas fa-video text-gray-300"></i>
+                </button>
+                <button class="w-10 h-10 rounded-full hover:bg-gray-700 flex items-center justify-center transition">
+                    <i class="fas fa-bell text-gray-300"></i>
+                </button>
+                <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold cursor-pointer">
+                    U
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="flex flex-col lg:flex-row px-4 py-6 max-w-7xl mx-auto">
+        <!-- Video Section -->
+        <div class="lg:w-2/3 lg:pr-8">
+            <!-- Video Player -->
+            <div id="video-section">
+                <div id="vid_6824fe5c90fae30c0902e7b2" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0;">
+                    <img id="thumb_6824fe5c90fae30c0902e7b2" src="https://images.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/6824fe5c90fae30c0902e7b2/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail">
+                    <div id="backdrop_6824fe5c90fae30c0902e7b2" style="-webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%;"></div>
+                </div>
+                <script type="text/javascript" id="scr_6824fe5c90fae30c0902e7b2">
+                    var s=document.createElement("script");
+                    s.src="https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/6824fe5c90fae30c0902e7b2/player.js", 
+                    s.async=!0,document.head.appendChild(s);
+                </script>
+            </div>
+            
+            <!-- Video Title -->
+            <h1 class="text-2xl font-bold mb-6 mt-4 leading-tight">Descobri uma técnica facial tão simples... que <span class="highlight-text">fiquei com raiva por nunca terem me contado antes.</span></h1>
+            
+            <!-- Video Stats -->
+            <div class="flex flex-wrap items-center justify-between text-sm text-gray-400 mb-4 gap-2">
+                <div class="flex items-center space-x-2">
+                    <span>1.234.567 visualizações</span>
+                    <span class="w-1 h-1 bg-gray-500 rounded-full"></span>
+                    <span>Há 2 meses</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="flex items-center space-x-1 hover:text-white transition" id="like-button">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span id="like-count">123K</span>
+                    </button>
+                    <button class="flex items-center space-x-1 hover:text-white transition" id="dislike-button">
+                        <i class="fas fa-thumbs-down"></i>
+                        <span>Não gostei</span>
+                    </button>
+                    <button class="flex items-center space-x-1 hover:text-white transition">
+                        <i class="fas fa-share"></i>
+                        <span>Compartilhar</span>
+                    </button>
+                    <button class="flex items-center space-x-1 hover:text-white transition">
+                        <i class="fas fa-plus"></i>
+                        <span>Salvar</span>
+                    </button>
+                    <button class="flex items-center space-x-1 hover:text-white transition">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Like/Dislike Bar -->
+            <div class="like-dislike-bar mb-6">
+                <div class="like-fill" id="like-bar"></div>
+            </div>
+            
+            <!-- Channel Info -->
+            <div class="flex items-center justify-between mb-6 p-3 bg-gray-900 rounded-lg">
+                <div class="flex items-center">
+                    <img src="https://i.imgur.com/iQOgBJy.png" alt="Priscila Tonioli" class="channel-avatar mr-3">
+                    <div>
+                        <div class="font-bold">Priscila Tonioli</div>
+                        <div class="text-sm text-gray-400">15 mil inscritos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Description -->
+            <div class="bg-gray-900 p-4 rounded-lg mb-6">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-medium">Descrição</span>
+                        <span class="text-xs bg-gray-700 px-2 py-1 rounded">MÉTODO COMPROVADO</span>
+                    </div>
+                    <button class="text-sm font-medium text-gray-400 hover:text-white transition" id="toggle-description">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <p class="mb-4 text-gray-300">Depois dos 40, minha pele começou a mostrar os sinais do tempo: manchas, marcas de expressão e aquela aparência cansada que nenhum creme resolvia. Neste vídeo, compartilho o método que descobri para revitalizar a pele madura - uma técnica simples que clareou minhas manchas, suavizou marcas profundas e devolveu o viço à minha pele.</p>
+                
+                <div class="hidden" id="full-description">
+                    <p class="mb-3 text-gray-300">🔍 <strong>O que você vai aprender:</strong></p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-300">
+                        <li>O passo a passo completo da técnica (demora apenas 5 minutos por day)</li>
+                        <li>Os ingredientes naturais que potencializam os resultados</li>
+                        <li>Como adaptar o método para diferentes tipos de pele</li>
+                        <li>Os erros mais comuns que podem comprometer os resultados</li>
+                    </ul>
+                    
+                    <p class="mb-3 text-gray-300">⏱ <strong>Linha do tempo do vídeo:</strong></p>
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
+                            <span>0:00</span>
+                            <span>Minha história</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 20%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1 mt-3">
+                            <span>3:45</span>
+                            <span>Preparação da pele</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Oferta Especial (aparecerá após 2:33) -->
+            <div id="special-offer" class="offer-container">
+                <div class="timer-badge">OFERTA POR TEMPO LIMITADO</div>
+                <h2 class="offer-title">Você chegou até aqui por um motivo...</h2>
+                <p class="text-gray-300 mb-4">E agora tem a chance de transformar sua pele antes que seja tarde demais. 🔥</p>
+                
+                <div class="price-container">
+                    <span class="old-price">De R$97</span>
+                    <span class="new-price">Por apenas R$19,90</span>
+                </div>
+                
+                <img src="https://izhevsk.hh.ru/employer-logo/2409292.jpeg" alt="Antes e Depois" class="before-after-img">
+                
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <span>Acesso imediato ao conteúdo online</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <span>Entregue 100% na área de membros exclusiva</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <span>Garantia de 30 dias</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <span>Transforme sua pele com técnicas naturais e comprovadas</span>
+                    </div>
+                </div>
+                
+                <button class="buy-button" onclick="window.location.href='https://www.tiktok.com/@tiktokdownloader'">
+                    QUERO COMPRAR AGORA
+                </button>
+            </div>
+            
+            <!-- Comments Section -->
+            <div class="mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center space-x-4">
+                        <h2 class="text-lg font-semibold">1.234 comentários</h2>
+                        <div class="flex items-center space-x-2 text-sm text-gray-400">
+                            <i class="fas fa-sort"></i>
+                            <span>Ordenar por</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comments List -->
+                <div class="space-y-6">
+                    <!-- Comment 1 -->
+                    <div class="flex">
+                        <div class="comment-avatar mr-4">
+                            <span>M</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2">
+                                <div class="font-medium">Maria S.</div>
+                                <div class="text-xs bg-blue-900 text-blue-200 px-2 py-0.5 rounded-full">TOP COMMENT</div>
+                            </div>
+                            <div class="text-sm mb-2 text-gray-400">Há 2 semanas</div>
+                            <p class="mb-2">Nunca imaginei que algo tão simples pudesse fazer tanta diferença! Minhas manchas já estão mais claras depois de apenas 2 semanas. Obrigada por compartilhar!</p>
+                            <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                <button class="flex items-center space-x-1 hover:text-white transition">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>1.2K</span>
+                                </button>
+                                <button class="flex items-center space-x-1 hover:text-white transition">
+                                    <i class="fas fa-thumbs-down"></i>
+                                </button>
+                                <button class="hover:text-white transition">Responder</button>
+                            </div>
+                            <div class="mt-3 pl-4 border-l-2 border-gray-700">
+                                <button class="text-sm text-blue-400 hover:text-blue-300 transition">
+                                    <i class="fas fa-arrow-down mr-1"></i> Ver 15 respostas
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 2 -->
+                    <div class="flex">
+                        <div class="comment-avatar mr-4">
+                            <span>A</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-medium">Ana L.</div>
+                            <div class="text-sm mb-2 text-gray-400">Há 1 mês</div>
+                            <p class="mb-2">Minha autoestima melhorou muito depois que comecei a seguir esse protocolo. Minha pele está mais uniforme e com aspecto mais jovem.</p>
+                            <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                <button class="flex items-center space-x-1 hover:text-white transition">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>856</span>
+                                </button>
+                                <button class="flex items-center space-x-1 hover:text-white transition">
+                                    <i class="fas fa-thumbs-down"></i>
+                                </button>
+                                <button class="hover:text-white transition">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 3 -->
+                    <div class="flex">
+                        <div class="comment-avatar mr-4">
+                            <span>C</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-medium">Claudia R.</div>
+                            <div class="text-sm mb-2 text-gray-400">Há 3 semanas</div>
+                            <p class="mb-2">Depois de anos gastando fortunas em cremes caríssimos, finalmente encontrei algo que realmente funciona! Minhas amigas já estão perguntando o que eu fiz diferente.</p>
+                            <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                <button class="flex items-center space-x-1 hover:text-white transition">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>723</span>
+                                </button>
+                                <button class="flex items-center space-x-1 hover:text-white transition">
+                                    <i class="fas fa-thumbs-down"></i>
+                                </button>
+                                <button class="hover:text-white transition">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 4 -->
+                    <div class="flex">
+                        <div class="comment-avatar mr-4">
+                            <span>P</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2">
+                                <div class="font-medium">Patrícia M.</div>
+                                <div class="tooltip">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span class="tooltiptext">Verificou os resultados com fotos</span>
+                                </div>
+                            </div>
+                            <div class="text-sm mb-2 text-gray-400">Há 2 meses</div>
+                            <p class="mb-2">Antes e depois de 6 semanas seguindo à risca as dicas do vídeo. Diferença impressionante nas minhas olheiras e na textura da pele!</p>
+                            <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                <button class="flex items-center space-x-1 hover:text-white transition">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>1.5K</span>
+                                </button>
+                                <button class="flex items-center space-x-1 hover:text-white transition">
+                                    <i class="fas fa-thumbs-down"></i>
+                                </button>
+                                <button class="hover:text-white transition">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="lg:w-1/3 lg:pl-4">
+            <!-- Empty sidebar since community section was removed -->
+        </div>
+    </main>
+    
+    <!-- Scroll to Video Button -->
+    <div class="scroll-to-video">
+        <button onclick="scrollToVideo()" class="bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 py-3 rounded-full hover:opacity-90 font-medium shadow-lg flex items-center transition-all">
+            <i class="fas fa-play mr-2"></i> Ver Vídeo
+        </button>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-4 px-6 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="mb-2">Este site não é afiliado, associado, autorizado, endossado ou de qualquer forma conectado ao YouTube, Google ou qualquer entidade relacionada. "YouTube" is a trademark of Google LLC.</p>
+            <p class="mb-2">As informações fornecidas neste site têm caráter meramente informativo e educacional.</p>
+            <p>Os resultados mencionados podem variar de pessoa para pessoa e não garantem resultados específicos.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Like button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const likeButton = document.getElementById('like-button');
+            const dislikeButton = document.getElementById('dislike-button');
+            const likeCount = document.getElementById('like-count');
+            const likeBar = document.getElementById('like-bar');
+            let likes = 123000;
+            let liked = false;
+            let disliked = false;
+            
+            // Toggle description
+            const toggleDescription = document.getElementById('toggle-description');
+            const description = document.querySelector('.bg-gray-900 p');
+            const fullDescription = document.getElementById('full-description');
+            
+            if (toggleDescription && description) {
+                toggleDescription.addEventListener('click', function() {
+                    fullDescription.classList.toggle('hidden');
+                    toggleDescription.innerHTML = fullDescription.classList.contains('hidden') ? 
+                        '<i class="fas fa-chevron-down"></i>' : '<i class="fas fa-chevron-up"></i>';
+                });
+            }
+            
+            // Like button functionality
+            likeButton.addEventListener('click', function() {
+                if (!liked) {
+                    likes += 1;
+                    likeCount.textContent = formatLikeCount(likes);
+                    likeBar.style.width = '95%';
+                    likeButton.innerHTML = '<i class="fas fa-thumbs-up text-blue-400"></i><span class="text-blue-400">' + formatLikeCount(likes) + '</span>';
+                    liked = true;
+                    disliked = false;
+                    dislikeButton.innerHTML = '<i class="fas fa-thumbs-down"></i><span>Não gostei</span>';
+                } else {
+                    likes -= 1;
+                    likeCount.textContent = formatLikeCount(likes);
+                    likeBar.style.width = '90%';
+                    likeButton.innerHTML = '<i class="fas fa-thumbs-up"></i><span>' + formatLikeCount(likes) + '</span>';
+                    liked = false;
+                }
+            });
+            
+            // Dislike button functionality
+            dislikeButton.addEventListener('click', function() {
+                if (!disliked) {
+                    if (liked) {
+                        likes -= 1;
+                        likeCount.textContent = formatLikeCount(likes);
+                    }
+                    likeBar.style.width = '85%';
+                    dislikeButton.innerHTML = '<i class="fas fa-thumbs-down text-blue-400"></i><span class="text-blue-400">Não gostei</span>';
+                    disliked = true;
+                    liked = false;
+                    likeButton.innerHTML = '<i class="fas fa-thumbs-up"></i><span>' + formatLikeCount(likes) + '</span>';
+                } else {
+                    likeBar.style.width = '90%';
+                    dislikeButton.innerHTML = '<i class="fas fa-thumbs-down"></i><span>Não gostei</span>';
+                    disliked = false;
+                }
+            });
+            
+            // Format like count
+            function formatLikeCount(count) {
+                if (count >= 1000000) {
+                    return (count / 1000000).toFixed(1) + 'M';
+                } else if (count >= 1000) {
+                    return (count / 1000).toFixed(1) + 'K';
+                }
+                return count;
+            }
+            
+            // Check video time to show offer
+            function checkVideoTime() {
+                try {
+                    // Try to access the player object from Vturb
+                    if (typeof window.player !== 'undefined' && typeof window.player.getCurrentTime === 'function') {
+                        const currentTime = window.player.getCurrentTime();
+                        
+                        if (currentTime >= 153) { // 2 minutos e 33 segundos
+                            document.getElementById('special-offer').style.display = 'block';
+                            clearInterval(videoTimeInterval); // Stop checking once shown
+                        }
+                    }
+                } catch (e) {
+                    console.log('Player not ready yet');
+                }
+            }
+            
+            // Start checking video time every second
+            const videoTimeInterval = setInterval(checkVideoTime, 1000);
+            
+            // Fallback: if player object is not accessible, show after 153 seconds of page load
+            setTimeout(function() {
+                if (document.getElementById('special-offer').style.display !== 'block') {
+                    document.getElementById('special-offer').style.display = 'block';
+                    clearInterval(videoTimeInterval);
+                }
+            }, 153000);
+        });
+        
+        // Scroll to video function
+        function scrollToVideo() {
+            const videoSection = document.getElementById('video-section');
+            videoSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Arthur8564/espa-o-top" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>                      <div class="progress-container">
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1 mt-3">
+                            <span>7:30</span>
+                            <span>Técnica principal</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1 mt-3">
+                            <span>12:15</span>
+                            <span>Dicas finais</span>
+                        </div>
+  
