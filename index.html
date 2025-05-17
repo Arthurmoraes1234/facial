@@ -38,719 +38,673 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "rjpbgk7w9m");
 </script>
-    
-    <meta charset="UTF-8">
+
+       <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Técnica Facial Revolucionária para Pele Madura</title>
+    <title>Protocolo Pele Nova - Rejuvenescimento Natural</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Poppins', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        dark: '#111827',
+                        salmon: 'rgba(250, 128, 114, 0.8)',
+                        beige: 'rgba(245, 245, 220, 0.8)',
+                        highlight: 'rgba(255, 182, 193, 0.6)'
+                    },
+                    backgroundImage: {
+                        'gradient-salmon-beige': 'linear-gradient(135deg, rgba(250, 128, 114, 0.8) 0%, rgba(245, 245, 220, 0.8) 100%)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'shake': 'shake 0.5s ease-in-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        shake: {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '25%': { transform: 'translateX(-5px)' },
+                            '75%': { transform: 'translateX(5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            background-color: #0f0f0f;
-            color: #f1f1f1;
-            font-family: 'Poppins', sans-serif;
+        .testimonial-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
         }
         
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding: 56.25% 0 0;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            margin-bottom: 1rem;
+        .price-card {
+            transition: all 0.3s ease;
+        }
+        .price-card:hover {
+            transform: scale(1.03);
         }
         
-        .custom-video-container {
-            position: relative;
-            width: 100%;
-            padding: 133.33333333333331% 0 0;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            margin-bottom: 1rem;
+        .btn-cta:hover {
+            animation: shake 0.5s ease-in-out;
         }
         
-        .comment-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff8a00, #e52e71);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .like-dislike-bar {
-            height: 4px;
-            background-color: #3d3d3d;
-            position: relative;
-            border-radius: 2px;
-        }
-        
-        .like-fill {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 90%;
-            background: linear-gradient(90deg, #065fd4, #00a6ff);
-            border-radius: 2px;
-        }
-        
-        .highlight-text {
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: bold;
-        }
-        
-        .scroll-to-video {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 200px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 12px;
-        }
-        
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-        
-        .progress-container {
-            width: 100%;
-            height: 6px;
-            background-color: #333;
-            border-radius: 3px;
-            margin-top: 10px;
-        }
-        
-        .progress-bar {
-            height: 100%;
-            border-radius: 3px;
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
-            width: 0%;
-            transition: width 1s ease-in-out;
-        }
-        
-        .channel-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ff8a00;
-        }
-        
-        #thumb_6824fe5c90fae30c0902e7b2,
-        #backdrop_6824fe5c90fae30c0902e7b2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 12px;
-        }
-        
-        #thumb_6824fe5c90fae30c0902e7b2 {
-            object-fit: cover;
-            display: block;
-        }
-        
-        #backdrop_6824fe5c90fae30c0902e7b2 {
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-        }
-        
-        #vid_6824fe5c90fae30c0902e7b2 {
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        /* Oferta Especial */
-        .offer-container {
-            display: none;
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 30px 0;
-            border: 1px solid #ff8a00;
-            box-shadow: 0 10px 30px rgba(255, 138, 0, 0.2);
-            animation: fadeIn 0.5s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .offer-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .price-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.2rem;
-        }
-        
-        .new-price {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #4CAF50;
-        }
-        
-        .before-after-img {
-            width: 100%;
-            border-radius: 8px;
-            margin: 15px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        .benefits-list {
-            margin: 20px 0;
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-        
-        .benefit-icon {
-            color: #4CAF50;
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .buy-button {
-            display: block;
-            width: 100%;
-            background: linear-gradient(90deg, #4CAF50, #2E7D32);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
-        }
-        
-        .buy-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
-        }
-        
-        .timer-badge {
-            background: #e52e71;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 15px;
-            animation: pulse 1.5s infinite;
+        section {
+            scroll-margin-top: 100px;
         }
     </style>
 </head>
-<body class="text-gray-100">
-    <!-- Header -->
-    <header class="bg-black shadow-sm sticky top-0 z-10">
-        <div class="flex items-center justify-between px-4 py-2">
-            <div class="flex items-center">
-                <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center mr-4 cursor-pointer hover:bg-gray-600 transition">
-                    <i class="fas fa-bars text-gray-300"></i>
-                </div>
-            </div>
-            <div class="flex-1 max-w-xl mx-4">
-                <div class="relative">
-                    <input type="text" placeholder="Pesquisar" class="w-full bg-gray-900 border border-gray-700 rounded-l-full px-4 py-2 focus:outline-none focus:border-blue-500 text-white placeholder-gray-400">
-                    <button class="absolute right-0 top-0 h-full bg-gray-700 border border-l-0 border-gray-700 rounded-r-full px-4 text-gray-300 hover:bg-gray-600 transition">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="flex items-center space-x-4">
-                <button class="w-10 h-10 rounded-full hover:bg-gray-700 flex items-center justify-center transition">
-                    <i class="fas fa-video text-gray-300"></i>
-                </button>
-                <button class="w-10 h-10 rounded-full hover:bg-gray-700 flex items-center justify-center transition">
-                    <i class="fas fa-bell text-gray-300"></i>
-                </button>
-                <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold cursor-pointer">
-                    U
-                </div>
-            </div>
-        </div>
+<body class="bg-dark text-gray-100 font-sans overflow-x-hidden">
+    <!-- Header with logo -->
+    <header class="container mx-auto px-4 py-4 flex justify-center animate-fade-in">
+        <img src="https://i.imgur.com/PfoiaLw.png" alt="Protocolo Pele Nova" class="w-full max-w-[150px]">
     </header>
     
-    <!-- Main Content -->
-    <main class="flex flex-col lg:flex-row px-4 py-6 max-w-7xl mx-auto">
-        <!-- Video Section -->
-        <div class="lg:w-2/3 lg:pr-8">
-            <!-- Video Player -->
-            <div id="video-section">
+    <!-- Main hook section -->
+    <section class="container mx-auto px-4 py-8 text-center relative overflow-hidden animate-slide-up">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+                Você não precisa de procedimentos caros ou produtos caros para ter a pele perfeita!
+            </h1>
+            <p class="text-lg md:text-xl mb-6 text-gray-300">
+                <strong>Assista o vídeo abaixo agora</strong> e descobri os 4 gatilhos naturais que reativam o colágeno, a firmeza e a juventude da sua pele — sem gastar uma fortuna com estética ou clínicas estúpidas.
+            </p>
+            
+            <!-- Video embed -->
+            <div class="max-w-4xl mx-auto mb-8">
                 <div id="vid_6824fe5c90fae30c0902e7b2" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0;">
                     <img id="thumb_6824fe5c90fae30c0902e7b2" src="https://images.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/6824fe5c90fae30c0902e7b2/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail">
-                    <div id="backdrop_6824fe5c90fae30c0902e7b2" style="-webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%;"></div>
+                    <div id="backdrop_6824fe5c90fae30c0902e7b2" style="backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%;"></div>
                 </div>
                 <script type="text/javascript" id="scr_6824fe5c90fae30c0902e7b2">
                     var s=document.createElement("script");
-                    s.src="https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/6824fe5c90fae30c0902e7b2/player.js", 
-                    s.async=!0,document.head.appendChild(s);
+                    s.src="https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/6824fe5c90fae30c0902e7b2/player.js";
+                    s.async=true;
+                    document.head.appendChild(s);
                 </script>
             </div>
-
-<!-- Oferta Especial (aparece após 2:33) -->
-<div id="special-offer" class="offer-container">
-
-  <!-- LOGO CENTRALIZADA -->
-  <div style="text-align: center; margin-bottom: 20px;">
-    <img src="https://i.imgur.com/Ps5PlMk.png" alt="Logo Protocolo Rejuvelhece" style="max-width: 200px; height: auto;">
-  </div>
-
-  <div class="timer-badge">OFERTA POR TEMPO LIMITADO</div>
-
-  <h2 class="offer-title">Você chegou até aqui por um motivo...</h2>
-  <p class="text-gray-300 mb-4">E agora tem a chance de transformar sua pele antes que seja tarde demais. 🔥</p>
-
-  <div class="price-container">
-    <span class="old-price">De R$97</span>
-    <span class="new-price">Por apenas R$19,90</span>
-  </div>
-
-  <img src="https://salutegrande.com/wp-content/uploads/2021/12/izhevsk_24092.jpg" alt="Antes e Depois" class="before-after-img">
-
-   <div class="benefits-list">
-    <div class="benefit-item">
-      <i class="fas fa-check-circle benefit-icon"></i>
-      <span>Acesso imediato ao conteúdo online</span>
-    </div>
-    <div class="benefit-item">
-      <i class="fas fa-check-circle benefit-icon"></i>
-      <span>Entregue 100% na área de membros exclusiva</span>
-    </div>
-    <div class="benefit-item">
-      <i class="fas fa-check-circle benefit-icon"></i>
-      <span>Garantia de 30 dias</span>
-    </div>
-    <div class="benefit-item">
-      <i class="fas fa-check-circle benefit-icon"></i>
-      <span>Transforme sua pele com técnicas naturais e comprovadas</span>
-    </div>
-    <div class="benefit-item">
-      <i class="fas fa-check-circle benefit-icon"></i>
-      <span>Cronograma diário simples de aplicar</span>
-    </div>
-    <div class="benefit-item">
-      <i class="fas fa-check-circle benefit-icon"></i>
-      <span>Sem gastar rios de dinheiro com cremes caros</span>
-    </div>
-  </div>
-
-  <button class="buy-button" onclick="window.location.href='https://bellavitaexpress.mycartpanda.com/checkout/184276731:1'">
-    QUERO COMPRAR AGORA
-  </button>
+            
+            <a href="#oferta" class="inline-block bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-6 rounded-full text-lg md:text-xl hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 transform hover:scale-105 btn-cta">
+                QUERO MEU ACESSO AGORA!
+            </a>
+        </div>
+    </section>
+    
+    <!-- Product explanation -->
+    <section class="container mx-auto px-4 py-12 relative animate-slide-up">
+        <div class="max-w-4xl mx-auto text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+                É como dar um reset natural na sua pele
+            </h2>
+            <p class="text-lg text-gray-300">
+                Esse protocolo ativa 4 estímulos naturais que seu corpo já conhece, mas que o tempo e o estresse desligaram:
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-salmon transition-all duration-300 animate-fade-in">
+                <div class="text-4xl mb-4 text-salmon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Massagem facial</h3>
+                <p class="text-gray-300 text-sm">Técnicas que ativam a circulação sanguínea para nutrir sua pele de dentro para fora.</p>
+            </div>
+            
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-salmon transition-all duration-300 animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="text-4xl mb-4 text-beige">
+                    <i class="fas fa-wind"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Respiração especial</h3>
+                <p class="text-gray-300 text-sm">Padrões respiratórios que regulam hormônios do estresse e do rejuvenescimento.</p>
+            </div>
+            
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-salmon transition-all duration-300 animate-fade-in" style="animation-delay: 0.4s;">
+                <div class="text-4xl mb-4 text-green-300">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Ingredientes naturais</h3>
+                <p class="text-gray-300 text-sm">Combinando elementos que você já tem em casa para reativar a produção de colágeno.</p>
+            </div>
+            
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-salmon transition-all duration-300 animate-fade-in" style="animation-delay: 0.6s;">
+                <div class="text-4xl mb-4 text-pink-300">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Microestímulos</h3>
+                <p class="text-gray-300 text-sm">Técnicas precisas que "acordam" a firmeza natural do seu rosto em poucos dias.</p>
+            </div>
+        </div>
+        
+        <div class="max-w-3xl mx-auto text-center mt-8">
+            <p class="text-lg md:text-xl text-gray-300 mb-6">
+                Tudo isso, em apenas <span class="font-bold text-salmon">10 minutos por dia</span>, com o que você já tem em casa. É tipo um lifting natural, só que real.
+            </p>
+            <a href="#oferta" class="inline-block bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-6 rounded-full text-lg md:text-xl hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 transform hover:scale-105 btn-cta">
+                QUERO MEU ACESSO AGORA!
+            </a>
+        </div>
+    </section>
+    
+    <!-- Before/after section -->
+    <section class="container mx-auto px-4 py-12 relative animate-slide-up">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+                A Vida Dela Sem e Com o Protocolo
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap=6 mb-8">
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-red-400/30 animate-fade-in">
+                    <h3 class="text-xl font-bold mb-4 text-red-300 flex items-center">
+                        <i class="fas fa-times-circle mr-3"></i> Sem o Protocolo
+                    </h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-frown text-red-300 mt-1 mr-3"></i>
+                            <span>Rosto murcho e aparência cansada</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-heart-broken text-red-300 mt=1 mr-3"></i>
+                            <span>Autoestima baixa e frustração</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-money-bill-wave text-red-300 mt=1 mr-3"></i>
+                            <span>Dinheiro indo pro ralo com produtos caros</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-red-300 mt=1 mr-3"></i>
+                            <span>Tempo perdido em tratamentos ineficazes</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-green-400/30 animate-fade-in" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl font-bold mb-4 text-green-300 flex items-center">
+                        <i class="fas fa-check-circle mr-3"></i> Com o Protocolo
+                    </h3>
+                    <ul class="space-y=3 text-gray-300 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-smile text-green-300 mt=1 mr=3"></i>
+                            <span>Pele visivelmente mais firme e jovem</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-green-300 mt=1 mr=3"></i>
+                            <span>Brilho natural e elogios reais</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-heart text-green-300 mt=1 mr=3"></i>
+                            <span>Você se sentindo bela e confiante novamente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-coins text-green-300 mt=1 mr=3"></i>
+                            <span>Economia com produtos e procedimentos caros</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+                <img src="https://salutegrande.com/wp-content/uploads/2021/12/izhevsk_24092.jpg" alt="Antes e Depois" class="w-full h-auto">
+            </div>
+            
+            <div class="text-center mt-6">
+                <a href="#oferta" class="inline-block bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-6 rounded-full text-lg md:text-xl hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 transform hover:scale-105 btn-cta">
+                    QUERO ESSES RESULTADOS!
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials section -->
+    <section class="container mx-auto px-4 py-12 relative animate-slide-up">
+        <div class="max-w-4xl mx-auto text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+                Depoimentos Reais
+            </h2>
+            <p class="text-lg text-gray-300">
+                Veja o que mulheres reais estão dizendo sobre o Protocolo Pele Nova
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card bg-gray-800/50 rounded-xl p-4 border border-gray-700 animate-fade-in">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Ana Clara</h4>
+                        <div class="flex text-yellow-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm mb-3">"Depois de 2 semanas seguindo o protocolo, meu marido perguntou se eu tinha feito algum tratamento! Minha pele nunca esteve tão firme!"</p>
+                <div class="flex justify-between text-xs text-gray-400">
+                    <span>3 dias atrás</span>
+                    <div class="flex space-x-2">
+                        <span><i class="far fa-heart"></i> 42</span>
+                        <span><i class="far fa-comment"></i> 5</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card bg-gray-800/50 rounded-xl p-4 border border-gray-700 animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Beatriz" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Beatriz R.</h4>
+                        <div class="flex text-yellow-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm mb-3">"Aos 58 anos, eu já tinha aceitado que minha pele seria assim pra sempre. Em 1 mês com o protocolo, pareço ter voltado 10 anos no tempo!"</p>
+                <div class="flex justify-between text-xs text-gray-400">
+                    <span>1 semana atrás</span>
+                    <div class="flex space-x=2">
+                        <span><i class="far fa-heart"></i> 78</span>
+                        <span><i class="far fa-comment"></i> 12</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card bg-gray-800/50 rounded-xl p-4 border border-gray=700 animate-fade-in" style="animation-delay: 0.4s;">
+                <div class="flex items-center mb=3">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Carla" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Carla S.</h4>
+                        <div class="flex text-yellow-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm mb-3">"Gastava mais de R$300 por mês em cremes caros. Agora uso ingredientes da minha cozinha e os resultados são MUITO melhores!"</p>
+                <div class="flex justify-between text-xs text-gray-400">
+                    <span>2 dias atrás</span>
+                    <div class="flex space-x-2">
+                        <span><i class="far fa-heart"></i> 56</span>
+                        <span><i class="far fa-comment"></i> 8</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card bg-gray-800/50 rounded-xl p-4 border border-gray=700 animate-fade-in" style="animation-delay: 0.6s;">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Daniela" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Daniela M.</h4>
+                        <div class="flex text-yellow-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm mb-3">"Minhas amigas não acreditam quando digo que não fiz botox. O protocolo mudou completamente minha autoestima em poucas semanas!"</p>
+                <div class="flex justify-between text-xs text-gray-400">
+                    <span>5 dias atrás</span>
+                    <div class="flex space-x-2">
+                        <span><i class="far fa-heart"></i> 94</span>
+                        <span><i class="far fa-comment"></i> 15</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card bg-gray-800/50 rounded-xl p-4 border border-gray=700 animate-fade-in" style="animation-delay: 0.8s;">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Elaine" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Elaine T.</h4>
+                        <div class="flex text-yellow-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm mb-3">"Depois do parto, minha pele ficou horrível. Em 3 semanas com o protocolo, recuperei minha pele de antes da gravidez!"</p>
+                <div class="flex justify-between text-xs text-gray-400">
+                    <span>3 semanas atrás</span>
+                    <div class="flex space-x-2">
+                        <span><i class="far fa-heart"></i> 112</span>
+                        <span><i class="far fa-comment"></i> 23</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 6 -->
+            <div class="testimonial-card bg-gray-800/50 rounded-xl p-4 border border-gray=700 animate-fade-in" style="animation-delay: 1s;">
+                <div class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Fernanda" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h4 class="font-bold text-sm">Fernanda P.</h4>
+                        <div class="flex text-yellow-400 text-xs">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm mb-3">"Sou médica e sempre duvidei desses métodos naturais. Mas os resultados científicos do protocolo me convenceram - e funcionou!"</p>
+                <div class="flex justify-between text-xs text-gray-400">
+                    <span>2 semanas atrás</span>
+                    <div class="flex space-x-2">
+                        <span><i class="far fa-heart"></i> 145</span>
+                        <span><i class="far fa-comment"></i> 31</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <a href="#oferta" class="inline-block bg-gradient-to-r from-salmon to-beige text-dark font-bold py=3 px-6 rounded-full text-lg md:text-xl hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 transform hover:scale-105 btn-cta">
+                QUERO FAZER PARTE DESSAS HISTÓRIAS!
+            </a>
+        </div>
+    </section>
+    
+    <!-- Countdown + urgency section -->
+    <section class="container mx-auto px-4 py-8 relative animate-slide-up">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+                Oferta por Tempo Limitado!
+            </h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-6">
+                Você não vai pagar R$59,90. Hoje, essa transformação pode começar por apenas <span class="font-bold text-salmon">R$19,90</span>.<br>
+                Promoção válida apenas enquanto o cronômetro estiver rodando.
+            </p>
+            
+            <div class="bg-gray-800/50 p-4 rounded-xl border border-salmon/50 mb-6 max-w-md mx-auto animate-pulse-slow">
+                <div class="text-xl font-bold mb-3 text-salmon">⏳ TEMPO LIMITADO</div>
+                <div id="countdown" class="flex justify-center space-x-4 text-2xl font-mono">
+                    <div class="bg-gray-900 px-4 py-2 rounded">
+                        <span id="minutes">30</span>:<span id="seconds">00</span>
+                    </div>
+                </div>
+                <button class="mt-4 w-full bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-6 rounded-full text-lg md:text-xl hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 transform hover:scale-105 btn-cta">
+                    GARANTIR DESCONTO
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Offer section -->
+    <section id="oferta" class="container mx-auto px-4 py-8 relative animate-slide-up">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+                Escolha Seu Plano
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Main offer -->
+                <div class="price-card bg-gray-800/50 p-6 rounded-xl border-2 border-salmon/70 relative overflow-hidden animate-fade-in">
+                    <div class="absolute top-0 right-0 bg-salmon text-dark font-bold px-3 py-1 text-xs transform rotate-12 translate-x-2 -translate-y-2">
+                        MAIS POPULAR
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-salmon">BÁSICO</h3>
+                    <div class="mb-4">
+                        <span class="text-3xl font-bold">R$19,90</span>
+                        <span class="line-through text-gray-400 ml-2">R$59,90</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-gray-300 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
+                            <span>Acesso imediato ao conteúdo online</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
+                            <span>Entregue 100% na área de membros exclusiva</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
+                            <span>Garantia de 30 dias</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
+                            <span>Técnicas naturais e comprovadas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
+                            <span>Cronograma diário simples de aplicar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
+                            <span>Sem gastar rios de dinheiro com cremes caros</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
+                            <span>6 meses de acesso</span>
+                        </li>
+</ul>
+<a href="https://bellavita2.pay.yampi.com.br/r/2M3UA8JZ1M" class="block w-full bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-4 rounded-full text-center hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 btn-cta">
+    QUERO ESSE PLANO!
+</a>
+</div>
+                
+                <!-- Second offer -->
+                <div class="price-card bg-gray-800/50 p-6 rounded-xl border-2 border-beige/70 relative overflow-hidden animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="absolute top-0 right-0 bg-beige text-dark font-bold px-3 py-1 text-xs transform rotate-12 translate-x-2 -translate-y-2">
+                        MELHOR CUSTO-BENEFÍCIO
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-beige">COMPLETO</h3>
+                    <div class="mb-4">
+                        <span class="text-3xl font-bold">R$27,90</span>
+                        <span class="line-through text-gray-400 ml-2">R$99,90</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-gray-300 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
+                            <span>TUDO do plano anterior</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
+                            <span>+ Bônus exclusivos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
+                            <span>+ Acesso vitalício com futuras atualizações</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
+                            <span>+ Suporte direto com nossa equipe</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
+                            <span>+ Guia de alimentação para pele jovem</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
+                            <span>+ Rotina noturna intensiva</span>
+                        </li>
+</ul>
+<a href="https://bellavita2.pay.yampi.com.br/r/8EBOSXRIAC" class="block w-full bg-gradient-to-r from-beige to-salmon text-dark font-bold py-3 px-4 rounded-full text-center hover:shadow-lg hover:shadow-beige/50 transition-all duration-300 btn-cta">
+    QUERO TUDO ISSO!
+</a>
+</div>
 </div>
             
-            <!-- Video Title -->
-            <h1 class="text-2xl font-bold mb-6 mt-4 leading-tight">Descobri uma técnica facial tão simples... que <span class="highlight-text">fiquei com raiva por nunca terem me contado antes.</span></h1>
-            
-            <!-- Video Stats -->
-            <div class="flex flex-wrap items-center justify-between text-sm text-gray-400 mb-4 gap-2">
-                <div class="flex items-center space-x-2">
-                    <span>1.234.567 visualizações</span>
-                    <span class="w-1 h-1 bg-gray-500 rounded-full"></span>
-                    <span>Há 2 meses</span>
+            <!-- Guarantee section -->
+            <div class="max-w-4xl mx-auto bg-gray-800/50 p-6 rounded-xl border border-green-400/30 text-center mb-8 animate-fade-in">
+                <div class="text-4xl text-green-400 mb-3">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button class="flex items-center space-x-1 hover:text-white transition" id="like-button">
-                        <i class="fas fa-thumbs-up"></i>
-                        <span id="like-count">123K</span>
-                    </button>
-                    <button class="flex items-center space-x-1 hover:text-white transition" id="dislike-button">
-                        <i class="fas fa-thumbs-down"></i>
-                        <span>Não gostei</span>
-                    </button>
-                    <button class="flex items-center space-x-1 hover:text-white transition">
-                        <i class="fas fa-share"></i>
-                        <span>Compartilhar</span>
-                    </button>
-                    <button class="flex items-center space-x-1 hover:text-white transition">
-                        <i class="fas fa-plus"></i>
-                        <span>Salvar</span>
-                    </button>
-                    <button class="flex items-center space-x-1 hover:text-white transition">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </button>
-                </div>
+                <h3 class="text-xl font-bold mb-3 text-green-300">Garantia Incondicional de 30 Dias</h3>
+                <p class="text-gray-300 mb-3 text-sm">
+                    Se em até 30 dias você não ver sua pele mais viva, firme e rejuvenescida… devolvemos cada centavo. Sem enrolação.
+                </p>
+                <p class="text-gray-400 text-xs">
+                    Contato para garantia: <span class="text-green-300">protocolopelenova@gmail.com</span>
+                </p>
             </div>
             
-            <!-- Like/Dislike Bar -->
-            <div class="like-dislike-bar mb-6">
-                <div class="like-fill" id="like-bar"></div>
-            </div>
-            
-            <!-- Channel Info -->
-            <div class="flex items-center justify-between mb-6 p-3 bg-gray-900 rounded-lg">
-                <div class="flex items-center">
-                    <img src="https://i.imgur.com/iQOgBJy.png" alt="Priscila Tonioli" class="channel-avatar mr-3">
-                    <div>
-                        <div class="font-bold">Priscila Tonioli</div>
-                        <div class="text-sm text-gray-400">15 mil inscritos</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Video Description -->
-            <div class="bg-gray-900 p-4 rounded-lg mb-6">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center space-x-2">
-                        <span class="font-medium">Descrição</span>
-                        <span class="text-xs bg-gray-700 px-2 py-1 rounded">MÉTODO COMPROVADO</span>
-                    </div>
-                    <button class="text-sm font-medium text-gray-400 hover:text-white transition" id="toggle-description">
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                </div>
-                <p class="mb-4 text-gray-300">Depois dos 40, minha pele começou a mostrar os sinais do tempo: manchas, marcas de expressão e aquela aparência cansada que nenhum creme resolvia. Neste vídeo, compartilho o método que descobri para revitalizar a pele madura - uma técnica simples que clareou minhas manchas, suavizou marcas profundas e devolveu o viço à minha pele.</p>
+            <!-- FAQ section -->
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+                    Perguntas Frequentes
+                </h3>
                 
-                <div class="hidden" id="full-description">
-                    <p class="mb-3 text-gray-300">🔍 <strong>O que você vai aprender:</strong></p>
-                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-300">
-                        <li>O passo a passo completo da técnica (demora apenas 5 minutos por day)</li>
-                        <li>Os ingredientes naturais que potencializam os resultados</li>
-                        <li>Como adaptar o método para diferentes tipos de pele</li>
-                        <li>Os erros mais comuns que podem comprometer os resultados</li>
-                    </ul>
+                <div class="space-y-3">
+                    <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray=700 animate-fade-in">
+                        <button class="faq-toggle w-full text-left p-3 flex justify-between items-center hover:bg-gray=700/50 transition">
+                            <span class="font-medium text-sm">Preciso de produtos caros?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300 text-xs"></i>
+                        </button>
+                        <div class="faq-content hidden px-3 pb-3 text-gray-300 text-sm">
+                            <p>Não. Tudo que você precisa já está em casa. O protocolo ensina a usar ingredientes comuns de maneira estratégica para obter resultados profissionais.</p>
+                        </div>
+                    </div>
                     
-                    <p class="mb-3 text-gray-300">⏱ <strong>Linha do tempo do vídeo:</strong></p>
-                    <div class="mb-4">
-                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
-                            <span>0:00</span>
-                            <span>Minha história</span>
+                    <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray=700 animate-fade-in" style="animation-delay: 0.1s;">
+                        <button class="faq-toggle w-full text-left p=3 flex justify-between items-center hover:bg-gray=700/50 transition">
+                            <span class="font-medium text-sm">Serve pra quem tem mais de 50?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300 text-xs"></i>
+                        </button>
+                        <div class="faq-content hidden px-3 pb-3 text-gray-300 text-sm">
+                            <p>Sim! Temos casos incríveis de rejuvenescimento acima dos 60. O protocolo funciona em qualquer idade porque estimula os processos naturais do corpo.</p>
                         </div>
-                        <div class="progress-container">
-                            <div class="progress-bar" style="width: 20%"></div>
+                    </div>
+                    
+                    <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray=700 animate-fade-in" style="animation-delay: 0.2s;">
+                        <button class="faq-toggle w-full text-left p-3 flex justify-between items-center hover:bg-gray=700/50 transition">
+                            <span class="font-medium text-sm">Entregam por onde?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300 text-xs"></i>
+                        </button>
+                        <div class="faq-content hidden px-3 pb-3 text-gray-300 text-sm">
+                            <p>Enviamos o material completo em nossa área de membros que é enviada logo após a compra. Você recebe acesso imediato por email e pode começar hoje mesmo.</p>
                         </div>
-                        
-                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1 mt-3">
-                            <span>3:45</span>
-                            <span>Preparação da pele</span>
-                        </div>
-                        <div class="progress-container">
-                            <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    
+                    <div class="bg-gray=800/50 rounded-xl overflow-hidden border border-gray=700 animate-fade-in" style="animation-delay: 0.3s;">
+                        <button class="faq-toggle w-full text-left p-3 flex justify-between items-center hover:bg-gray=700/50 transition">
+                            <span class="font-medium text-sm">Quanto tempo até ver resultados?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300 text-xs"></i>
+                        </button>
+                        <div class="faq-content hidden px-3 pb-3 text-gray-300 text-sm">
+                            <p>A maioria das mulheres nota diferenças em 7-10 dias. Resultados mais significativos aparecem após 3-4 semanas de aplicação consistente do protocolo.</p>
                         </div>
                     </div>
                 </div>
             </div>
-                
-                <!-- Comments List -->
-                <div class="space-y-6">
-                    <!-- Comment 1 -->
-                    <div class="flex">
-                        <div class="comment-avatar mr-4">
-                            <span>M</span>
-                        </div>
-                        <div class="flex-1">
-                            <div class="flex items-center space-x-2">
-                                <div class="font-medium">Maria S.</div>
-                                <div class="text-xs bg-blue-900 text-blue-200 px-2 py-0.5 rounded-full">TOP COMMENT</div>
-                            </div>
-                            <div class="text-sm mb-2 text-gray-400">Há 2 semanas</div>
-                            <p class="mb-2">Nunca imaginei que algo tão simples pudesse fazer tanta diferença! Minhas manchas já estão mais claras depois de apenas 2 semanas. Obrigada por compartilhar!</p>
-                            <div class="flex items-center space-x-4 text-sm text-gray-400">
-                                <button class="flex items-center space-x-1 hover:text-white transition">
-                                    <i class="fas fa-thumbs-up"></i>
-                                    <span>1.2K</span>
-                                </button>
-                                <button class="flex items-center space-x-1 hover:text-white transition">
-                                    <i class="fas fa-thumbs-down"></i>
-                                </button>
-                                <button class="hover:text-white transition">Responder</button>
-                            </div>
-                            <div class="mt-3 pl-4 border-l-2 border-gray-700">
-                                <button class="text-sm text-blue-400 hover:text-blue-300 transition">
-                                    <i class="fas fa-arrow-down mr-1"></i> Ver 15 respostas
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Comment 2 -->
-                    <div class="flex">
-                        <div class="comment-avatar mr-4">
-                            <span>A</span>
-                        </div>
-                        <div class="flex-1">
-                            <div class="font-medium">Ana L.</div>
-                            <div class="text-sm mb-2 text-gray-400">Há 1 mês</div>
-                            <p class="mb-2">Minha autoestima melhorou muito depois que comecei a seguir esse protocolo. Minha pele está mais uniforme e com aspecto mais jovem.</p>
-                            <div class="flex items-center space-x-4 text-sm text-gray-400">
-                                <button class="flex items-center space-x-1 hover:text-white transition">
-                                    <i class="fas fa-thumbs-up"></i>
-                                    <span>856</span>
-                                </button>
-                                <button class="flex items-center space-x-1 hover:text-white transition">
-                                    <i class="fas fa-thumbs-down"></i>
-                                </button>
-                                <button class="hover:text-white transition">Responder</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Comment 3 -->
-                    <div class="flex">
-                        <div class="comment-avatar mr-4">
-                            <span>C</span>
-                        </div>
-                        <div class="flex-1">
-                            <div class="font-medium">Claudia R.</div>
-                            <div class="text-sm mb-2 text-gray-400">Há 3 semanas</div>
-                            <p class="mb-2">Depois de anos gastando fortunas em cremes caríssimos, finalmente encontrei algo que realmente funciona! Minhas amigas já estão perguntando o que eu fiz diferente.</p>
-                            <div class="flex items-center space-x-4 text-sm text-gray-400">
-                                <button class="flex items-center space-x-1 hover:text-white transition">
-                                    <i class="fas fa-thumbs-up"></i>
-                                    <span>723</span>
-                                </button>
-                                <button class="flex items-center space-x-1 hover:text-white transition">
-                                    <i class="fas fa-thumbs-down"></i>
-                                </button>
-                                <button class="hover:text-white transition">Responder</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Comment 4 -->
-                    <div class="flex">
-                        <div class="comment-avatar mr-4">
-                            <span>P</span>
-                        </div>
-                        <div class="flex-1">
-                            <div class="flex items-center space-x-2">
-                                <div class="font-medium">Patrícia M.</div>
-                                <div class="tooltip">
-                                    <i class="fas fa-check-circle text-blue-400"></i>
-                                    <span class="tooltiptext">Verificou os resultados com fotos</span>
-                                </div>
-                            </div>
-                            <div class="text-sm mb-2 text-gray-400">Há 2 meses</div>
-                            <p class="mb-2">Antes e depois de 6 semanas seguindo à risca as dicas do vídeo. Diferença impressionante nas minhas olheiras e na textura da pele!</p>
-                            <div class="flex items-center space-x-4 text-sm text-gray-400">
-                                <button class="flex items-center space-x-1 hover:text-white transition">
-                                    <i class="fas fa-thumbs-up"></i>
-                                    <span>1.5K</span>
-                                </button>
-                                <button class="flex items-center space-x-1 hover:text-white transition">
-                                    <i class="fas fa-thumbs-down"></i>
-                                </button>
-                                <button class="hover:text-white transition">Responder</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="text-center mt-8">
+                <a href="#oferta" class="inline-block bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-6 rounded-full text-lg md:text-xl hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 transform hover:scale-105 btn-cta">
+                    QUERO COMEÇAR AGORA!
+                </a>
             </div>
         </div>
-        
-        <!-- Sidebar -->
-        <div class="lg:w-1/3 lg:pl-4">
-            <!-- Empty sidebar since community section was removed -->
-        </div>
-    </main>
-    
-    <!-- Scroll to Video Button -->
-    <div class="scroll-to-video">
-        <button onclick="scrollToVideo()" class="bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 py-3 rounded-full hover:opacity-90 font-medium shadow-lg flex items-center transition-all">
-            <i class="fas fa-play mr-2"></i> Ver Vídeo
-        </button>
-    </div>
+    </section>
     
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 py-4 px-6 text-xs text-gray-500">
-        <div class="max-w-7xl mx-auto text-center">
-            <p class="mb-2">Este site não é afiliado, associado, autorizado, endossado ou de qualquer forma conectado ao YouTube, Google ou qualquer entidade relacionada. "YouTube" is a trademark of Google LLC.</p>
-            <p class="mb-2">As informações fornecidas neste site têm caráter meramente informativo e educacional.</p>
-            <p>Os resultados mencionados podem variar de pessoa para pessoa e não garantem resultados específicos.</p>
+    <footer class="bg-gray-900/80 py-8 animate-fade-in">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+                <img src="https://i.imgur.com/PfoiaLw.png" alt="Protocolo Pele Nova" class="w-full max-w-[200px] mb-4">
+                <p class="text-gray-400 mb-2 text-sm">Todos os direitos reservados © Protocolo Pele Nova</p>
+                <p class="text-gray-400 text-xs">Contato: protocolopelenova@gmail.com</p>
+            </div>
         </div>
     </footer>
-    
+
+    <!-- Countdown timer script -->
     <script>
-        // Like button functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const likeButton = document.getElementById('like-button');
-            const dislikeButton = document.getElementById('dislike-button');
-            const likeCount = document.getElementById('like-count');
-            const likeBar = document.getElementById('like-bar');
-            let likes = 123000;
-            let liked = false;
-            let disliked = false;
-            
-            // Toggle description
-            const toggleDescription = document.getElementById('toggle-description');
-            const description = document.querySelector('.bg-gray-900 p');
-            const fullDescription = document.getElementById('full-description');
-            
-            if (toggleDescription && description) {
-                toggleDescription.addEventListener('click', function() {
-                    fullDescription.classList.toggle('hidden');
-                    toggleDescription.innerHTML = fullDescription.classList.contains('hidden') ? 
-                        '<i class="fas fa-chevron-down"></i>' : '<i class="fas fa-chevron-up"></i>';
-                });
-            }
-            
-            // Like button functionality
-            likeButton.addEventListener('click', function() {
-                if (!liked) {
-                    likes += 1;
-                    likeCount.textContent = formatLikeCount(likes);
-                    likeBar.style.width = '95%';
-                    likeButton.innerHTML = '<i class="fas fa-thumbs-up text-blue-400"></i><span class="text-blue-400">' + formatLikeCount(likes) + '</span>';
-                    liked = true;
-                    disliked = false;
-                    dislikeButton.innerHTML = '<i class="fas fa-thumbs-down"></i><span>Não gostei</span>';
-                } else {
-                    likes -= 1;
-                    likeCount.textContent = formatLikeCount(likes);
-                    likeBar.style.width = '90%';
-                    likeButton.innerHTML = '<i class="fas fa-thumbs-up"></i><span>' + formatLikeCount(likes) + '</span>';
-                    liked = false;
+        // Countdown timer
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            const interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    display.textContent = "00:00";
+                    document.getElementById('countdown').innerHTML = '<div class="text-red-500 font-bold">OFERTA EXPIRADA!</div>';
                 }
-            });
-            
-            // Dislike button functionality
-            dislikeButton.addEventListener('click', function() {
-                if (!disliked) {
-                    if (liked) {
-                        likes -= 1;
-                        likeCount.textContent = formatLikeCount(likes);
-                    }
-                    likeBar.style.width = '85%';
-                    dislikeButton.innerHTML = '<i class="fas fa-thumbs-down text-blue-400"></i><span class="text-blue-400">Não gostei</span>';
-                    disliked = true;
-                    liked = false;
-                    likeButton.innerHTML = '<i class="fas fa-thumbs-up"></i><span>' + formatLikeCount(likes) + '</span>';
-                } else {
-                    likeBar.style.width = '90%';
-                    dislikeButton.innerHTML = '<i class="fas fa-thumbs-down"></i><span>Não gostei</span>';
-                    disliked = false;
-                }
-            });
-            
-            // Format like count
-            function formatLikeCount(count) {
-                if (count >= 1000000) {
-                    return (count / 1000000).toFixed(1) + 'M';
-                } else if (count >= 1000) {
-                    return (count / 1000).toFixed(1) + 'K';
-                }
-                return count;
-            }
-            
-            // Check video time to show offer
-            function checkVideoTime() {
-                try {
-                    // Try to access the player object from Vturb
-                    if (typeof window.player !== 'undefined' && typeof window.player.getCurrentTime === 'function') {
-                        const currentTime = window.player.getCurrentTime();
-                        
-                        if (currentTime >= 153) { // 2 minutos e 33 segundos
-                            document.getElementById('special-offer').style.display = 'block';
-                            clearInterval(videoTimeInterval); // Stop checking once shown
-                        }
-                    }
-                } catch (e) {
-                    console.log('Player not ready yet');
-                }
-            }
-            
-            // Start checking video time every second
-            const videoTimeInterval = setInterval(checkVideoTime, 1000);
-            
-            // Fallback: if player object is not accessible, show after 153 seconds of page load
-            setTimeout(function() {
-                if (document.getElementById('special-offer').style.display !== 'block') {
-                    document.getElementById('special-offer').style.display = 'block';
-                    clearInterval(videoTimeInterval);
-                }
-            }, 153000);
-        });
-        
-        // Scroll to video function
-        function scrollToVideo() {
-            const videoSection = document.getElementById('video-section');
-            videoSection.scrollIntoView({ behavior: 'smooth' });
+            }, 1000);
         }
+
+        window.onload = function () {
+            const thirtyMinutes = 60 * 30,
+                display = document.querySelector('#countdown');
+            startTimer(thirtyMinutes, display);
+            
+            // Add animation classes to elements as they come into view
+            const animateElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(entry.target.classList.contains('animate-fade-in') ? 'animate-fade-in' : 'animate-slide-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        };
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
     </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">
-                        
-                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1 mt-3">
-                            <span>7:30</span>
-                            <span>Técnica principal</span>
-                        </div>
-                        <div class="progress-container">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1 mt-3">
-                            <span>12:15</span>
-                            <span>Dicas finais</span>
-                        </div>
-  
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;
+</html>
