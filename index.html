@@ -447,124 +447,88 @@
         </div>
     </section>
     
-    <!-- Countdown + urgency section -->
-    <section class="container mx-auto px-4 py-8 relative animate-slide-up">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
-                Oferta por Tempo Limitado!
-            </h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-6">
-                Você não vai pagar R$59,90. Hoje, essa transformação pode começar por apenas <span class="font-bold text-salmon">R$19,90</span>.<br>
-                Promoção válida apenas enquanto o cronômetro estiver rodando.
-            </p>
-            
-            <div class="bg-gray-800/50 p-4 rounded-xl border border-salmon/50 mb-6 max-w-md mx-auto animate-pulse-slow">
-                <div class="text-xl font-bold mb-3 text-salmon">⏳ TEMPO LIMITADO</div>
-                <div id="countdown" class="flex justify-center space-x-4 text-2xl font-mono">
-                    <div class="bg-gray-900 px-4 py-2 rounded">
-                        <span id="minutes">30</span>:<span id="seconds">00</span>
-                    </div>
+<!-- Countdown + urgency section -->
+<section class="container mx-auto px-4 py-8 relative animate-slide-up">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+            Oferta por Tempo Limitado!
+        </h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-6">
+            Você não vai pagar R$59,90. Hoje, essa transformação pode começar por apenas 
+            <span class="font-bold text-salmon">R$19,90</span>.<br>
+            Promoção válida apenas enquanto o cronômetro estiver rodando.
+        </p>
+
+        <div class="bg-gray-800/50 p-4 rounded-xl border border-salmon/50 mb-6 max-w-md mx-auto animate-pulse-slow">
+            <div class="text-xl font-bold mb-3 text-salmon">⏳ TEMPO LIMITADO</div>
+            <div id="countdown" class="flex justify-center space-x-4 text-2xl font-mono">
+                <div class="bg-gray-900 px-4 py-2 rounded">
+                    <span id="minutes">30</span>:<span id="seconds">00</span>
                 </div>
-                <button class="mt-4 w-full bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-6 rounded-full text-lg md:text-xl hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 transform hover:scale-105 btn-cta">
-                    GARANTIR DESCONTO
-                </button>
+            </div>
+            <button class="mt-4 w-full bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-6 rounded-full text-lg md:text-xl hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 transform hover:scale-105 btn-cta">
+                GARANTIR DESCONTO
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Offer section -->
+<section id="oferta" class="container mx-auto px-4 py-8 relative animate-slide-up">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
+            Escolha Seu Plano
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <!-- Main offer -->
+            <div class="price-card bg-gray-800/50 p-6 rounded-xl border-2 border-salmon/70 relative overflow-hidden animate-fade-in">
+                <div class="absolute top-0 right-0 bg-salmon text-dark font-bold px-3 py-1 text-xs transform rotate-12 translate-x-2 -translate-y-2">
+                    BASICO
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-salmon">BÁSICO</h3>
+                <div class="mb-4">
+                    <span class="text-3xl font-bold">R$19,90</span>
+                    <span class="line-through text-gray-400 ml-2">R$59,90</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-gray-300 text-sm">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-salmon mt-1 mr-2"></i><span>Acesso imediato ao conteúdo online</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-salmon mt-1 mr-2"></i><span>Entregue 100% na área de membros exclusiva</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-salmon mt-1 mr-2"></i><span>Garantia de 30 dias</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-salmon mt-1 mr-2"></i><span>Técnicas naturais e comprovadas</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-salmon mt-1 mr-2"></i><span>Cronograma diário simples de aplicar</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-salmon mt-1 mr-2"></i><span>Sem gastar rios de dinheiro com cremes caros</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-salmon mt-1 mr-2"></i><span>6 meses de acesso</span></li>
+                </ul>
+                <a href="https://bellavita2.pay.yampi.com.br/r/2M3UA8JZ1M" class="block w-full bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-4 rounded-full text-center hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 btn-cta">
+                    QUERO ESSE PLANO!
+                </a>
+            </div>
+
+            <!-- Second offer -->
+            <div class="price-card bg-gray-800/50 p-6 rounded-xl border-2 border-beige/70 relative overflow-hidden animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="absolute top-0 right-0 bg-beige text-dark font-bold px-3 py-1 text-xs transform rotate-12 translate-x-2 -translate-y-2">
+                    MAIS VENDIDO
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-beige">COMPLETO</h3>
+                <div class="mb-4">
+                    <span class="text-3xl font-bold">R$27,90</span>
+                    <span class="line-through text-gray-400 ml-2">R$99,90</span>
+                </div>
+                <ul class="space-y-2 mb-6 text-gray-300 text-sm">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-beige mt-1 mr-2"></i><span>TUDO do plano anterior</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-beige mt-1 mr-2"></i><span>+ Bônus exclusivos</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-beige mt-1 mr-2"></i><span>+ Acesso vitalício com futuras atualizações</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-beige mt-1 mr-2"></i><span>+ Suporte direto com nossa equipe</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-beige mt-1 mr-2"></i><span>+ Guia de alimentação para pele jovem</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-beige mt-1 mr-2"></i><span>+ Rotina noturna intensiva</span></li>
+                </ul>
+                <a href="https://bellavita2.pay.yampi.com.br/r/8EBOSXRIAC" class="block w-full bg-gradient-to-r from-beige to-salmon text-dark font-bold py-3 px-4 rounded-full text-center hover:shadow-lg hover:shadow-beige/50 transition-all duration-300 btn-cta">
+                    QUERO TUDO ISSO!
+                </a>
             </div>
         </div>
-    </section>
-    
-    <!-- Offer section -->
-    <section id="oferta" class="container mx-auto px-4 py-8 relative animate-slide-up">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-salmon to-beige">
-                Escolha Seu Plano
-            </h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <!-- Main offer -->
-                <div class="price-card bg-gray-800/50 p-6 rounded-xl border-2 border-salmon/70 relative overflow-hidden animate-fade-in">
-                    <div class="absolute top-0 right-0 bg-salmon text-dark font-bold px-3 py-1 text-xs transform rotate-12 translate-x-2 -translate-y-2">
-                        MAIS POPULAR
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-salmon">BÁSICO</h3>
-                    <div class="mb-4">
-                        <span class="text-3xl font-bold">R$19,90</span>
-                        <span class="line-through text-gray-400 ml-2">R$59,90</span>
-                    </div>
-                    <ul class="space-y-2 mb-6 text-gray-300 text-sm">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
-                            <span>Acesso imediato ao conteúdo online</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
-                            <span>Entregue 100% na área de membros exclusiva</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
-                            <span>Garantia de 30 dias</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
-                            <span>Técnicas naturais e comprovadas</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
-                            <span>Cronograma diário simples de aplicar</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
-                            <span>Sem gastar rios de dinheiro com cremes caros</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-salmon mt-1 mr-2"></i>
-                            <span>6 meses de acesso</span>
-                        </li>
-</ul>
-<a href="https://bellavita2.pay.yampi.com.br/r/2M3UA8JZ1M" class="block w-full bg-gradient-to-r from-salmon to-beige text-dark font-bold py-3 px-4 rounded-full text-center hover:shadow-lg hover:shadow-salmon/50 transition-all duration-300 btn-cta">
-    QUERO ESSE PLANO!
-</a>
-</div>
-                
-                <!-- Second offer -->
-                <div class="price-card bg-gray-800/50 p-6 rounded-xl border-2 border-beige/70 relative overflow-hidden animate-fade-in" style="animation-delay: 0.2s;">
-                    <div class="absolute top-0 right-0 bg-beige text-dark font-bold px-3 py-1 text-xs transform rotate-12 translate-x-2 -translate-y-2">
-                        MELHOR CUSTO-BENEFÍCIO
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-beige">COMPLETO</h3>
-                    <div class="mb-4">
-                        <span class="text-3xl font-bold">R$27,90</span>
-                        <span class="line-through text-gray-400 ml-2">R$99,90</span>
-                    </div>
-                    <ul class="space-y-2 mb-6 text-gray-300 text-sm">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
-                            <span>TUDO do plano anterior</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
-                            <span>+ Bônus exclusivos</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
-                            <span>+ Acesso vitalício com futuras atualizações</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
-                            <span>+ Suporte direto com nossa equipe</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
-                            <span>+ Guia de alimentação para pele jovem</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-2"></i>
-                            <span>+ Rotina noturna intensiva</span>
-                        </li>
-</ul>
-<a href="https://bellavita2.pay.yampi.com.br/r/8EBOSXRIAC" class="block w-full bg-gradient-to-r from-beige to-salmon text-dark font-bold py-3 px-4 rounded-full text-center hover:shadow-lg hover:shadow-beige/50 transition-all duration-300 btn-cta">
-    QUERO TUDO ISSO!
-</a>
-</div>
+    </div>
 </div>
             
             <!-- Guarantee section -->
