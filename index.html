@@ -1,1031 +1,160 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '623187483436706');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=6231874834367062&ev=PageView&noscript=1"/>
-    </noscript>    
-
-    <!-- UTMify -->
-    <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    async
-    defer
-    ></script>
-    
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "rjpbgk7w9m");
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKINNEW.AI - Personalized Care For Your Skin</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'dark-gray': '#1a1a1a',
-                        'darker-gray': '#121212',
-                        'pink-light': '#ffb7d5',
-                        'pink-medium': '#ff8fb8',
-                        'luxury-gold': '#d4af37',
-                    },
-                    fontFamily: {
-                        poppins: ['Poppins', 'sans-serif'],
-                        dancingscript: ['Dancing Script', 'cursive']
-                    },
-                    backgroundImage: {
-                        'pink-gradient': 'linear-gradient(135deg, #ffb7d5, #ff8fb8)',
-                        'radial-gradient': 'radial-gradient(circle, rgba(26,26,26,0.8) 0%, rgba(18,18,18,0.9) 70%)',
-                        'gold-gradient': 'linear-gradient(135deg, #d4af37, #f9e076)'
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'shine': 'shine 3s ease-in-out infinite'
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        shine: {
-                            '0%': { 'background-position': '0% 50%' },
-                            '100%': { 'background-position': '100% 50%' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #121212;
-            color: #f8f8f8;
-            scroll-behavior: smooth;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 10% 20%, rgba(255, 143, 184, 0.1) 0%, rgba(26, 26, 26, 0) 20%), 
-                        radial-gradient(circle at 90% 80%, rgba(255, 143, 184, 0.1) 0%, rgba(26, 26, 26, 0) 25%);
-            z-index: -1;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #ffb7d5, #ff8fb8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .gradient-text::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(135deg, #ffb7d5, #ff8fb8);
-            border-radius: 3px;
-        }
-        
-        .gradient-border {
-            border: 2px solid transparent;
-            background: linear-gradient(#121212, #121212) padding-box,
-                        linear-gradient(135deg, #ff8fb8, #ffb7d5) border-box;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 143, 184, 0.2), rgba(255, 183, 213, 0.2));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-        }
-        
-        .gradient-border:hover::before {
-            opacity: 1;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #ff8fb8, #ffb7d5);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .gradient-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.1);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-        
-        .gradient-bg:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .gold-gradient-bg {
-            background: linear-gradient(135deg, #d4af37, #f9e076);
-        }
-        
-        .section-pattern {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .section-pattern::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff8fb8' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
-            z-index: -1;
-        }
-        
-        .feature-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 25px rgba(255, 143, 184, 0.2);
-        }
-        
-        .feature-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(135deg, #ff8fb8, #ffb7d5);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .feature-card:hover::after {
-            opacity: 1;
-        }
-        
-        .plan-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .plan-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(255, 143, 184, 0.3);
-        }
-        
-        .plan-card .plan-highlight {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%) rotate(3deg);
-            background: linear-gradient(135deg, #ff8fb8, #ffb7d5);
-            padding: 8px 30px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #121212;
-            border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-        }
-        
-        .product-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.3));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .text-outline {
-            color: transparent;
-            -webkit-text-stroke: 1px #ffb7d5;
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-    </style>
-</head>
-<body class="font-poppins bg-darker-gray">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-dark-gray/90 backdrop-blur-sm py-4 px-6 border-b border-white/10">
-        <div class="container mx-auto flex items-center justify-between">
-            <a href="#" class="flex items-center group">
-                <div class="gradient-bg w-10 h-10 rounded-full flex items-center justify-center group-hover:rotate-[20deg] transition-all duration-500">
-                    <i class="fa-solid fa-leaf text-dark-gray text-xl"></i>
-                </div>
-                <span class="text-white font-bold text-xl ml-3 group-hover:opacity-80 transition">SKINNEW<span class="gradient-text">.AI</span></span>
-            </a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#benefits" class="text-white/70 hover:text-white transition hover:gradient-text">Benefits</a>
-                <a href="#plans" class="text-white/70 hover:text-white transition hover:gradient-text">Plans</a>
-                <a href="#reviews" class="text-white/70 hover:text-white transition hover:gradient-text">Reviews</a>
-                <a href="#guarantee" class="text-white/70 hover:text-white transition hover:gradient-text">Guarantee</a>
-            </nav>
-            <a href="#plans" class="gradient-bg text-dark-gray font-bold py-1 px-4 rounded-full text-xs hover:scale-[1.03] transition-all inline-flex items-center justify-center">
-                Try Now
-                <i class="ml-1 fas fa-arrow-right"></i>
-            </a>
+<!-- Offer Section -->
+<section id="plans" class="py-24 px-6 relative">
+    <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-dark-gray to-transparent z-0"></div>
+    <div class="container mx-auto relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-5xl font-bold mb-6">
+                Choose the <span class="gradient-text">perfect plan</span> for you
+            </h2>
+            <p class="text-xl text-white/80">An investment that fits your budget and a transformation you can see in the mirror.</p>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="pt-20 pb-24 px-6 relative overflow-hidden">
-        <div class="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-gradient-to-br from-pink-medium/30 to-transparent blur-3xl opacity-50 z-0"></div>
-        <div class="absolute bottom-10 left-0 w-40 h-40 rounded-full bg-gradient-to-br from-pink-medium/20 to-transparent blur-3xl opacity-30 z-0"></div>
         
-        <div class="container mx-auto relative z-10">
-            <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                    Your Skin Deserves
-                    <span class="relative">
-                        <span class="gradient-text block mt-2">Exclusive Care!</span>
-                        <span class="absolute -bottom-3 left-0 right-0 text-center text-7xl opacity-5 font-extrabold text-outline">AI</span>
-                    </span>
-                </h1>
+        <div class="flex flex-col lg:flex-row justify-center gap-8 max-w-6xl mx-auto">
+            <!-- Basic Plan -->
+            <div class="plan-card gradient-border bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 w-full max-w-md transition-all duration-300">
+                <div class="mb-6">
+                    <h3 class="text-3xl font-bold mb-2">SKINNEW BASIC</h3>
+                    <!-- PREÇO ATUALIZADO -->
+                    <div class="gradient-text text-5xl font-bold mb-2">$10</div>
+                    <p class="text-lg">2-Month Access | One-time payment</p>
+                </div>
                 
-                <p class="text-xl mb-8 text-white/80">
-                    This AI app gives you the most precise rejuvenation plan of your life, based on your specific concerns and needs. All for less than a shampoo!
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                        <span>Access to the SKINNEW.AI consultant</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                        <span>2 monthly consultations</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                        <span>Personalized diagnosis</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                        <span>PDF with: Custom formula (natural or with drugstore products)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                        <span>7-day routine (morning + night)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                        <span>Tips based on your skin type</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
+                        <span>Suggestions for affordable or homemade products</span>
+                    </li>
+                </ul>
+                
+                <p class="mb-6 flex items-center">
+                    <i class="fas fa-mobile-alt mr-2"></i>
+                    📲 Delivery via email | 2-month access
                 </p>
                 
-                <div class="gradient-border rounded-xl py-3 px-6 inline-block mb-10 animate-pulse-slow">
-                    <p class="font-bold flex items-center">
-                        <i class="fas fa-video mr-2"></i> Want proof? See how it works below!
-                    </p>
-                </div>
-                
-                <!-- Video Embed -->
-                 <div class="rounded-2xl overflow-hidden mb-10 border-4 border-white/10 shadow-2xl">
-                    <div id="vid_684f9aa24b4b2f641c7019c0" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0;"> 
-                        <img id="thumb_684f9aa24b4b2f641c7019c0" src="https://images.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/684f9aa24b4b2f641c7019c0/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> 
-                        <div id="backdrop_684f9aa24b4b2f641c7019c0" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> 
-                    </div> 
-                    <script type="text/javascript" id="scr_684f9aa24b4b2f641c7019c0"> 
-                        var s=document.createElement("script"); 
-                        s.src="https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/684f9aa24b4b2f641c7019c0/player.js", s.async=!0,document.head.appendChild(s); 
-                    </script>
-                </div>
-
-                <!-- Social Proof -->
-                <div class="flex flex-col items-center mb-8">
-                    <p class="mb-4 font-bold text-white/80 flex items-center">
-                        <i class="fas fa-heart mr-2 text-pink-medium"></i> Trusted by over 10,000 women
-                    </p>
-                    <div class="flex items-center">
-                        <div class="flex -space-x-3">
-                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
-                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Satisfied customer" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Satisfied customer" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Satisfied customer" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
-                                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Satisfied customer" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="ml-4 flex">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star-half-alt text-yellow-400"></i>
-                            <span class="ml-2 text-white/80">4.8</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <a href="#plans" class="gradient-bg hover:shadow-xl text-dark-gray font-bold py-4 px-10 rounded-full text-lg mt-4 transition-all transform hover:-translate-y-1 flex items-center mx-auto">
-                    Get My Custom Plan
-                    <i class="fas fa-chevron-right ml-3 text-sm"></i>
-                </a>
-                
-                <div class="flex justify-center space-x-6 mt-6">
-                    <div class="flex items-center text-sm">
-                        <i class="fas fa-lock mr-2 text-green-400"></i>
-                        <span class="text-white/70">Secure Payment</span>
-                    </div>
-                    <div class="flex items-center text-sm">
-                        <i class="fas fa-truck mr-2 text-blue-400"></i>
-                        <span class="text-white/70">Instant Delivery</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- For Whom Section -->
-    <section class="py-20 px-6 bg-gradient-to-b from-gray-900 to-dark-gray section-pattern overflow-hidden">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 relative">
-                    <div class="absolute -top-6 -left-6 w-48 h-48 rounded-full bg-gradient-to-br from-pink-light/10 to-transparent blur-xl opacity-50"></div>
-                    <div class="relative">
-                        <img src="https://i.imgur.com/0uZDXC7.png" alt="SKINNEW.AI app" class="w-full max-w-md mx-auto floating rounded-2xl shadow-2xl">
-                        <div class="absolute -bottom-6 -right-6 bg-dark-gray/80 backdrop-blur border border-white/10 p-4 rounded-xl shadow-lg">
-                            <div class="flex items-center">
-                                <div class="gradient-bg w-10 h-10 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-check text-dark-gray"></i>
-                                </div>
-                                <p class="ml-3 font-bold text-white">Visible results <br>in just 7 days</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2 md:pl-16">
-                    <h2 class="text-4xl font-bold mb-8 leading-normal">
-                        Who is <span class="gradient-text">SKINNEW.AI</span> for?
-                    </h2>
-                    
-                    <ul class="space-y-6">
-                        <li class="flex items-start">
-                            <div class="gradient-bg w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fas fa-check text-dark-gray text-sm"></i>
-                            </div>
-                            <p class="ml-4 text-lg">If you look in the mirror and feel you've lost your glow, firmness, or self-esteem...</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="gradient-bg w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fas fa-check text-dark-gray text-sm"></i>
-                            </div>
-                            <p class="ml-4 text-lg">You've tried it all: creams, dermatologists, influencers—and nothing has worked.</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="gradient-bg w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fas fa-check text-dark-gray text-sm"></i>
-                            </div>
-                            <p class="ml-4 text-lg">You know your skin deserves more, but you lack the money or patience for countless treatments.</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="gradient-bg w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fas fa-check text-dark-gray text-sm"></i>
-                            </div>
-                            <p class="ml-4 text-lg">You're tired of empty promises and following tips that work for everyone but you.</p>
-                        </li>
-                    </ul>
-                    
-                    <div class="mt-12 gradient-border rounded-2xl p-6 backdrop-blur-sm">
-                        <div class="flex">
-                            <div class="mr-4 flex-shrink-0">
-                                <div class="gradient-bg w-12 h-12 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-heart text-dark-gray text-xl"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <p class="text-xl font-bold">👉 Then SKINNEW.AI was made just for you.</p>
-                                <p class="mt-3">A smart, personalized, and straightforward plan will be created. And that's exactly what you'll get!</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#plans" class="gradient-bg text-dark-gray font-bold py-4 px-10 rounded-full text-lg mt-8 hover:shadow-xl transition-all inline-flex items-center justify-center">
-                        Create My Custom Plan
-                        <i class="fas fa-arrow-right ml-3"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-24 px-6">
-        <div class="container mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-5xl font-bold mb-6">Exclusive <span class="gradient-text">Benefits</span></h2>
-                <p class="text-xl text-white/80">See how SKINNEW.AI transforms your skincare routine into a personalized and effective experience.</p>
+                <!-- EVENTO DO PIXEL ADICIONADO -->
+                <button onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://bellavita2.pay.yampi.com.br/r/4LQYR6SUJX'" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 rounded-xl text-lg transition-all border border-gray-700">
+                    Buy Basic Plan
+                </button>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Benefit 1 -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-pink-medium/50">
-                    <div class="flex items-center mb-6">
-                        <div class="product-icon rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-diagnoses text-pink-medium text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Precise Diagnosis</h3>
+            <!-- Complete Plan -->
+            <div class="plan-card gradient-border bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 w-full max-w-md relative transition-all duration-300">
+                <div class="plan-highlight">MOST POPULAR</div>
+                
+                <div class="mb-6">
+                    <h3 class="text-3xl font-bold mb-2">SKINNEW COMPLETE</h3>
+                    <div class="flex items-end">
+                        <!-- PREÇO ATUALIZADO -->
+                        <div class="gradient-text text-5xl font-bold">$13</div>
+                        <span class="ml-3 text-sm text-pink-medium line-through">$69.90</span>
                     </div>
-                    <p class="text-white/80">A real and direct analysis of your skin based on your answers and specific needs.</p>
+                    <p class="text-lg">For those who want the most complete, detailed plan with progressive results.</p>
+                    <p class="text-green-400 mt-1">Lifetime Access | One-time payment</p>
                 </div>
                 
-                <!-- Benefit 2 -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-pink-medium/50">
-                    <div class="flex items-center mb-6">
-                        <div class="product-icon rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-file-prescription text-pink-medium text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Personalized Formula</h3>
-                    </div>
-                    <p>A care plan made exclusively for you, with what truly works for your skin type.</p>
-                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>30-day plan with progressive care</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>4 monthly consultations</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>Daily checklists ready to print</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>PDF with: Personalized formula</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>Complete routine (morning + night)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>Tips adapted to your skin type</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>Affordable and homemade products</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>Blacklist of what's destroying your skin without you knowing</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>🔐 Lifetime access</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                        <span>👭 Shareable with up to 2 people</span>
+                    </li>
+                </ul>
                 
-                <!-- Benefit 3 -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-pink-medium/50">
-                    <div class="flex items-center mb-6">
-                        <div class="product-icon rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-bolt text-pink-medium text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Fast Results</h3>
-                    </div>
-                    <p>Plan created in minutes, with 7 to 30-day care routines for morning and night.</p>
-                </div>
+                <p class="mb-2 flex items-center text-pink-medium">
+                    <i class="fas fa-bolt mr-2"></i>
+                    ⚠️ Immediate delivery via exclusive link + email
+                </p>
+                <p class="font-bold mb-6 flex">
+                    <i class="fas fa-coffee mr-2 mt-1"></i>
+                    💣 For less than a coffee a day, you activate the most effective rejuvenation plan your skin has ever seen.
+                </p>
                 
-                <!-- Benefit 4 -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-pink-medium/50">
-                    <div class="flex items-center mb-6">
-                        <div class="product-icon rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-coins text-pink-medium text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Affordable Products</h3>
-                    </div>
-                    <p>Recommendations for inexpensive or homemade products that actually work.</p>
-                </div>
-                
-                <!-- Benefit 5 -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-pink-medium/50">
-                    <div class="flex items-center mb-6">
-                        <div class="product-icon rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-ban text-pink-medium text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Blacklist</h3>
-                    </div>
-                    <p>Discover what's aging your skin without you realizing it and learn how to avoid it.</p>
-                </div>
-                
-                <!-- Benefit 6 -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 hover:border-pink-medium/50">
-                    <div class="flex items-center mb-6">
-                        <div class="product-icon rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-file-pdf text-pink-medium text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Complete PDF</h3>
-                    </div>
-                    <p>A beautiful guide to print and follow step-by-step, without complications.</p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-16">
-                <a href="#plans" class="gradient-bg text-dark-gray font-bold py-4 px-10 rounded-full text-lg hover:shadow-xl transition-all inline-flex items-center justify-center">
-                    I Want All These Benefits
-                    <i class="fas fa-gem ml-3"></i>
-                </a>
+                <!-- EVENTO DO PIXEL ADICIONADO -->
+                <button onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://bellavita2.pay.yampi.com.br/r/41HL55K8JJ'" class="w-full gradient-bg hover:shadow-xl text-dark-gray font-bold py-4 rounded-xl text-lg transition-all">
+                    Buy Complete Plan
+                    <i class="fas fa-crown ml-2"></i>
+                </button>
             </div>
         </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section id="reviews" class="py-24 px-6 bg-gradient-to-r from-gray-900 to-dark-gray">
-        <div class="container mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-4xl font-bold mb-4">
-                    Real <span class="gradient-text">Transformations</span>
-                </h2>
-                <p class="text-xl text-white/80">What our clients say about their experience with SKINNEW.AI</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="gradient-border backdrop-blur border border-white/10 rounded-2xl p-8">
-                    <div class="flex mb-6">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ana C." class="w-12 h-12 rounded-full object-cover border-2 border-pink-medium">
-                        <div class="ml-4">
-                            <p class="font-bold">Ana C., 48</p>
-                            <div class="flex mt-1">
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="italic text-white/90">"After years of spending on expensive products, I finally found a solution that works for my skin! The personalized plan changed everything."</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <div class="text-sm text-white/60">
-                            <i class="fas fa-clock mr-2"></i>
-                            <span>2 weeks ago</span>
-                        </div>
-                        <div class="text-xs bg-pink-medium/10 text-pink-medium px-2 py-1 rounded">
-                            RESULT: 98%
-                        </div>
-                    </div>
+        
+        <div class="flex flex-col md:flex-row justify-center gap-6 mt-16 max-w-4xl mx-auto">
+            <div class="bg-gray-800/50 p-4 rounded-lg flex items-center border border-gray-700">
+                <div class="bg-green-900/30 text-green-400 rounded-full p-3 mr-4">
+                    <i class="fas fa-shield-alt text-lg"></i>
                 </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="gradient-border backdrop-blur border border-white/10 rounded-2xl p-8">
-                    <div class="flex mb-6">
-                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Mariana R." class="w-12 h-12 rounded-full object-cover border-2 border-pink-medium">
-                        <div class="ml-4">
-                            <p class="font-bold">Mariana R., 31</p>
-                            <div class="flex mt-1">
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="italic text-white/90">"I never imagined homemade products could make such a difference! My skin is more radiant than it was 10 years ago."</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <div class="text-sm text-white/60">
-                            <i class="fas fa-clock mr-2"></i>
-                            <span>1 month ago</span>
-                        </div>
-                        <div class="text-xs bg-pink-medium/10 text-pink-medium px-2 py-1 rounded">
-                            RESULT: 100%
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="gradient-border backdrop-blur border border-white/10 rounded-2xl p-8">
-                    <div class="flex mb-6">
-                        <img src="https://randomuser.me/api/portraits/women/41.jpg" alt="Carla S." class="w-12 h-12 rounded-full object-cover border-2 border-pink-medium">
-                        <div class="ml-4">
-                            <p class="font-bold">Carla S., 39</p>
-                            <div class="flex mt-1">
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star text-yellow-400 text-sm"></i>
-                                <i class="fas fa-star-half-alt text-yellow-400 text-sm"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="italic text-white/90">"The blacklist was a revelation! I discovered habits that were harming my skin without me realizing. Highly recommend!"</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <div class="text-sm text-white/60">
-                            <i class="fas fa-clock mr-2"></i>
-                            <span>3 weeks ago</span>
-                        </div>
-                        <div class="text-xs bg-pink-medium/10 text-pink-medium px-2 py-1 rounded">
-                            RESULT: 92%
-                        </div>
-                    </div>
+                <div>
+                    <p class="font-bold">Secure Payments</p>
+                    <p class="text-sm text-white/70">100% secure payment through trusted gateways</p>
                 </div>
             </div>
-            
-            <div class="text-center mt-16">
-                <a href="#plans" class="gradient-bg text-dark-gray font-bold py-4 px-10 rounded-full text-lg hover:shadow-xl transition-all inline-flex items-center justify-center">
-                    See Plans!
-                    <i class="fas fa-dollar-sign ml-3"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Before and After Section -->
-    <section id="before-after" class="py-24 px-6 bg-dark-gray">
-        <div class="container mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Visible <span class="gradient-text">Results</span></h2>
-                <p class="text-xl text-white/80">See the power of a truly personalized care plan. The images below illustrate the kind of transformation our clients achieve.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Image 1: Acne-prone skin -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
-                    <img src="https://i.imgur.com/Bh7kg4M.png" alt="Before and after result on acne-prone skin" class="w-full h-auto">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Even and Calm Skin</h3>
-                        <p class="text-white/80">A plan focused on oil control and healing, resulting in smoother skin with less redness.</p>
-                    </div>
+            <div class="bg-gray-800/50 p-4 rounded-lg flex items-center border border-gray-700">
+                <div class="bg-blue-900/30 text-blue-400 rounded-full p-3 mr-4">
+                    <i class="fas fa-lock text-lg"></i>
                 </div>
-
-                <!-- Image 2: Mature skin -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
-                    <img src="https://i.imgur.com/bAKxaIm.png" alt="Before and after result on mature skin with wrinkles" class="w-full h-auto">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Firmness and Facial Contour</h3>
-                        <p class="text-white/80">Treatment for sagging and fine lines, restoring vitality and facial definition.</p>
-                    </div>
-                </div>
-
-                <!-- Image 3: Rejuvenation -->
-                <div class="feature-card bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
-                    <img src="https://i.imgur.com/o0a2WYE.png" alt="Before and after result in facial rejuvenation" class="w-full h-auto">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Rejuvenation and Glow</h3>
-                        <p class="text-white/80">The right combination of active ingredients for visibly younger, brighter, and renewed skin texture.</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="text-center mt-16">
-                 <a href="#plans" class="gradient-bg text-dark-gray font-bold py-4 px-10 rounded-full text-lg hover:shadow-xl transition-all inline-flex items-center justify-center">
-                    I Want This Transformation!
-                    <i class="fas fa-heart ml-3"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Offer Section -->
-    <section id="plans" class="py-24 px-6 relative">
-        <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-dark-gray to-transparent z-0"></div>
-        <div class="container mx-auto relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-5xl font-bold mb-6">
-                    Choose the <span class="gradient-text">perfect plan</span> for you
-                </h2>
-                <p class="text-xl text-white/80">An investment that fits your budget and a transformation you can see in the mirror.</p>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row justify-center gap-8 max-w-6xl mx-auto">
-                <!-- Basic Plan -->
-                <div class="plan-card gradient-border bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 w-full max-w-md transition-all duration-300">
-                    <div class="mb-6">
-                        <h3 class="text-3xl font-bold mb-2">SKINNEW BASIC</h3>
-                        <div class="gradient-text text-5xl font-bold mb-2">$19.90</div>
-                        <p class="text-lg">2-Month Access | One-time payment</p>
-                    </div>
-                    
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
-                            <span>Access to the SKINNEW.AI consultant</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
-                            <span>2 monthly consultations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
-                            <span>Personalized diagnosis</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
-                            <span>PDF with: Custom formula (natural or with drugstore products)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
-                            <span>7-day routine (morning + night)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
-                            <span>Tips based on your skin type</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-400 mt-1 mr-3"></i>
-                            <span>Suggestions for affordable or homemade products</span>
-                        </li>
-                    </ul>
-                    
-                    <p class="mb-6 flex items-center">
-                        <i class="fas fa-mobile-alt mr-2"></i>
-                        📲 Delivery via email | 2-month access
-                    </p>
-                    
-                    <button onclick="window.location.href='https://bellavita2.pay.yampi.com.br/r/4LQYR6SUJX'" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 rounded-xl text-lg transition-all border border-gray-700">
-                        Buy Basic Plan
-                    </button>
-                </div>
-                
-                <!-- Complete Plan -->
-                <div class="plan-card gradient-border bg-dark-gray/50 backdrop-blur border border-white/10 rounded-2xl p-8 w-full max-w-md relative transition-all duration-300">
-                    <div class="plan-highlight">MOST POPULAR</div>
-                    
-                    <div class="mb-6">
-                        <h3 class="text-3xl font-bold mb-2">SKINNEW COMPLETE</h3>
-                        <div class="flex items-end">
-                            <div class="gradient-text text-5xl font-bold">$29.90</div>
-                            <span class="ml-3 text-sm text-pink-medium line-through">$69.90</span>
-                        </div>
-                        <p class="text-lg">For those who want the most complete, detailed plan with progressive results.</p>
-                        <p class="text-green-400 mt-1">Lifetime Access | One-time payment</p>
-                    </div>
-                    
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>30-day plan with progressive care</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>4 monthly consultations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>Daily checklists ready to print</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>PDF with: Personalized formula</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>Complete routine (morning + night)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>Tips adapted to your skin type</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>Affordable and homemade products</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>Blacklist of what's destroying your skin without you knowing</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>🔐 Lifetime access</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
-                            <span>👭 Shareable with up to 2 people</span>
-                        </li>
-                    </ul>
-                    
-                    <p class="mb-2 flex items-center text-pink-medium">
-                        <i class="fas fa-bolt mr-2"></i>
-                        ⚠️ Immediate delivery via exclusive link + email
-                    </p>
-                    <p class="font-bold mb-6 flex">
-                        <i class="fas fa-coffee mr-2 mt-1"></i>
-                        💣 For less than a coffee a day, you activate the most effective rejuvenation plan your skin has ever seen.
-                    </p>
-                    
-                    <button onclick="window.location.href='https://bellavita2.pay.yampi.com.br/r/41HL55K8JJ'" class="w-full gradient-bg hover:shadow-xl text-dark-gray font-bold py-4 rounded-xl text-lg transition-all">
-                        Buy Complete Plan
-                        <i class="fas fa-crown ml-2"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-6 mt-16 max-w-4xl mx-auto">
-                <div class="bg-gray-800/50 p-4 rounded-lg flex items-center border border-gray-700">
-                    <div class="bg-green-900/30 text-green-400 rounded-full p-3 mr-4">
-                        <i class="fas fa-shield-alt text-lg"></i>
-                    </div>
-                    <div>
-                        <p class="font-bold">Secure Payments</p>
-                        <p class="text-sm text-white/70">100% secure payment through trusted gateways</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800/50 p-4 rounded-lg flex items-center border border-gray-700">
-                    <div class="bg-blue-900/30 text-blue-400 rounded-full p-3 mr-4">
-                        <i class="fas fa-lock text-lg"></i>
-                    </div>
-                    <div>
-                        <p class="font-bold">Privacy Protected</p>
-                        <p class="text-sm text-white/70">Your data will always be protected</p>
-                    </div>
+                <div>
+                    <p class="font-bold">Privacy Protected</p>
+                    <p class="text-sm text-white/70">Your data will always be protected</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Guarantee Section -->
-    <section id="guarantee" class="py-24 px-6 bg-gradient-to-br from-gray-900 to-dark-gray">
-        <div class="container mx-auto max-w-4xl">
-            <div class="gradient-border rounded-2xl p-10 backdrop-blur-sm relative overflow-hidden">
-                <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-gradient-to-br from-pink-light/10 to-transparent blur-xl opacity-30"></div>
-                <div class="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-gradient-to-br from-pink-light/10 to-transparent blur-xl opacity-30"></div>
-                
-                <div class="relative z-10 text-center">
-                    <div class="flex justify-center">
-                        <div class="gradient-bg w-24 h-24 rounded-full flex items-center justify-center mb-8">
-                            <i class="fas fa-shield-alt text-dark-gray text-4xl"></i>
-                        </div>
-                    </div>
-                    
-                    <h2 class="text-4xl font-bold mb-6">
-                        <span class="gradient-text">Unconditional</span> Guarantee
-                    </h2>
-                    <p class="text-xl mb-8 max-w-2xl mx-auto">
-                        If in 30 days you don't look in the mirror and see a real difference, we'll refund every penny. No explanations, no bureaucracy, no shame.
-                    </p>
-                    
-                    <p class="font-bold text-xl mb-10 bg-dark-gray/50 inline-block p-4 rounded-xl border border-white/10">
-                        Test the plan, follow the care, and if you think it wasn't worth it: 📩 Send an email, and you're done. Full refund guaranteed.
-                    </p>
-                    
-                    <a href="#plans" class="gradient-bg text-dark-gray font-bold py-4 px-10 rounded-xl text-lg hover:shadow-xl transition-all inline-flex items-center justify-center">
-                        I Want to Try It Risk-Free
-                        <i class="fas fa-hand-holding-usd ml-3"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section class="py-16 px-6 bg-gradient-to-r from-gray-900 to-dark-gray border-t border-white/10">
-        <div class="container mx-auto text-center max-w-3xl">
-            <h2 class="text-4xl font-bold mb-6">
-                Stop <span class="text-outline">wasting</span> time and money
-            </h2>
-            <p class="text-xl mb-10">
-                Discover the definitive solution for your skin that has already transformed over 10,000 women.
-            </p>
-            <a href="#plans" class="gradient-bg text-dark-gray font-bold py-5 px-14 rounded-full text-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 inline-flex items-center justify-center">
-                Create My Plan Now
-                <i class="fas fa-chevron-right ml-4 text-sm"></i>
-            </a>
-            <p class="mt-6 text-white/70">
-                <i class="fas fa-lock mr-2"></i> 100% Secure Payment · Instant Delivery
-            </p>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-24 px-6 bg-dark-gray">
-        <div class="container mx-auto max-w-4xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    Frequently Asked <span class="gradient-text">Questions</span>
-                </h2>
-                <p class="text-xl text-white/80">Clearing up the main points so you can start with total confidence.</p>
-            </div>
-
-            <div class="space-y-6">
-                <!-- Question 1 -->
-                <div class="gradient-border rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-pink-medium/10">
-                    <h3 class="text-xl font-bold text-white mb-3 flex items-start">
-                        <i class="fas fa-question-circle text-pink-medium mt-1 mr-3 flex-shrink-0"></i>
-                        <span>Does this really work for mature skin with wrinkles and sagging?</span>
-                    </h3>
-                    <p class="text-white/80 pl-8">
-                        Yes! SKINNEW.AI was developed specifically with the needs of skin from 35-40 years and older in mind. The AI analyzes factors like collagen loss, firmness, and hydration to create a plan focused on rejuvenation, smoothing fine lines, and restoring skin's radiance.
-                    </p>
-                </div>
-
-                <!-- Question 2 -->
-                <div class="gradient-border rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-pink-medium/10">
-                    <h3 class="text-xl font-bold text-white mb-3 flex items-start">
-                        <i class="fas fa-question-circle text-pink-medium mt-1 mr-3 flex-shrink-0"></i>
-                        <span>Are the recommended products safe? I have sensitive skin.</span>
-                    </h3>
-                    <p class="text-white/80 pl-8">
-                        Absolutely. One of the questions in our diagnosis is about your skin's sensitivity. Based on your answer, the AI prioritizes gentle, hypoallergenic ingredients and also offers options for homemade, natural recipes, ensuring your care plan is both effective and safe for you.
-                    </p>
-                </div>
-
-                <!-- Question 3 -->
-                <div class="gradient-border rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-pink-medium/10">
-                    <h3 class="text-xl font-bold text-white mb-3 flex items-start">
-                        <i class="fas fa-question-circle text-pink-medium mt-1 mr-3 flex-shrink-0"></i>
-                        <span>Will I have to spend a lot on the recommended products?</span>
-                    </h3>
-                    <p class="text-white/80 pl-8">
-                        Not at all! One of our biggest differentiators is affordability. SKINNEW.AI is trained to find the "hidden gems" of drugstores: products with great value and powerful active ingredients. Additionally, we always offer alternatives with homemade recipes using ingredients you likely already have.
-                    </p>
-                </div>
-
-                <!-- Question 4 -->
-                <div class="gradient-border rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-pink-medium/10">
-                    <h3 class="text-xl font-bold text-white mb-3 flex items-start">
-                        <i class="fas fa-question-circle text-pink-medium mt-1 mr-3 flex-shrink-0"></i>
-                        <span>I don't have much time. Is the skincare routine long or complicated?</span>
-                    </h3>
-                    <p class="text-white/80 pl-8">
-                        We understand the daily rush. That's why the routines are direct and optimized, taking only a few minutes in the morning and at night. The PDF guide explains the step-by-step process clearly and simply, so you can take care of your skin without messing up your schedule.
-                    </p>
-                </div>
-                
-                <!-- Question 5 -->
-                <div class="gradient-border rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-pink-medium/10">
-                    <h3 class="text-xl font-bold text-white mb-3 flex items-start">
-                        <i class="fas fa-question-circle text-pink-medium mt-1 mr-3 flex-shrink-0"></i>
-                        <span>Is this a subscription or a one-time payment?</span>
-                    </h3>
-                    <p class="text-white/80 pl-8">
-                        It's a <strong>one-time payment</strong>. You pay once and get access to your personalized plan for the contracted period (2 months for the Basic plan or forever for the Complete plan). There are no monthly fees, hidden charges, or any kind of recurring billing. Simple, transparent, and no surprises on your statement.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="py-16 px-6 border-t border-white/10">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-12 md:mb-0">
-                    <div class="flex items-center mb-6">
-                        <div class="gradient-bg w-12 h-12 rounded-full flex items-center justify-center">
-                            <i class="fa-solid fa-leaf text-dark-gray text-xl"></i>
-                        </div>
-                        <span class="text-white font-bold text-2xl ml-3">SKINNEW<span class="gradient-text">.AI</span></span>
-                    </div>
-                    <p class="mb-4 max-w-sm">Your partner in AI-powered skincare.</p>
-                    <p class="text-white/70">
-                        <i class="fas fa-envelope mr-2"></i> contact@skinnew.ai
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="text-lg font-bold mb-4">Product</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#" class="text-white/70 hover:text-white transition">How It Works</a></li>
-                            <li><a href="#benefits" class="text-white/70 hover:text-white transition">Benefits</a></li>
-                            <li><a href="#plans" class="text-white/70 hover:text-white transition">Plans</a></li>
-                            <li><a href="#guarantee" class="text-white/70 hover:text-white transition">Guarantee</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-lg font-bold mb-4">Support</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#faq" class="text-white/70 hover:text-white transition">FAQ</a></li>
-                            <li><a href="#" class="text-white/70 hover:text-white transition">Contact</a></li>
-                            <li><a href="#" class="text-white/70 hover:text-white transition">Help</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-lg font-bold mb-4">Legal</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#" class="text-white/70 hover:text-white transition">Terms of Use</a></li>
-                            <li><a href="#" class="text-white/70 hover:text-white transition">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-white/70 mb-4 md:mb-0">© 2024 SKINNEW.AI. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to top button -->
-    <button onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-gray-800 hover:bg-gray-700 w-12 h-12 rounded-full flex items-center justify-center shadow-lg border border-white/10 transition-all z-50">
-        <i class="fas fa-arrow-up text-white"></i>
-    </button>
-
-    <script>
-        // Scroll to top function
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-</body>
-</html>
+    </div>
+</section>
