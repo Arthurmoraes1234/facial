@@ -99,7 +99,7 @@
     <!-- Padding para o corpo -->
     <div class="pt-10">
         <!-- SEÇÃO 1 – HEADLINE + MOCKUP (GIGANTE) -->
-        <section class="relative pt-16 pb-12 md:pb-24 text-center">
+        <section class="relative pt-16 pb-12 md:pb-32 text-center">
             <div class="aurora-bg">
                 <div class="aurora-blob top-0 left-0 w-96 h-96 bg-blue-500"></div>
                 <div class="aurora-blob bottom-0 right-0 w-96 h-96 bg-red-500"></div>
@@ -117,14 +117,10 @@
                     <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-calendar-day mr-2 text-blue-400"></i>One activity per day</span>
                     <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-bolt mr-2 text-blue-400"></i>Instant results</span>
                 </div>
-                <!-- Seção da imagem centralizada e ampliada -->
-<section class="relative overflow-x-auto w-full">
-  <div class="w-[120%] max-w-none h-auto mx-auto">
-    <img src="https://i.imgur.com/FUFYzOY.png" 
-         alt="Magical Book Mockup"
-         class="h-auto mx-auto block">
-  </div>
-</section>
+                <!-- Container do Mockup (AJUSTADO PARA SER GIGANTE) -->
+                <div class="relative z-20 md:-mb-56 lg:-mb-80">
+                     <img src="https://i.imgur.com/FUFYzOY.png" alt="Magical Book Mockup" class="w-full mx-auto" style="max-width: 1600px;">
+                </div>
                  <a href="#ofertas-section" class="cta-button text-white font-bold py-4 px-12 rounded-full text-lg inline-block mt-8">
                     Yes, I want to start now!
                 </a>
@@ -134,7 +130,7 @@
 
         <!-- SEÇÃO 2 – O QUE VOCÊ VAI RECEBER -->
         <div class="angled-section">
-            <section class="relative py-20 md:pt-80">
+            <section class="relative py-20 md:pt-96">
                 <div class="container mx-auto px-6">
                     <div class="text-center mb-16">
                          <h2 class="text-3xl md:text-5xl font-bold">What will you <span class="gradient-text-blue">receive?</span></h2>
@@ -163,8 +159,9 @@
         <!-- SEÇÃO 5 – BÔNUS (AJUSTADA) -->
         <section class="py-20">
              <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-12">And only today, you’ll also get <span class="gradient-text-blue">2 amazing bonuses:</span></h2>
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold mb-12">And only today, you’ll also get <span class="gradient-text-blue">3 amazing bonuses:</span></h2>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Bonus 1 -->
                     <div class="section-card flex flex-col justify-between">
                         <div>
                             <img src="https://i.imgur.com/h5Sum4X.jpeg" alt="Daily Chore Chart" class="rounded-xl mb-6 h-64 w-full object-cover">
@@ -175,6 +172,7 @@
                             <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-xl">FREE</span>
                         </div>
                     </div>
+                    <!-- Bonus 2 -->
                     <div class="section-card flex flex-col justify-between">
                         <div>
                             <img src="https://i.imgur.com/l3r07w6.png" alt="Healthy Foods Guide" class="rounded-xl mb-6 h-64 w-full object-cover">
@@ -182,6 +180,17 @@
                         </div>
                         <div class="mt-4">
                             <span class="text-lg text-muted-text line-through mr-3">$19.90</span>
+                            <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-xl">FREE</span>
+                        </div>
+                    </div>
+                     <!-- Bonus 3 (NOVO) -->
+                    <div class="section-card flex flex-col justify-between">
+                        <div>
+                            <img src="https://i.imgur.com/R1UhUoC.png" alt="Printable PDF Book" class="rounded-xl mb-6 h-64 w-full object-cover">
+                            <h3 class="text-xl font-bold">The Complete Book in a Printable PDF</h3>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-lg text-muted-text line-through mr-3">$29.90</span>
                             <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-xl">FREE</span>
                         </div>
                     </div>
