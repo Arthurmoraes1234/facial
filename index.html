@@ -98,8 +98,8 @@
 
     <!-- Padding para o corpo -->
     <div class="pt-10">
-        <!-- SEÇÃO 1 – HEADLINE + MOCKUP (AJUSTADA) -->
-        <section class="relative pt-16 pb-24 md:pb-48 text-center overflow-hidden">
+        <!-- SEÇÃO 1 – HEADLINE + MOCKUP (GIGANTE) -->
+        <section class="relative pt-16 pb-12 md:pb-24 text-center">
             <div class="aurora-bg">
                 <div class="aurora-blob top-0 left-0 w-96 h-96 bg-blue-500"></div>
                 <div class="aurora-blob bottom-0 right-0 w-96 h-96 bg-red-500"></div>
@@ -117,9 +117,9 @@
                     <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-calendar-day mr-2 text-blue-400"></i>One activity per day</span>
                     <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-bolt mr-2 text-blue-400"></i>Instant results</span>
                 </div>
-                <!-- Container do Mockup (AJUSTADO PARA SER MAIOR) -->
-                <div class="relative z-20 md:-mb-40 lg:-mb-56">
-                     <img src="https://i.imgur.com/CprpYxW.png" alt="Magical Book Mockup" class="w-full max-w-6xl mx-auto">
+                <!-- Container do Mockup (AJUSTADO PARA SER GIGANTE) -->
+                <div class="relative z-20 md:-mb-48 lg:-mb-64">
+                     <img src="https://i.imgur.com/CprpYxW.png" alt="Magical Book Mockup" class="w-full max-w-7xl mx-auto">
                 </div>
                  <a href="#ofertas-section" class="cta-button text-white font-bold py-4 px-12 rounded-full text-lg inline-block mt-8">
                     Yes, I want to start now!
@@ -128,22 +128,20 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 2 – O QUE VOCÊ VAI RECEBER (REDESENHADA) -->
+        <!-- SEÇÃO 2 – O QUE VOCÊ VAI RECEBER -->
         <div class="angled-section">
-            <section class="relative py-20 md:pt-64">
+            <section class="relative py-20 md:pt-80">
                 <div class="container mx-auto px-6">
                     <div class="text-center mb-16">
                          <h2 class="text-3xl md:text-5xl font-bold">What will you <span class="gradient-text-blue">receive?</span></h2>
                     </div>
                     <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <!-- Cards de Valor -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-layer-group text-blue-400"></i></div><h3 class="font-bold text-lg">365+ Activities</h3><p class="text-sm text-muted-text">Organized by age to stimulate creativity.</p></div>
                             <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-users text-blue-400"></i></div><h3 class="font-bold text-lg">Member's Area</h3><p class="text-sm text-muted-text">Exclusive access to our online platform.</p></div>
                             <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-file-pdf text-blue-400"></i></div><h3 class="font-bold text-lg">Printable PDF</h3><p class="text-sm text-muted-text">The complete activity book ready to print.</p></div>
                              <div class="section-card bg-blue-500/10 border-blue-500/30"><div class="text-3xl mb-3"><i class="fas fa-video text-blue-400"></i></div><h3 class="font-bold text-lg">Video Guide</h3><p class="text-sm text-muted-text">A special VSL showing how to get the most out of the material.</p></div>
                         </div>
-                        <!-- VSL -->
                         <div>
                             <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-700">
                                 <vturb-smartplayer id="vid-68656a662c8801d4bbc4c9f3" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
@@ -158,13 +156,31 @@
             </section>
         </div>
         
-        <!-- SEÇÃO 5 – BÔNUS -->
+        <!-- SEÇÃO 5 – BÔNUS (AJUSTADA) -->
         <section class="py-20">
              <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-5xl font-bold mb-12">And only today, you’ll also get <span class="gradient-text-blue">2 amazing bonuses:</span></h2>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="section-card"><img src="https://i.imgur.com/h5Sum4X.jpeg" alt="Daily Chore Chart" class="rounded-xl mb-6 h-64 w-full object-cover"><h3 class="text-xl font-bold">Printable daily chore chart for kids</h3></div>
-                    <div class="section-card"><img src="https://i.imgur.com/l3r07w6.png" alt="Healthy Foods Guide" class="rounded-xl mb-6 h-64 w-full object-cover"><h3 class="text-xl font-bold">Complete guide to introducing healthy foods naturally</h3></div>
+                    <div class="section-card flex flex-col justify-between">
+                        <div>
+                            <img src="https://i.imgur.com/h5Sum4X.jpeg" alt="Daily Chore Chart" class="rounded-xl mb-6 h-64 w-full object-cover">
+                            <h3 class="text-xl font-bold">Printable daily chore chart for kids</h3>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-lg text-muted-text line-through mr-3">$19.90</span>
+                            <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-xl">FREE</span>
+                        </div>
+                    </div>
+                    <div class="section-card flex flex-col justify-between">
+                        <div>
+                            <img src="https://i.imgur.com/l3r07w6.png" alt="Healthy Foods Guide" class="rounded-xl mb-6 h-64 w-full object-cover">
+                            <h3 class="text-xl font-bold">Complete guide to introducing healthy foods naturally</h3>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-lg text-muted-text line-through mr-3">$19.90</span>
+                            <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-xl">FREE</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -262,13 +278,16 @@
         document.querySelectorAll('.faq-item button').forEach(button => { button.addEventListener('click', () => { button.parentElement.classList.toggle('active'); }); });
         function startCountdown(duration, display) {
             let timer = duration, minutes, seconds;
-            setInterval(function () {
+            let interval = setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
                 display.textContent = minutes + ":" + seconds;
-                if (--timer < 0) { timer = 0; }
+                if (--timer < 0) {
+                    display.textContent = "00:00";
+                    clearInterval(interval);
+                }
             }, 1000);
         }
         window.onload = function () {
