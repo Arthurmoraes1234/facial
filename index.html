@@ -98,8 +98,8 @@
 
     <!-- Padding para o corpo -->
     <div class="pt-10">
-        <!-- SEÇÃO 1 – HEADLINE + MOCKUP -->
-        <section class="relative pt-16 pb-16 md:pb-24 text-center overflow-hidden">
+        <!-- SEÇÃO 1 – HEADLINE + MOCKUP (AJUSTADA) -->
+        <section class="relative pt-16 pb-24 md:pb-48 text-center overflow-hidden">
             <div class="aurora-bg">
                 <div class="aurora-blob top-0 left-0 w-96 h-96 bg-blue-500"></div>
                 <div class="aurora-blob bottom-0 right-0 w-96 h-96 bg-red-500"></div>
@@ -117,8 +117,9 @@
                     <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-calendar-day mr-2 text-blue-400"></i>One activity per day</span>
                     <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-bolt mr-2 text-blue-400"></i>Instant results</span>
                 </div>
-                <div class="relative z-20 md:-mb-24 lg:-mb-32">
-                     <img src="https://i.imgur.com/CprpYxW.png" alt="Magical Book Mockup" class="w-full max-w-4xl mx-auto transform transition-transform duration-500 hover:scale-105">
+                <!-- Container do Mockup (AJUSTADO PARA SER MAIOR) -->
+                <div class="relative z-20 md:-mb-40 lg:-mb-56">
+                     <img src="https://i.imgur.com/CprpYxW.png" alt="Magical Book Mockup" class="w-full max-w-6xl mx-auto">
                 </div>
                  <a href="#ofertas-section" class="cta-button text-white font-bold py-4 px-12 rounded-full text-lg inline-block mt-8">
                     Yes, I want to start now!
@@ -127,35 +128,36 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 2 – O QUE VOCÊ VAI RECEBER -->
+        <!-- SEÇÃO 2 – O QUE VOCÊ VAI RECEBER (REDESENHADA) -->
         <div class="angled-section">
-            <section class="relative py-20 md:pt-48">
+            <section class="relative py-20 md:pt-64">
                 <div class="container mx-auto px-6">
                     <div class="text-center mb-16">
                          <h2 class="text-3xl md:text-5xl font-bold">What will you <span class="gradient-text-blue">receive?</span></h2>
                     </div>
                     <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="text-center md:text-left">
-                            <ul class="space-y-6 text-xl">
-                                <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-4"></i>365+ activities organized by age</li>
-                                <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-4"></i>Access to our exclusive member’s area</li>
-                                <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-4"></i>Printable PDF activity book</li>
-                            </ul>
-                             <a href="#ofertas-section" class="cta-button text-white font-bold py-3 px-8 rounded-full text-md inline-block mt-10">
-                                Yes, I want it now!
-                            </a>
+                        <!-- Cards de Valor -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-layer-group text-blue-400"></i></div><h3 class="font-bold text-lg">365+ Activities</h3><p class="text-sm text-muted-text">Organized by age to stimulate creativity.</p></div>
+                            <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-users text-blue-400"></i></div><h3 class="font-bold text-lg">Member's Area</h3><p class="text-sm text-muted-text">Exclusive access to our online platform.</p></div>
+                            <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-file-pdf text-blue-400"></i></div><h3 class="font-bold text-lg">Printable PDF</h3><p class="text-sm text-muted-text">The complete activity book ready to print.</p></div>
+                             <div class="section-card bg-blue-500/10 border-blue-500/30"><div class="text-3xl mb-3"><i class="fas fa-video text-blue-400"></i></div><h3 class="font-bold text-lg">Video Guide</h3><p class="text-sm text-muted-text">A special VSL showing how to get the most out of the material.</p></div>
                         </div>
+                        <!-- VSL -->
                         <div>
-                            <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-gray-700">
-                                <vturb-smartplayer id="vid-68656a662c8801d4bbc4c9f3" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+                            <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-700">
+                                <vturb-smartplayer id="vid-68656a662c8801d4bbc4c9f3" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
                                 <script type="text/javascript">var s=document.createElement("script");s.src="https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/68656a662c8801d4bbc4c9f3/v4/player.js",s.async=!0,document.head.appendChild(s);</script>
                             </div>
+                            <a href="#ofertas-section" class="cta-button text-white font-bold py-3 px-8 rounded-full text-md w-full text-center mt-8 inline-block">
+                                Yes, I want it all now!
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-
+        
         <!-- SEÇÃO 5 – BÔNUS -->
         <section class="py-20">
              <div class="container mx-auto px-6 text-center">
@@ -174,17 +176,17 @@
                     <i class="fas fa-biohazard text-5xl text-red-500 mb-6"></i>
                     <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">The phone isn't just distracting your child.<br>It's <span class="text-red-500">damaging them.</span></h2>
                     <div class="section-card bg-dark-primary p-8 text-left text-lg space-y-4">
-                        <p class="flex items-start"><span class="mr-3">❌</span> Destroying attention span</p>
-                        <p class="flex items-start"><span class="mr-3">❌</span> Causing emotional outbursts and irritation</p>
-                        <p class="flex items-start"><span class="mr-3">❌</span> Weakening emotional connection with parents</p>
-                        <p class="flex items-start"><span class="mr-3">❌</span> Delaying emotional and cognitive development</p>
-                        <p class="flex items-start font-bold text-light-text border-t border-gray-700 pt-4 mt-4!"><span class="mr-3">💣</span> Just 2 hours of screen time per day doubles the risk of anxiety and ADHD.</p>
+                        <p class="flex items-start"><span class="mr-3 text-red-500">❌</span> Destroying attention span</p>
+                        <p class="flex items-start"><span class="mr-3 text-red-500">❌</span> Causing emotional outbursts and irritation</p>
+                        <p class="flex items-start"><span class="mr-3 text-red-500">❌</span> Weakening emotional connection with parents</p>
+                        <p class="flex items-start"><span class="mr-3 text-red-500">❌</span> Delaying emotional and cognitive development</p>
+                        <p class="flex items-start font-bold text-light-text border-t border-gray-700 pt-4 mt-4!"><span class="mr-3 text-red-500">💣</span> Just 2 hours of screen time per day doubles the risk of anxiety and ADHD.</p>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- SEÇÃO 8 & 9 & 10 - Acesso, Garantia, Segurança -->
+        <!-- SEÇÃO 8, 9, 10 - Acesso, Garantia, Segurança -->
         <section class="py-20">
             <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
                 <div class="space-y-3"><i class="fas fa-paper-plane text-4xl text-blue-400"></i><h3 class="text-2xl font-bold">How do you access?</h3><p class="text-muted-text">After payment, you’ll receive an email with your login and password. Instant access to start today!</p></div>
@@ -199,32 +201,36 @@
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-5xl font-extrabold">🎯 Special <span class="gradient-text-blue">Limited-Time</span> Offer</h2>
                     <div id="countdown-timer" class="mt-6 text-4xl font-bold bg-red-600 text-white rounded-lg p-3 inline-block shadow-lg">
-                        <span>00:20:00</span>
+                        <span>20:00</span>
                     </div>
                 </div>
-                <div class="flex flex-col lg:flex-row gap-8 justify-center items-end">
-                  <div class="section-card w-full lg:w-2/5 p-8 text-center">
-                    <h3 class="text-2xl font-bold">BASIC OFFER</h3>
-                    <p class="text-4xl font-extrabold my-4">$10</p>
-                    <ul class="space-y-2 mb-6 text-muted-text">
-                      <li class="flex items-center justify-center"><i class="fas fa-check mr-2 text-green-500"></i>50 activities</li>
-                      <li class="flex items-center justify-center"><i class="fas fa-check mr-2 text-green-500"></i>Print-ready PDF</li>
-                      <li class="flex items-center justify-center"><i class="fas fa-check mr-2 text-green-500"></i>3 months of access</li>
-                    </ul>
+                <div class="flex flex-col lg:flex-row gap-8 justify-center items-stretch">
+                  <div class="section-card w-full lg:max-w-sm p-8 text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold">BASIC OFFER</h3>
+                        <p class="text-4xl font-extrabold my-4">$10</p>
+                        <ul class="space-y-2 mb-6 text-muted-text text-left">
+                          <li class="flex items-center"><i class="fas fa-check mr-3 text-green-500"></i>50 activities</li>
+                          <li class="flex items-center"><i class="fas fa-check mr-3 text-green-500"></i>Print-ready PDF</li>
+                          <li class="flex items-center"><i class="fas fa-check mr-3 text-green-500"></i>3 months of access</li>
+                        </ul>
+                    </div>
                     <a href="https://expressbellavita.systeme.io/paystripe2" onclick="fbq('track', 'InitiateCheckout');" class="border-2 border-gray-600 hover:bg-gray-700 font-bold py-3 px-6 text-center block w-full rounded-full transition">Buy now!</a>
                   </div>
-                  <div class="section-card w-full lg:w-3/5 p-8 border-4 border-blue-500 relative text-center">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-sm font-bold px-4 py-1 rounded-full">🔥 BEST SELLER</div>
-                    <h3 class="text-3xl font-bold text-blue-400">COMPLETE OFFER</h3>
-                    <p class="text-lg text-muted-text line-through mt-4">From $79.90</p>
-                    <p class="text-5xl font-extrabold my-2">Today for just $19.90</p>
-                    <ul class="space-y-2 mb-6 text-light-text">
-                      <li class="flex items-center justify-center"><i class="fas fa-star mr-2 text-yellow-400"></i>365+ creative & tested activities</li>
-                      <li class="flex items-center justify-center"><i class="fas fa-star mr-2 text-yellow-400"></i>Lifetime access</li>
-                      <li class="flex items-center justify-center"><i class="fas fa-star mr-2 text-yellow-400"></i>Monthly updates</li>
-                      <li class="flex items-center justify-center"><i class="fas fa-star mr-2 text-yellow-400"></i>PDF + online access</li>
-                      <li class="flex items-center justify-center"><i class="fas fa-star mr-2 text-yellow-400"></i>Free bonuses included</li>
-                    </ul>
+                  <div class="section-card w-full lg:max-w-md p-8 border-4 border-blue-500 relative text-center flex flex-col justify-between">
+                    <div>
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-sm font-bold px-4 py-1 rounded-full">🔥 BEST SELLER</div>
+                        <h3 class="text-3xl font-bold text-blue-400">COMPLETE OFFER</h3>
+                        <p class="text-lg text-muted-text line-through mt-4">From $79.90</p>
+                        <p class="text-5xl font-extrabold my-2">Today for just $19.90</p>
+                        <ul class="space-y-2 mb-6 text-light-text text-left">
+                          <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>365+ creative & tested activities</li>
+                          <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>Lifetime access</li>
+                          <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>Monthly updates</li>
+                          <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>PDF + online access</li>
+                          <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>Free bonuses included</li>
+                        </ul>
+                    </div>
                     <a href="https://expressbellavita.systeme.io/paystripe1" onclick="fbq('track', 'InitiateCheckout');" class="cta-button text-white font-bold py-4 px-8 text-xl text-center block w-full">Buy now!</a>
                   </div>
                 </div>
@@ -252,41 +258,23 @@
     </div>
     
     <script>
-        // Scroll to Offers
-        function scrollToOffers() {
-            document.getElementById('ofertas-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-item button').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                faqItem.classList.toggle('active');
-            });
-        });
-
-        // Countdown Timer
+        function scrollToOffers() { document.getElementById('ofertas-section').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        document.querySelectorAll('.faq-item button').forEach(button => { button.addEventListener('click', () => { button.parentElement.classList.toggle('active'); }); });
         function startCountdown(duration, display) {
             let timer = duration, minutes, seconds;
             setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
-
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = "00:" + minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration; // Opcional: reiniciar o timer
-                }
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) { timer = 0; }
             }, 1000);
         }
-
         window.onload = function () {
             const twentyMinutes = 60 * 20;
             const display = document.querySelector('#countdown-timer span');
-            startCountdown(twentyMinutes, display);
+            if (display) { startCountdown(twentyMinutes, display); }
         };
     </script>
 </body>
