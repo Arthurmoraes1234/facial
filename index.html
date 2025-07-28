@@ -1,288 +1,191 @@
-/* --- CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
-:root {
-    --dark-blue-1: #020412; /* Azul mais escuro */
-    --dark-blue-2: #0a1128; /* Azul marinho um pouco mais claro */
-    --text-white: #f0f0f0;
-    --highlight-green: #2ecc71;
-    --highlight-blue: #3498db;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --border-color: rgba(255, 255, 255, 0.1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(170deg, var(--dark-blue-1), var(--dark-blue-2));
-    color: var(--text-white);
-    line-height: 1.7;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-section {
-    padding: 60px 0;
-}
-
-h1, h2, h3 {
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-h1 {
-    font-size: 2.8rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-h3 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: var(--highlight-green);
-}
-
-.highlight-green { color: var(--highlight-green); }
-.highlight-blue { color: var(--highlight-blue); }
-
-/* --- HEADER E FOOTER --- */
-.static-header {
-    padding: 20px 0;
-    background-color: var(--dark-blue-1);
-}
-
-.logo {
-    display: block;
-    margin: 0 auto;
-    max-width: 180px;
-}
-
-.site-footer {
-    padding: 40px 0;
-    text-align: center;
-    background-color: var(--dark-blue-1);
-}
-
-.site-footer .logo {
-    margin-bottom: 20px;
-}
-
-.urgency-text {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-.urgency-warning {
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
-/* --- SEÇÕES ESPECÍFICAS --- */
-.subtitulo h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    max-width: 700px;
-    margin: 0 auto 20px auto;
-}
-.subtitulo p {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-}
-.full-width-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    margin-top: 20px;
-}
-
-.oferta .offer-layout {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-}
-.oferta .offer-details {
-    flex: 2;
-}
-.oferta .offer-image {
-    flex: 1;
-}
-.oferta .offer-image img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.check-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-.check-list li {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-}
-.pricing {
-    margin: 30px 0;
-    padding: 20px;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    text-align: center;
-}
-.pricing del {
-    opacity: 0.7;
-}
-.price-highlight {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--highlight-green);
-}
-.cta-button {
-    display: block;
-    width: 100%;
-    padding: 18px 20px;
-    background-color: var(--highlight-green);
-    color: var(--dark-blue-1);
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--highlight-green);
-}
-.cta-button.urgent {
-    background-color: #e74c3c;
-    color: var(--text-white);
-}
-.cta-button.urgent:hover {
-    box-shadow: 0 0 20px #e74c3c;
-}
-
-.porque-funciona { text-align: center; }
-.porque-funciona .feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-    font-size: 1.2rem;
-}
-.porque-funciona .feature-list li {
-    margin-bottom: 15px;
-}
-.final-statement {
-    font-size: 1.1rem;
-    font-weight: 700;
-    max-width: 700px;
-    margin: 20px auto 0 auto;
-}
-
-.como-usar h2 { margin-bottom: 20px; }
-.como-usar .intro-p { text-align: center; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;}
-.como-usar .steps {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    text-align: center;
-    margin: 40px 0;
-}
-.como-usar .step h3 {
-    font-size: 3rem;
-    color: var(--highlight-blue);
-}
-
-.prova-social .testimonials {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-.testimonial-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 25px;
-    border-radius: 10px;
-    flex: 1;
-}
-.testimonial-card .quote {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-.testimonial-card .author {
-    font-weight: 700;
-    color: var(--highlight-green);
-    text-align: right;
-}
-
-.faq .faq-item {
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 0;
-}
-.faq summary {
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    list-style: none; /* Remove a seta padrão */
-    display: flex;
-    justify-content: space-between;
-}
-.faq summary::after {
-    content: '+';
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-}
-.faq details[open] summary::after {
-    transform: rotate(45deg);
-}
-.faq p {
-    padding: 15px 5px 0 5px;
-    background-color: var(--dark-blue-2);
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-.garantia { text-align: center; }
-.garantia h2 { margin-bottom: 20px; }
-.guarantee-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-.guarantee-list li {
-    margin-bottom: 10px;
-}
-
-/* --- RESPONSIVIDADE PARA CELULARES --- */
-@media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano BrincaLivre™ - Desconecte seu filho das telas</title>
     
-    .oferta .offer-layout,
-    .prova-social .testimonials,
-    .como-usar .steps {
-        flex-direction: column;
-    }
-    .oferta .offer-image {
-        margin-top: 30px;
-    }
-}
+    <!-- Importação da Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Link para o arquivo de estilo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Logo no topo -->
+    <header class="static-header">
+        <div class="container">
+            <img src="https://i.imgur.com/u5T03Og.png" alt="Logo BrincaLivre" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Título Chamativo -->
+        <section class="hero">
+            <div class="container">
+                <h1>Seu filho precisa de um plano <span class="highlight-green">leve e eficaz</span> para se desconectar das telas <span class="highlight-blue">AGORA</span>.</h1>
+            </div>
+        </section>
+
+        <!-- 2. Subtítulo Explicativo -->
+        <section class="subtitulo">
+            <div class="container">
+                <h2>Baseado nas suas respostas, identificamos que você está vivendo um desafio comum entre mães modernas: filhos viciados em telas e você mal em ver isso.</h2>
+                <p>A boa notícia? Existe uma solução criada exatamente para isso — e você está a um passo de aplicar.</p>
+                <img src="https://i.imgur.com/Gwskwev.png" alt="Mãe e filho brincando felizes no chão" class="full-width-image">
+            </div>
+        </section>
+
+        <!-- 3. Seção da Oferta -->
+        <section class="oferta">
+            <div class="container offer-layout">
+                <div class="offer-details">
+                    <h3>Plano BrincaLivre™ – Plano de 30 dias sem telas</h3>
+                    <p>Um material completo com 30 atividades educativas e lúdicas, baseadas em psicologia infantil, pra você aplicar com seu filho sem precisar de celular, tablet ou gritaria.</p>
+                    <ul class="check-list">
+                        <li>✅ 30 brincadeiras educativas e impressas</li>
+                        <li>✅ Organizadas em plano diário de 30 dias</li>
+                        <li>✅ Baseadas em psicologia infantil</li>
+                        <li>✅ Atividades simples, pra aplicar com pouco tempo</li>
+                        <li>✅ Desenvolve criatividade e autonomia</li>
+                        <li>✅ PDF interativo + acesso via site privado</li>
+                        <li>✅ Recomendado por +21 mil mães</li>
+                        <li>✅ Acesso imediato por e-mail e WhatsApp</li>
+                    </ul>
+                    <div class="pricing">
+                        <p>O valor base do nosso pacote de 30 dias é <del>R$59,90</del>, mas somente hoje estamos com um cupom exclusivo para mães que vieram do quiz!</p>
+                        <p class="price-highlight">Por apenas R$14,90</p>
+                    </div>
+                    <a href="#comprar" class="cta-button">Quero o Plano BrincaLivre Agora</a>
+                </div>
+                <div class="offer-image">
+                    <img src="https://i.imgur.com/JBU69oG.jpeg" alt="Preview do material BrincaLivre">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Por que funciona? -->
+        <section class="porque-funciona">
+            <div class="container">
+                <h2>Por que esse produto funciona?</h2>
+                <p>Porque é um plano de brincadeiras educativas diárias que mantém seu filho longe das telas enquanto ele aprende e se diverte de verdade — tudo isso sem você precisar quebrar a cabeça ou gastar horas tentando entreter ele.</p>
+                <ul class="feature-list">
+                    <li><span class="highlight-green">Cada dia, uma nova atividade</span> pronta pra usar</li>
+                    <li>Desenvolve <span class="highlight-blue">criatividade, foco e autonomia</span></li>
+                    <li>Mantém a criança entretida, <span class="highlight-blue">longe do celular/tablet</span></li>
+                    <li>Foi feito pra <span class="highlight-green">mães ocupadas, cansadas e sem tempo</span> sobrando</li>
+                </ul>
+                <p class="final-statement">Você não precisa mais procurar ideias na internet ou inventar do zero. É só abrir, aplicar e ver seu filho virar outra criança — mais leve, ativa e conectada com o mundo real.</p>
+            </div>
+        </section>
+
+        <!-- 5. Como usar -->
+        <section class="como-usar">
+            <div class="container">
+                <h2>🧠 Como Usar (Simplicidade Total)</h2>
+                 <p class="intro-p">Após a compra iremos enviar o acesso a nosso site exclusivo, ali você irá ter acesso a todo plano com as brincadeiras e indicações de acordo com seu quiz. Podendo imprimir tudo em pdf ou acessar online mesmo!</p>
+                <div class="steps">
+                    <div class="step">
+                        <h3>1.</h3>
+                        <p>Siga o plano de 30 dias com 1 brincadeira por dia</p>
+                    </div>
+                    <div class="step">
+                        <h3>2.</h3>
+                        <p>Imprima quando quiser ou use direto no celular</p>
+                    </div>
+                    <div class="step">
+                        <h3>3.</h3>
+                        <p>Comece a ver seu filho desconectando das telas naturalmente</p>
+                    </div>
+                </div>
+                <p class="final-statement">Simples, leve e direto ao ponto.</p>
+            </div>
+        </section>
+
+        <!-- 6. Prova Social -->
+        <section class="prova-social">
+            <div class="container">
+                <h2>💬 Feedbacks Reais de Mães</h2>
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <p class="quote">“Em 2 dias meu filho esqueceu o tablet. Nem acreditei. Recomendo pra toda mãe.”</p>
+                        <p class="author">⭐️⭐️⭐️⭐️⭐️ – Juliana M.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">“Tinha tentado de tudo. Só o BrincaLivre fez ele brincar de verdade de novo.”</p>
+                        <p class="author">⭐️⭐️⭐️⭐️⭐️ – Camila D.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">“Achei que seria só mais um PDF… mas mudou nossa rotina aqui em casa.”</p>
+                        <p class="author">⭐️⭐️⭐️⭐️⭐️ – Roberta F.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="faq">
+            <div class="container">
+                <h2>❓ FAQ (Perguntas Frequentes)</h2>
+                <div class="faq-item">
+                    <details>
+                        <summary>O que recebo ao comprar?</summary>
+                        <p>Você recebe um site exclusivo interativo com 30 atividades educativas, além do acesso a um portal online exclusivo.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Serve pra qual idade?</summary>
+                        <p>Foi criado para crianças de 2 a 11 anos.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Preciso imprimir tudo?</summary>
+                        <p>Não. Você pode usar o material direto no celular, tablet ou computador — ou imprimir só as partes que quiser.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Tem garantia?</summary>
+                        <p>Sim! Garantia de 30 dias. Se não gostar, é só pedir reembolso. Mas temos certeza que nosso produto irá realizar o que prometemos!</p>
+                    </details>
+                </div>
+                 <div class="faq-item">
+                    <details>
+                        <summary>É um curso?</summary>
+                        <p>Não! É um plano prático e direto pra aplicar com seu filho desde o primeiro dia.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Garantia -->
+        <section class="garantia">
+            <div class="container">
+                <h2>🛡️ Garantia Incondicional de 30 Dias</h2>
+                <ul class="guarantee-list">
+                    <li>🛡️ Sem resultado?</li>
+                    <li>🛡️ Seu filho não largou as telas?</li>
+                    <li>🛡️ Achou que não era pra você?</li>
+                </ul>
+                <p>Você tem 30 dias pra pedir seu dinheiro de volta. <span class="highlight-blue">Sem perguntas, sem burocracia.</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. Rodapé -->
+    <footer class="site-footer">
+        <div class="container">
+            <img src="https://i.imgur.com/u5T03Og.png" alt="Logo BrincaLivre" class="logo">
+            <p class="urgency-text">Mais de 21 mil mães já aplicaram o BrincaLivre™ e viram seus filhos voltarem a brincar de verdade.</p>
+            <p class="urgency-warning">🕒 Essa página pode sair do ar a qualquer momento.</p>
+            <a href="#comprar-final" class="cta-button urgent">🔴 Quero o BrincaLivre Agora – R$14,90</a>
+        </div>
+    </footer>
+
+</body>
+</html>
