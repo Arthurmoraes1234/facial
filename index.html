@@ -3,393 +3,532 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrincaLivre - Simulação</title>
-    
-    <!-- Importando uma fonte lúdica do Google Fonts -->
+    <title>Área de Membros - BrincaLivre</title>
+
+    <!-- Google Fonts: Poppins (Lúdica e legível) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome para Ícones (gratuito e fácil de usar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <style>
-        /* --- Configurações Globais e Reset --- */
+        /* --- Variáveis de Design (fácil de customizar) --- */
         :root {
-            --cor-primaria: #89CFF0; /* Azul bebê */
-            --cor-secundaria: #FFDDC1; /* Pêssego claro */
-            --cor-texto: #5c5c5c;
-            --cor-fundo-app: #FEFBF6; /* Branco gelo */
-            --cor-fundo-pagina: #f0f2f5;
+            --cor-primaria: #4A90E2;      /* Azul suave */
+            --cor-secundaria: #F5A623;   /* Amarelo/Laranja */
+            --cor-sucesso: #7ED321;       /* Verde amigável */
+            --cor-fundo: #F4F8FA;        /* Cinza muito claro */
+            --cor-texto: #4A4A4A;
+            --cor-texto-claro: #9B9B9B;
+            --cor-branco: #FFFFFF;
+            --sombra-card: 0 8px 25px rgba(0, 0, 0, 0.08);
+            --border-radius: 20px;
+            --font-principal: 'Poppins', sans-serif;
         }
 
+        /* --- Reset e Configurações Globais --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Nunito', sans-serif;
-            background-color: var(--cor-fundo-pagina);
+            font-family: var(--font-principal);
+            background-color: var(--cor-fundo);
             color: var(--cor-texto);
+        }
+
+        /* --- Estrutura Principal do "App" --- */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 100px; /* Espaço para o rodapé fixo no mobile */
+        }
+        
+        /* --- Header --- */
+        .app-header {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+        
+        .app-header .logo {
+            max-height: 50px;
         }
 
-        /* --- Estrutura do "Celular" --- */
-        .mobile-container {
-            width: 100%;
-            max-width: 400px;
-            height: 85vh;
-            min-height: 700px;
-            background-color: var(--cor-fundo-app);
-            border-radius: 40px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
+        /* --- Lógica de "Telas" sem JavaScript --- */
+        /* Esconde todas as seções de conteúdo por padrão */
+        .module-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Mostra a seção de conteúdo quando ela é o alvo do link */
+        .module-content:target {
+            display: block;
+        }
+
+        /* Esconde a tela principal de módulos quando um conteúdo está ativo */
+        .module-content:target ~ #modules-home {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Tela Principal de Módulos --- */
+        #modules-home h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #modules-home p {
+            text-align: center;
+            color: var(--cor-texto-claro);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- Card do Módulo --- */
+        .module-card {
+            background: var(--cor-branco);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--sombra-card);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
-        /* --- Header com o Logo --- */
-        .app-header {
-            text-align: center;
-            padding: 25px 20px 15px;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #4A4A4A;
-        }
-
-        .logo span {
+        .module-card .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
             color: var(--cor-primaria);
         }
 
-        /* --- Conteúdo Principal (rolável) --- */
-        main {
+        .module-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             flex-grow: 1;
-            overflow-y: auto;
-            padding: 0 20px 100px 20px; /* Padding no fundo para não esconder atrás do nav */
         }
         
-        /* --- Lógica de "troca de tela" sem JS --- */
-        /* Por padrão, a tela principal fica escondida */
-        #tela-principal {
-            display: none;
-        }
-        /* Quando a tela principal for o alvo do link (ex: #tela-principal), ela aparece */
-        #tela-principal:target {
-            display: block;
-        }
-        /* E quando a tela principal for o alvo, a tela inicial some */
-        #tela-principal:target ~ #tela-inicial {
-            display: none;
+        .btn-acessar {
+            display: inline-block;
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
         }
 
-        /* --- Tela de Entrada (Seleção de Idade) --- */
-        #tela-inicial {
-            text-align: center;
-            padding-top: 40px;
+        .btn-acessar:hover {
+            background-color: #3a7bc8;
+        }
+        
+        /* Estilo para Módulos Bloqueados */
+        .module-card.locked {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card.locked .card-content {
+            filter: grayscale(1);
+            opacity: 0.6;
         }
 
-        #tela-inicial h2 {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .age-selection {
+        .module-card.locked .lock-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            justify-content: center;
             align-items: center;
-        }
-
-        .age-button {
-            display: block;
-            width: 80%;
-            padding: 18px;
-            background: linear-gradient(135deg, var(--cor-primaria), #a1d9f5);
-            color: white;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 700;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(137, 207, 240, 0.5);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .age-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(137, 207, 240, 0.6);
-        }
-
-        /* --- Tela Principal (Lista de Brincadeiras) --- */
-        .day-header {
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 25px;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border-radius: 12px;
-        }
-
-        /* --- Card da Brincadeira --- */
-        .activity-card {
-            background-color: #fff;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
-            border: 1px solid #f0f0f0;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .card-header .icon {
-            font-size: 2.8rem;
-        }
-
-        .card-header h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #333;
-        }
-
-        .card-details {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            padding-left: 5px;
-        }
-
-        .card-section h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #444;
-        }
-
-        .card-section ul, .card-section ol {
-            padding-left: 20px;
-            font-size: 0.95rem;
-            line-height: 1.5;
         }
         
-        .card-section {
+        .module-card.locked .lock-overlay .fa-lock {
+            font-size: 3rem;
+            color: var(--cor-texto);
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .module-card.locked .btn-acessar {
+            background-color: var(--cor-texto-claro);
+            cursor: pointer;
+        }
+        
+        /* --- Estilo das Páginas de Conteúdo --- */
+        .content-page {
+            background: var(--cor-branco);
+            border-radius: var(--border-radius);
+            padding: 30px 40px;
+            box-shadow: var(--sombra-card);
+        }
+        
+        .content-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .content-header .icon {
+            font-size: 3rem;
+            color: var(--cor-primaria);
+        }
+
+        .content-header h2 {
+            font-size: 2rem;
+            color: var(--cor-texto);
+        }
+
+        .content-body p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .pdf-embed {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .pdf-embed .fa-file-pdf {
+            font-size: 5rem;
+            color: #E53E3E;
+            margin-bottom: 15px;
+        }
+        
+        .btn-download {
+            display: inline-block;
+            background-color: var(--cor-sucesso);
+            color: var(--cor-branco);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .btn-download:hover {
+            background-color: #68b31a;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--cor-primaria);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+        
+        /* Upsell Block */
+        .upsell-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 2px dashed var(--cor-secundaria);
+            border-radius: var(--border-radius);
+            background-color: #FFFBEB;
+        }
+
+        .upsell-block .fa-rocket {
+            font-size: 3rem;
+            color: var(--cor-secundaria);
             margin-bottom: 15px;
         }
 
-        .card-learning {
-            margin-top: 15px;
+        .upsell-block h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
-
-        .learning-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .learning-tag {
-            background-color: #E0F7FA; /* Ciano bem claro */
-            color: #00796B; /* Verde azulado escuro */
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
+        
+        .btn-unlock {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--cor-secundaria), #F8C364);
+            color: var(--cor-branco);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
             font-weight: 700;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+        }
+        
+        .btn-unlock:hover {
+            transform: scale(1.05);
         }
 
-
-        /* --- Rodapé Fixo de Navegação --- */
+        /* --- Rodapé Fixo (Mobile-First) --- */
         .bottom-nav {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 85px;
-            background-color: #ffffff;
+            background: var(--cor-branco);
             display: flex;
             justify-content: space-around;
-            align-items: center;
-            border-top: 1px solid #e9e9e9;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
-            /* Importante para manter os cantos arredondados do container */
-            border-bottom-left-radius: 40px; 
-            border-bottom-right-radius: 40px;
+            padding: 10px 0;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
         }
 
         .nav-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
-            color: #b0b0b0; /* Cor do ícone inativo */
+            color: var(--cor-texto-claro);
             text-decoration: none;
-        }
-
-        .nav-item .icon {
-            font-size: 1.8rem;
-        }
-
-        .nav-item .label {
             font-size: 0.75rem;
-            font-weight: 700;
+            gap: 4px;
+        }
+        
+        .nav-item i {
+            font-size: 1.5rem;
         }
 
         .nav-item.active {
-            color: var(--cor-primaria); /* Cor do ícone ativo */
+            color: var(--cor-primaria);
+        }
+        
+        /* --- Responsividade --- */
+        @media (min-width: 768px) {
+            .bottom-nav {
+                /* Esconde o rodapé fixo em telas maiores */
+                display: none;
+            }
+            .app-container {
+                padding-bottom: 20px; /* Remove o padding extra */
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="mobile-container">
-        
+    <div class="app-container">
         <header class="app-header">
-            <div class="logo">Brinca<span>Livre</span></div>
+            <!-- COLOQUE SEU LOGO AQUI -->
+            <a href="#modules-home"><img src="https://i.imgur.com/U2vcds4.png" alt="Logo BrincaLivre" class="logo"></a>
         </header>
 
         <main>
-            <!-- TELA PRINCIPAL (VISÍVEL APÓS CLIQUE) -->
-            <section id="tela-principal">
-                <h2 class="day-header">Brincadeiras de Hoje</h2>
-
-                <!-- CARD 1 -->
-                <div class="activity-card">
-                    <div class="card-header">
-                        <span class="icon">🏁</span>
-                        <h3>Corrida do Saco</h3>
+            <!-- ======================================================= -->
+            <!--   CONTEÚDO DO MÓDULO 1: DESAFIO 30 DIAS (ESCONDIDO)     -->
+            <!-- ======================================================= -->
+            <section id="desafio30dias" class="module-content">
+                <a href="#modules-home" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar para os módulos</a>
+                <div class="content-page">
+                    <div class="content-header">
+                        <i class="fas fa-calendar-check icon" style="color: var(--cor-sucesso);"></i>
+                        <h2>Desafio 30 Dias Sem Telas</h2>
                     </div>
-                    <p class="card-details">🕒 <strong>Duração:</strong> 15 min</p>
-                    <div class="card-section">
-                        <h4>Materiais Necessários</h4>
-                        <ul>
-                            <li>🛍️ Sacos de estopa ou fronhas</li>
-                            <li>📍 Marcadores para largada e chegada</li>
-                        </ul>
-                    </div>
-                    <div class="card-section">
-                        <h4>Passo a Passo</h4>
-                        <ol>
-                            <li>Cada um entra em um saco e segura na cintura.</li>
-                            <li>Ao sinal, todos pulam em direção à chegada.</li>
-                            <li>Quem cruzar a linha primeiro, ganha!</li>
-                        </ol>
-                    </div>
-                    <div class="card-learning">
-                        <h4>Aprendizados</h4>
-                        <div class="learning-tags">
-                            <span class="learning-tag">👐 Motricidade</span>
-                            <span class="learning-tag">👥 Cooperação</span>
+                    <div class="content-body">
+                        <p>Bem-vinda ao nosso desafio transformador! Aqui você encontrará um plano semanal de atividades simples e divertidas para fazer com seu filho, uma para cada dia. O objetivo é criar momentos de conexão e aprendizado longe das telas. Veja o material da semana abaixo e mãos à obra!</p>
+                        
+                        <!-- ÁREA PARA EMBEDAR O PDF -->
+                        <!-- Para funcionar, substitua a tag <p> abaixo por uma tag <iframe> com o link do seu PDF -->
+                        <!-- Exemplo: <iframe src="URL_DO_SEU_PDF.pdf" width="100%" height="500px"></iframe> -->
+                        <div class="pdf-embed">
+                            <i class="fas fa-file-pdf"></i>
+                            <p><strong>Visualização do PDF aqui.</strong><br>(seu arquivo será carregado neste espaço)</p>
                         </div>
+
+                        <!-- BOTÃO DE DOWNLOAD -->
+                        <!-- Coloque o link direto para o seu arquivo no href -->
+                        <a href="URL_DO_SEU_ARQUIVO_PDF" download class="btn-download" style="display: block; text-align: center;">
+                            <i class="fas fa-download"></i> Baixar PDF da Semana
+                        </a>
                     </div>
                 </div>
-
-                <!-- CARD 2 -->
-                <div class="activity-card">
-                    <div class="card-header">
-                        <span class="icon">🎨</span>
-                        <h3>Pintura Mágica no Gelo</h3>
+            </section>
+            
+            <!-- ======================================================= -->
+            <!--   CONTEÚDO DO MÓDULO 2: HISTÓRIAS (ESCONDIDO)          -->
+            <!-- ======================================================= -->
+            <section id="historias" class="module-content">
+                 <a href="#modules-home" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar para os módulos</a>
+                 <div class="content-page">
+                    <div class="content-header">
+                        <i class="fas fa-book-open icon" style="color: #AC82E6;"></i>
+                        <h2>30 Histórias Educativas</h2>
                     </div>
-                    <p class="card-details">🕒 <strong>Duração:</strong> 30 min</p>
-                    <div class="card-section">
-                        <h4>Materiais Necessários</h4>
-                        <ul>
-                            <li>🧊 Formas de gelo com água</li>
-                            <li>🧂 Sal grosso</li>
-                            <li>💧 Corante alimentício líquido</li>
-                        </ul>
-                    </div>
-                    <div class="card-section">
-                        <h4>Passo a Passo</h4>
-                        <ol>
-                            <li>Coloque as pedras de gelo numa bandeja.</li>
-                            <li>Peça para a criança salpicar sal sobre o gelo.</li>
-                            <li>Pinguem gotas de corante e vejam os caminhos coloridos se formando.</li>
-                        </ol>
-                    </div>
-                    <div class="card-learning">
-                        <h4>Aprendizados</h4>
-                        <div class="learning-tags">
-                            <span class="learning-tag">🧠 Cognitivo</span>
-                            <span class="learning-tag">🎨 Criatividade</span>
-                        </div>
+                    <div class="content-body">
+                        <p>Um e-book com 30 histórias curtas e encantadoras, perfeitas para a hora de dormir. Cada história ensina valores importantes como amizade, respeito e coragem, fortalecendo o vínculo entre vocês.</p>
+                        <a href="URL_DO_SEU_EBOOK_HISTORIAS" download class="btn-download" style="display: block; text-align: center;">
+                            <i class="fas fa-download"></i> Baixar E-book de Histórias
+                        </a>
                     </div>
                 </div>
-                
-                <!-- CARD 3 -->
-                <div class="activity-card">
-                    <div class="card-header">
-                        <span class="icon">📦</span>
-                        <h3>Cápsula do Tempo</h3>
+            </section>
+            
+            <!-- Adicione as outras seções de conteúdo aqui (Guia Alimentar, Birra, etc.) seguindo o mesmo modelo -->
+
+            <!-- ======================================================= -->
+            <!--   CONTEÚDO DO MÓDULO BLOQUEADO (ESCONDIDO)             -->
+            <!-- ======================================================= -->
+            <section id="premium-upsell" class="module-content">
+                 <a href="#modules-home" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar para os módulos</a>
+                 <div class="content-page">
+                    <div class="content-header">
+                        <i class="fas fa-star icon" style="color: var(--cor-secundaria);"></i>
+                        <h2>Conteúdo Exclusivo Premium</h2>
                     </div>
-                    <p class="card-details">🕒 <strong>Duração:</strong> 25 min</p>
-                    <div class="card-section">
-                        <h4>Materiais Necessários</h4>
-                        <ul>
-                            <li>👟 Caixa de sapato</li>
-                            <li>📝 Papel, canetas e desenhos</li>
-                            <li>🧸 Pequenos objetos e brinquedos</li>
-                        </ul>
-                    </div>
-                    <div class="card-section">
-                        <h4>Passo a Passo</h4>
-                        <ol>
-                            <li>Decorem a caixa juntos.</li>
-                            <li>Escrevam uma carta para o "eu do futuro".</li>
-                            <li>Guardem objetos que representam o hoje. Feche e combine uma data para abrir!</li>
-                        </ol>
-                    </div>
-                    <div class="card-learning">
-                        <h4>Aprendizados</h4>
-                        <div class="learning-tags">
-                            <span class="learning-tag">🎨 Criatividade</span>
-                            <span class="learning-tag">💬 Comunicação</span>
-                        </div>
+                    <div class="content-body">
+                       <div class="upsell-block">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Este módulo faz parte do Plano Premium!</h3>
+                            <p>Libere o acesso imediato a este e outros materiais exclusivos para transformar a infância do seu filho.</p>
+                            <!-- COLOQUE SEU LINK DE CHECKOUT AQUI -->
+                            <a href="URL_DA_SUA_PAGINA_DE_VENDA_OU_CHECKOUT" class="btn-unlock">
+                                <i class="fas fa-lock-open"></i> Quero Desbloquear Agora!
+                            </a>
+                       </div>
                     </div>
                 </div>
-
             </section>
 
-            <!-- TELA DE ENTRADA (VISÍVEL POR PADRÃO) -->
-            <section id="tela-inicial">
-                <h2>Qual a idade da criança?</h2>
-                <div class="age-selection">
-                    <a href="#tela-principal" class="age-button">2-3 anos</a>
-                    <a href="#tela-principal" class="age-button">4-5 anos</a>
-                    <a href="#tela-principal" class="age-button">6-8 anos</a>
+            <!-- ======================================================= -->
+            <!--   TELA PRINCIPAL: LISTA DE MÓDULOS (VISÍVEL)            -->
+            <!-- ======================================================= -->
+            <section id="modules-home">
+                <h1>Seja bem-vinda, Mamãe!</h1>
+                <p>Explore os módulos abaixo para começar a criar momentos inesquecíveis e educativos com seu filho, longe das telas.</p>
+                <div class="modules-grid">
+                    
+                    <!-- MÓDULO 1: DESAFIO 30 DIAS -->
+                    <article class="module-card">
+                        <i class="fas fa-calendar-check icon" style="color: var(--cor-sucesso);"></i>
+                        <h3>Desafio 30 Dias Sem Telas</h3>
+                        <a href="#desafio30dias" class="btn-acessar">Acessar</a>
+                    </article>
+
+                    <!-- MÓDULO 2: 30 HISTÓRIAS -->
+                    <article class="module-card">
+                        <i class="fas fa-book-open icon" style="color: #AC82E6;"></i>
+                        <h3>30 Histórias Educativas</h3>
+                        <a href="#historias" class="btn-acessar">Acessar</a>
+                    </article>
+
+                    <!-- MÓDULO 3: GUIA ALIMENTAR -->
+                    <article class="module-card">
+                        <i class="fas fa-utensils icon" style="color: #E67E22;"></i>
+                        <h3>Guia Alimentar Infantil</h3>
+                        <a href="#premium-upsell" class="btn-acessar">Acessar</a> <!-- Exemplo de link para um módulo não criado ainda -->
+                    </article>
+
+                    <!-- MÓDULO 4: E-BOOK BIRRA -->
+                    <article class="module-card">
+                        <i class="fas fa-hand-holding-heart icon" style="color: #E91E63;"></i>
+                        <h3>E-book: Lidar com Birras</h3>
+                        <a href="#premium-upsell" class="btn-acessar">Acessar</a>
+                    </article>
+                    
+                    <!-- MÓDULO 5: CARTAZ DE TAREFAS -->
+                    <article class="module-card">
+                        <i class="fas fa-tasks icon" style="color: #3498DB;"></i>
+                        <h3>Cartaz Visual de Tarefas</h3>
+                        <a href="#premium-upsell" class="btn-acessar">Acessar</a>
+                    </article>
+                    
+                    <!-- MÓDULO BLOQUEADO 1 -->
+                    <article class="module-card locked">
+                        <div class="card-content">
+                            <i class="fas fa-puzzle-piece icon"></i>
+                            <h3>150 Brincadeiras Educativas</h3>
+                        </div>
+                        <div class="lock-overlay">
+                            <i class="fas fa-lock"></i>
+                            <a href="#premium-upsell" class="btn-acessar">Desbloquear</a>
+                        </div>
+                    </article>
+
+                    <!-- MÓDULO BLOQUEADO 2 -->
+                    <article class="module-card locked">
+                        <div class="card-content">
+                            <i class="fas fa-heart icon"></i>
+                            <h3>Plano Infância Feliz</h3>
+                        </div>
+                        <div class="lock-overlay">
+                            <i class="fas fa-lock"></i>
+                            <a href="#premium-upsell" class="btn-acessar">Desbloquear</a>
+                        </div>
+                    </article>
+
                 </div>
             </section>
         </main>
-
-        <footer class="bottom-nav">
-            <a href="#tela-principal" class="nav-item active">
-                <span class="icon">🏠</span>
-                <span class="label">Início</span>
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">🧠</span>
-                <span class="label">Aprendizados</span>
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">❤️</span>
-                <span class="label">Favoritos</span>
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">⚙️</span>
-                <span class="label">Perfil</span>
-            </a>
-        </footer>
     </div>
+
+    <!-- RODAPÉ FIXO PARA MOBILE -->
+    <footer class="bottom-nav">
+        <a href="#modules-home" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Início</span>
+        </a>
+        <a href="#modules-home" class="nav-item">
+            <i class="fas fa-book"></i>
+            <span>Módulos</span>
+        </a>
+        <a href="URL_DA_SUA_PAGINA_DE_VENDA" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Comprar</span>
+        </a>
+        <a href="mailto:seu-email-de-suporte@dominio.com" class="nav-item">
+            <i class="fas fa-headset"></i>
+            <span>Suporte</span>
+        </a>
+    </footer>
 
 </body>
 </html>
