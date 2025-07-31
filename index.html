@@ -2,557 +2,394 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BrincaLivre - App Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrincaLivre - Simulação</title>
     
-    <!-- Google Fonts -->
+    <!-- Importando uma fonte lúdica do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* --- GERAL & VARIÁVEIS --- */
+        /* --- Configurações Globais e Reset --- */
         :root {
-            --bg-color: #F8F9FA;
-            --primary-color: #3D5A80;
-            --secondary-color: #98C1D9;
-            --accent-color: #EE6C4D;
-            --text-color: #293241;
-            --card-bg: #FFFFFF;
-            --pastel-yellow: #FEEAAB;
-            --pastel-green: #A9D1B7;
-            --pastel-blue: #A7C5E8;
-            --pastel-pink: #F6C0B3;
+            --cor-primaria: #89CFF0; /* Azul bebê */
+            --cor-secundaria: #FFDDC1; /* Pêssego claro */
+            --cor-texto: #5c5c5c;
+            --cor-fundo-app: #FEFBF6; /* Branco gelo */
+            --cor-fundo-pagina: #f0f2f5;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Nunito', sans-serif;
         }
 
         body {
-            background-color: #e0e0e0;
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--cor-fundo-pagina);
+            color: var(--cor-texto);
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             min-height: 100vh;
+            padding: 1rem;
         }
 
-        /* --- SIMULADOR DE CELULAR --- */
-        #app-container {
+        /* --- Estrutura do "Celular" --- */
+        .mobile-container {
             width: 100%;
-            max-width: 420px;
-            height: 100vh;
-            max-height: 850px;
-            background-color: var(--bg-color);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            overflow: hidden;
+            max-width: 400px;
+            height: 85vh;
+            min-height: 700px;
+            background-color: var(--cor-fundo-app);
+            border-radius: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             position: relative;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        .screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 20px;
-            padding-bottom: 90px; /* Espaço para o menu inferior */
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-            overflow-y: auto;
-            background-color: var(--bg-color);
+        /* --- Header com o Logo --- */
+        .app-header {
+            text-align: center;
+            padding: 25px 20px 15px;
         }
 
-        .screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-            transform: scale(0.98);
-            pointer-events: none;
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #4A4A4A;
+        }
+
+        .logo span {
+            color: var(--cor-primaria);
+        }
+
+        /* --- Conteúdo Principal (rolável) --- */
+        main {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 0 20px 100px 20px; /* Padding no fundo para não esconder atrás do nav */
         }
         
-        /* --- ELEMENTOS COMUNS --- */
-        h1 {
-            color: var(--primary-color);
-            font-size: 28px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 20px;
+        /* --- Lógica de "troca de tela" sem JS --- */
+        /* Por padrão, a tela principal fica escondida */
+        #tela-principal {
+            display: none;
         }
-
-        .button-primary {
+        /* Quando a tela principal for o alvo do link (ex: #tela-principal), ela aparece */
+        #tela-principal:target {
             display: block;
-            width: 100%;
+        }
+        /* E quando a tela principal for o alvo, a tela inicial some */
+        #tela-principal:target ~ #tela-inicial {
+            display: none;
+        }
+
+        /* --- Tela de Entrada (Seleção de Idade) --- */
+        #tela-inicial {
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        #tela-inicial h2 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .age-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .age-button {
+            display: block;
+            width: 80%;
             padding: 18px;
-            background-color: var(--accent-color);
+            background: linear-gradient(135deg, var(--cor-primaria), #a1d9f5);
             color: white;
-            border: none;
-            border-radius: 15px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            text-align: center;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(238, 108, 77, 0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .button-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(238, 108, 77, 0.5);
-        }
-
-        /* --- TELA 1: SPLASH --- */
-        #splash-screen {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(180deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-            color: white;
-            padding-bottom: 20px; /* Override padding */
-        }
-        #splash-screen img {
-            width: 120px;
-            margin-bottom: 20px;
-        }
-        #splash-screen .app-name {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-        #splash-screen .slogan {
-            font-size: 18px;
-            margin-bottom: 40px;
-            padding: 0 20px;
-        }
-        #splash-screen .button-primary {
-            position: absolute;
-            bottom: 50px;
-            left: 5%;
-            width: 90%;
-        }
-
-        /* --- TELA 2: SELEÇÃO DE IDADE --- */
-        .age-cards-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .age-card {
-            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: 700;
             border-radius: 20px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-color);
-            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(137, 207, 240, 0.5);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 150px;
         }
-        .age-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        .age-card span {
-            font-size: 32px;
-            margin-top: 10px;
-        }
-        .age-card[data-age="2-3"] { background-color: var(--pastel-yellow); }
-        .age-card[data-age="4-5"] { background-color: var(--pastel-pink); }
-        .age-card[data-age="6-7"] { background-color: var(--pastel-green); }
-        .age-card[data-age="8-9"] { background-color: var(--pastel-blue); }
 
-        /* --- TELA 3: PLANO SEMANAL --- */
-        #weekly-plan-screen h1 {
-            font-size: 24px;
+        .age-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(137, 207, 240, 0.6);
         }
-        .activity-day-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            margin-bottom: 12px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-        .activity-day-card:hover {
-            transform: translateX(5px);
-        }
-        .activity-day-card .day-name {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 10px;
-            font-weight: 700;
-            margin-right: 15px;
+
+        /* --- Tela Principal (Lista de Brincadeiras) --- */
+        .day-header {
             text-align: center;
-        }
-        .activity-day-card .activity-info {
-            flex-grow: 1;
-        }
-        .activity-day-card .activity-name {
+            font-size: 1.3rem;
             font-weight: 700;
-            color: var(--text-color);
-            font-size: 16px;
-        }
-        .activity-day-card .activity-objective {
-            font-size: 13px;
-            color: #666;
+            color: #333;
+            margin-bottom: 25px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 12px;
         }
 
-        /* --- TELA 4: DETALHES DA ATIVIDADE --- */
-        #activity-detail-screen .header {
+        /* --- Card da Brincadeira --- */
+        .activity-card {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+            border: 1px solid #f0f0f0;
+        }
+
+        .card-header {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
-        }
-        #activity-detail-screen .back-button {
-            font-size: 24px;
-            color: var(--primary-color);
-            cursor: pointer;
-            margin-right: 15px;
-        }
-        #activity-detail-screen .detail-title {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-        #activity-detail-screen .detail-image {
-            width: 100%;
-            height: 200px;
-            border-radius: 15px;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-        #activity-detail-screen h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-color);
-            margin-top: 25px;
-            margin-bottom: 10px;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 10px;
-        }
-        #activity-detail-screen p, #activity-detail-screen ul {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
-        }
-        #activity-detail-screen ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        #activity-detail-screen .parent-tip {
-            background-color: var(--pastel-yellow);
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 15px;
-        }
-        #activity-detail-screen .pdf-button {
-            margin-top: 30px;
-            background-color: var(--secondary-color);
-            box-shadow: 0 4px 10px rgba(152, 193, 217, 0.4);
+            gap: 15px;
+            margin-bottom: 15px;
         }
 
-        /* --- MENU INFERIOR FIXO --- */
-        .bottom-menu {
+        .card-header .icon {
+            font-size: 2.8rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .card-details {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+
+        .card-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .card-section ul, .card-section ol {
+            padding-left: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .card-section {
+            margin-bottom: 15px;
+        }
+
+        .card-learning {
+            margin-top: 15px;
+        }
+
+        .learning-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .learning-tag {
+            background-color: #E0F7FA; /* Ciano bem claro */
+            color: #00796B; /* Verde azulado escuro */
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+
+        /* --- Rodapé Fixo de Navegação --- */
+        .bottom-nav {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
-            height: 70px;
-            background-color: #fff;
-            border-top: 1px solid #ddd;
+            right: 0;
+            height: 85px;
+            background-color: #ffffff;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
-            z-index: 100;
-            transition: bottom 0.3s ease-in-out;
+            border-top: 1px solid #e9e9e9;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+            /* Importante para manter os cantos arredondados do container */
+            border-bottom-left-radius: 40px; 
+            border-bottom-right-radius: 40px;
         }
-        .bottom-menu.hidden {
-            bottom: -80px;
-        }
-        .menu-item {
+
+        .nav-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #999;
-            cursor: pointer;
-            font-size: 12px;
-            transition: color 0.2s ease;
+            gap: 5px;
+            color: #b0b0b0; /* Cor do ícone inativo */
+            text-decoration: none;
         }
-        .menu-item i {
-            font-size: 22px;
-            margin-bottom: 4px;
+
+        .nav-item .icon {
+            font-size: 1.8rem;
         }
-        .menu-item.active {
-            color: var(--primary-color);
+
+        .nav-item .label {
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .nav-item.active {
+            color: var(--cor-primaria); /* Cor do ícone ativo */
         }
     </style>
 </head>
 <body>
 
-    <div id="app-container">
-        <!-- TELA 1 — BOAS-VINDAS -->
-        <div id="splash-screen" class="screen">
-            <img src="https://i.imgur.com/U2vcds4.png" alt="Logo BrincaLivre">
-            <div class="app-name">BrincaLivre</div>
-            <p class="slogan">Tirando seu filho da tela com criatividade, todo dia.</p>
-            <button class="button-primary" id="start-btn">Começar Agora</button>
-        </div>
+    <div class="mobile-container">
+        
+        <header class="app-header">
+            <div class="logo">Brinca<span>Livre</span></div>
+        </header>
 
-        <!-- TELA 2 — SELECIONE A IDADE -->
-        <div id="age-selection-screen" class="screen hidden">
-            <h1>Qual a idade do seu filho?</h1>
-            <div class="age-cards-container">
-                <div class="age-card" data-age="2-3">2 a 3 anos <span>👶</span></div>
-                <div class="age-card" data-age="4-5">4 a 5 anos <span>👧</span></div>
-                <div class="age-card" data-age="6-7">6 a 7 anos <span>🧒</span></div>
-                <div class="age-card" data-age="8-9">8 a 9 anos <span>👦</span></div>
-            </div>
-        </div>
+        <main>
+            <!-- TELA PRINCIPAL (VISÍVEL APÓS CLIQUE) -->
+            <section id="tela-principal">
+                <h2 class="day-header">Brincadeiras de Hoje</h2>
 
-        <!-- TELA 3 — PLANO SEMANAL -->
-        <div id="weekly-plan-screen" class="screen hidden">
-            <h1 id="weekly-plan-title">Plano da Semana</h1>
-            <div id="weekly-plan-list">
-                <!-- Conteúdo gerado por JS -->
-            </div>
-        </div>
+                <!-- CARD 1 -->
+                <div class="activity-card">
+                    <div class="card-header">
+                        <span class="icon">🏁</span>
+                        <h3>Corrida do Saco</h3>
+                    </div>
+                    <p class="card-details">🕒 <strong>Duração:</strong> 15 min</p>
+                    <div class="card-section">
+                        <h4>Materiais Necessários</h4>
+                        <ul>
+                            <li>🛍️ Sacos de estopa ou fronhas</li>
+                            <li>📍 Marcadores para largada e chegada</li>
+                        </ul>
+                    </div>
+                    <div class="card-section">
+                        <h4>Passo a Passo</h4>
+                        <ol>
+                            <li>Cada um entra em um saco e segura na cintura.</li>
+                            <li>Ao sinal, todos pulam em direção à chegada.</li>
+                            <li>Quem cruzar a linha primeiro, ganha!</li>
+                        </ol>
+                    </div>
+                    <div class="card-learning">
+                        <h4>Aprendizados</h4>
+                        <div class="learning-tags">
+                            <span class="learning-tag">👐 Motricidade</span>
+                            <span class="learning-tag">👥 Cooperação</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- TELA 4 — DETALHES DA ATIVIDADE -->
-        <div id="activity-detail-screen" class="screen hidden">
-            <!-- Conteúdo gerado por JS -->
-        </div>
+                <!-- CARD 2 -->
+                <div class="activity-card">
+                    <div class="card-header">
+                        <span class="icon">🎨</span>
+                        <h3>Pintura Mágica no Gelo</h3>
+                    </div>
+                    <p class="card-details">🕒 <strong>Duração:</strong> 30 min</p>
+                    <div class="card-section">
+                        <h4>Materiais Necessários</h4>
+                        <ul>
+                            <li>🧊 Formas de gelo com água</li>
+                            <li>🧂 Sal grosso</li>
+                            <li>💧 Corante alimentício líquido</li>
+                        </ul>
+                    </div>
+                    <div class="card-section">
+                        <h4>Passo a Passo</h4>
+                        <ol>
+                            <li>Coloque as pedras de gelo numa bandeja.</li>
+                            <li>Peça para a criança salpicar sal sobre o gelo.</li>
+                            <li>Pinguem gotas de corante e vejam os caminhos coloridos se formando.</li>
+                        </ol>
+                    </div>
+                    <div class="card-learning">
+                        <h4>Aprendizados</h4>
+                        <div class="learning-tags">
+                            <span class="learning-tag">🧠 Cognitivo</span>
+                            <span class="learning-tag">🎨 Criatividade</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CARD 3 -->
+                <div class="activity-card">
+                    <div class="card-header">
+                        <span class="icon">📦</span>
+                        <h3>Cápsula do Tempo</h3>
+                    </div>
+                    <p class="card-details">🕒 <strong>Duração:</strong> 25 min</p>
+                    <div class="card-section">
+                        <h4>Materiais Necessários</h4>
+                        <ul>
+                            <li>👟 Caixa de sapato</li>
+                            <li>📝 Papel, canetas e desenhos</li>
+                            <li>🧸 Pequenos objetos e brinquedos</li>
+                        </ul>
+                    </div>
+                    <div class="card-section">
+                        <h4>Passo a Passo</h4>
+                        <ol>
+                            <li>Decorem a caixa juntos.</li>
+                            <li>Escrevam uma carta para o "eu do futuro".</li>
+                            <li>Guardem objetos que representam o hoje. Feche e combine uma data para abrir!</li>
+                        </ol>
+                    </div>
+                    <div class="card-learning">
+                        <h4>Aprendizados</h4>
+                        <div class="learning-tags">
+                            <span class="learning-tag">🎨 Criatividade</span>
+                            <span class="learning-tag">💬 Comunicação</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- MENU INFERIOR -->
-        <nav class="bottom-menu hidden" id="bottom-menu-nav">
-            <div class="menu-item" id="menu-inicio">
-                <i class="fa-solid fa-house"></i>
-                <span>Início</span>
-            </div>
-            <div class="menu-item active" id="menu-semana">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>Semana</span>
-            </div>
-            <div class="menu-item" id="menu-idade">
-                <i class="fa-solid fa-child"></i>
-                <span>Idade</span>
-            </div>
-            <div class="menu-item">
-                <i class="fa-solid fa-lightbulb"></i>
-                <span>Dicas</span>
-            </div>
-            <div class="menu-item">
-                <i class="fa-solid fa-gear"></i>
-                <span>Ajustes</span>
-            </div>
-        </nav>
+            </section>
+
+            <!-- TELA DE ENTRADA (VISÍVEL POR PADRÃO) -->
+            <section id="tela-inicial">
+                <h2>Qual a idade da criança?</h2>
+                <div class="age-selection">
+                    <a href="#tela-principal" class="age-button">2-3 anos</a>
+                    <a href="#tela-principal" class="age-button">4-5 anos</a>
+                    <a href="#tela-principal" class="age-button">6-8 anos</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bottom-nav">
+            <a href="#tela-principal" class="nav-item active">
+                <span class="icon">🏠</span>
+                <span class="label">Início</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon">🧠</span>
+                <span class="label">Aprendizados</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon">❤️</span>
+                <span class="label">Favoritos</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span class="label">Perfil</span>
+            </a>
+        </footer>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-        // --- BANCO DE DADOS DE BRINCADEIRAS (SIMULADO) ---
-        const brincadeiras = {
-            "2-3": {
-                title: "2 a 3 anos: Pequenos Exploradores 👶",
-                atividades: [
-                    { dia: "SEG", nome: "Caixa Sensorial", objetivo: "Tato e curiosidade", imagem: "https://images.pexels.com/photos/4545151/pexels-photo-4545151.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Encha uma caixa com arroz, feijão ou areia e esconda pequenos brinquedos. Deixe a criança explorar com as mãos.", objetivoDetalhado: "Desenvolve a percepção tátil, a coordenação motora fina e a capacidade de concentração.", dicaPais: "Varie os materiais na caixa (água, gelatina, folhas secas) para novas experiências." },
-                    { dia: "TER", nome: "Torre de Almofadas", objetivo: "Coordenação motora e equilíbrio", imagem: "https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Junte todas as almofadas e travesseiros da casa e incentive a criança a empilhá-los o mais alto que conseguir. Depois, a melhor parte: derrubar!", objetivoDetalhado: "Estimula a coordenação motora ampla, o planejamento motor e a noção de causa e efeito.", dicaPais: "Participe da brincadeira e celebre cada torre construída, por menor que seja." },
-                    { dia: "QUA", nome: "Pintura com os Dedos", objetivo: "Criatividade e expressão", imagem: "https://images.pexels.com/photos/1001753/pexels-photo-1001753.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Use tintas comestíveis (feitas com iogurte e corante alimentício) e um papel grande no chão. Deixe a criança pintar livremente com as mãos e os pés.", objetivoDetalhado: "Promove a expressão artística, o reconhecimento de cores e o desenvolvimento sensorial.", dicaPais: "Não se preocupe com a sujeira! Forre o chão e vista uma roupa velha na criança." },
-                    { dia: "QUI", nome: "Corrida dos Bichos 🐒", objetivo: "Imaginação e movimento", imagem: "https://images.pexels.com/photos/161172/pottery-creativity-work-skills-161172.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Proponha imitar o jeito de andar de vários animais: pular como sapo, rastejar como cobra, andar como caranguejo. Crie uma 'corrida' no corredor.", objetivoDetalhado: "Trabalha a consciência corporal, a imaginação e a coordenação motora grossa.", dicaPais: "Faça os sons dos animais junto com a criança para tornar tudo mais divertido." },
-                    { dia: "SEX", nome: "Caça ao Tesouro das Cores", objetivo: "Reconhecimento de cores", imagem: "https://images.pexels.com/photos/3662846/pexels-photo-3662846.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Peça para a criança encontrar objetos pela casa de uma cor específica. 'Vamos achar tudo que é azul!'.", objetivoDetalhado: "Ajuda na identificação e nomeação das cores, além de estimular a atenção e o movimento.", dicaPais: "Comece com cores primárias e, aos poucos, introduza tons diferentes." },
-                    { dia: "SAB", nome: "Música com Panelas", objetivo: "Ritmo e exploração sonora", imagem: "https://images.pexels.com/photos/159497/school-notebook-pen-business-159497.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Separe potes, panelas e colheres de pau. Deixe a criança explorar os diferentes sons que cada objeto faz, criando sua própria 'bateria'.", objetivoDetalhado: "Desenvolve a percepção auditiva, o senso de ritmo e a criatividade.", dicaPais: "Coloque uma música e tente acompanhar o ritmo com os 'instrumentos'." },
-                    { dia: "DOM", nome: "Teatro de Fantoches", objetivo: "Linguagem e emoções", imagem: "https://images.pexels.com/photos/7924159/pexels-photo-7924159.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Use meias velhas para criar fantoches simples (botões para olhos, lã para cabelo). Crie uma pequena história com eles.", objetivoDetalhado: "Estimula a linguagem oral, a criatividade para contar histórias e a expressão de emoções.", dicaPais: "Deixe a criança conduzir a história. Você pode se surpreender com a imaginação dela." },
-                ]
-            },
-            "4-5": {
-                title: "4 a 5 anos: Mentes Criativas 👧",
-                atividades: [
-                    { dia: "SEG", nome: "Teatro de Sombras", objetivo: "Criatividade e storytelling", imagem: "https://images.pexels.com/photos/7698502/pexels-photo-7698502.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Com um lençol branco e uma lanterna, crie um 'palco'. Use as mãos ou recorte formas de papelão para criar personagens e contar histórias.", objetivoDetalhado: "Estimula a criatividade, a capacidade de narrativa e ajuda a lidar com o medo do escuro de forma lúdica.", dicaPais: "Comece com formas simples de animais com as mãos e depois evolua para personagens mais complexos." },
-                    { dia: "TER", nome: "Telefone de Copo 📞", objetivo: "Comunicação e ciência", imagem: "https://images.pexels.com/photos/4145146/pexels-photo-4145146.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Faça um furo no fundo de dois copos de plástico e passe um barbante, dando um nó em cada ponta. Estique o barbante e fale em um copo enquanto o outro escuta.", objetivoDetalhado: "Ensina sobre vibração e som, além de trabalhar a escuta ativa e a comunicação.", dicaPais: "Experimente com diferentes comprimentos de barbante para ver o que acontece." },
-                    { dia: "QUA", nome: "Circuito de Obstáculos", objetivo: "Coordenação e agilidade", imagem: "https://images.pexels.com/photos/4720306/pexels-photo-4720306.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Use cadeiras para passar por baixo, almofadas para pular, uma linha de fita no chão para se equilibrar. Crie um percurso desafiador na sala.", objetivoDetalhado: "Desenvolve a agilidade, o equilíbrio, a força e a capacidade de seguir sequências.", dicaPais: "Cronometre o tempo para tornar a brincadeira mais emocionante." },
-                    { dia: "QUI", nome: "Massinha Caseira", objetivo: "Tato e criatividade", imagem: "https://images.pexels.com/photos/6362402/pexels-photo-6362402.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Misture 1 xícara de sal, 4 de farinha, 1 e meia de água e 3 colheres de óleo. Amasse bem. Separe em porções e tinja com corante alimentício.", objetivoDetalhado: "Aprimora a coordenação motora fina, a criatividade e a percepção de texturas.", dicaPais: "Envolva a criança no processo de fazer a massinha. É uma ótima aula de culinária e ciência." },
-                    { dia: "SEX", nome: "Jogo da Memória de Formas", objetivo: "Memória e geometria", imagem: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Desenhe pares de formas geométricas (círculos, quadrados, triângulos) em pedaços de papelão. Vire-os para baixo e jogue o clássico jogo da memória.", objetivoDetalhado: "Trabalha a memória de curto prazo, o reconhecimento de formas e a concentração.", dicaPais: "Aumente a dificuldade adicionando mais pares ou formas mais complexas." },
-                    { dia: "SAB", nome: "Construir uma Cabana", objetivo: "Imaginação e engenharia", imagem: "https://images.pexels.com/photos/5998523/pexels-photo-5998523.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Use lençóis, cadeiras, sofá e prendedores de roupa para construir uma cabana. Leve lanternas, livros e lanches para dentro.", objetivoDetalhado: "Estimula o planejamento, a resolução de problemas, a cooperação e a imaginação.", dicaPais: "Deixe a criança liderar o projeto da 'construção'. O processo é mais importante que o resultado." },
-                    { dia: "DOM", nome: "Pintura com Bolhas", objetivo: "Arte e ciência", imagem: "https://images.pexels.com/photos/1250283/pexels-photo-1250283.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Misture água, detergente e um pouco de tinta guache em um copo. Peça para a criança soprar com um canudo até formar bolhas coloridas. Pressione um papel sobre as bolhas.", objetivoDetalhado: "Combina arte com um experimento simples sobre tensão superficial, resultando em padrões únicos.", dicaPais: "Lembre a criança de soprar, e não sugar o líquido. Faça em uma área externa para evitar sujeira." },
-                ]
-            },
-            "6-7": {
-                title: "6 a 7 anos: Jovens Cientistas 🧒",
-                atividades: [
-                    { dia: "SEG", nome: "Vulcão de Bicarbonato", objetivo: "Ciência e reação química", imagem: "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Molde um vulcão com argila ou massa de modelar em volta de um copinho. Coloque bicarbonato de sódio, algumas gotas de detergente e corante vermelho. Despeje vinagre para a 'erupção'.", objetivoDetalhado: "Demonstra uma reação ácido-base de forma visual e empolgante, despertando o interesse pela ciência.", dicaPais: "Faça o experimento em uma bandeja para conter a 'lava' e facilitar a limpeza." },
-                    { dia: "TER", nome: "Diário da Natureza", objetivo: "Observação e escrita", imagem: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Dê um caderno e um lápis para a criança. Façam uma caminhada no quintal ou em um parque e incentive-a a desenhar e escrever o que observa: folhas, insetos, nuvens.", objetivoDetalhado: "Desenvolve a capacidade de observação, o registro de informações e a prática da escrita e do desenho.", dicaPais: "Colete folhas e flores para prensar e colar no diário depois." },
-                    { dia: "QUA", nome: "Criação de um Jogo", objetivo: "Lógica e criatividade", imagem: "https://images.pexels.com/photos/278918/pexels-photo-278918.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Em uma cartolina, desenhe um tabuleiro com um caminho de casas. Deixe a criança criar as regras: 'se parar na casa azul, volte 2', 'se parar na vermelha, jogue de novo'.", objetivoDetalhado: "Estimula o raciocínio lógico, a criatividade na criação de regras e a habilidade de planejamento.", dicaPais: "Ajude a pensar em regras que deixem o jogo equilibrado e divertido para todos." },
-                    { dia: "QUI", nome: "Mapa do Tesouro", objetivo: "Orientação e raciocínio", imagem: "https://images.pexels.com/photos/21014/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Desenhe um mapa da casa ou do quintal com pistas visuais. Esconda um 'tesouro' (um lanche ou brinquedo) no final e deixe a criança seguir o mapa.", objetivoDetalhado: "Trabalha a noção espacial, a leitura de mapas, a resolução de problemas e o sequenciamento lógico.", dicaPais: "Use 'pontos de referência' fáceis de identificar, como a TV, a geladeira ou uma árvore." },
-                    { dia: "SEX", nome: "Stop! (Adedonha)", objetivo: "Linguagem e agilidade", imagem: "https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Defina categorias (Nome, Cidade, Fruta, Animal etc.). Sorteie uma letra e todos devem preencher as categorias com palavras que comecem com ela. O primeiro a terminar grita 'Stop!'.", objetivoDetalhado: "Expande o vocabulário, treina a agilidade de raciocínio e a organização de informações.", dicaPais: "Adapte as categorias para a idade e o conhecimento da criança." },
-                    { dia: "SAB", nome: "Origami Simples", objetivo: "Foco e coordenação fina", imagem: "https://images.pexels.com/photos/5439512/pexels-photo-5439512.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Procure tutoriais de origamis fáceis, como barquinhos, aviões ou o 'come-come'. Use papéis coloridos e siga o passo a passo das dobras.", objetivoDetalhado: "Melhora a coordenação motora fina, a concentração, a paciência e a capacidade de seguir instruções.", dicaPais: "Comece com modelos bem simples para evitar frustração. O avião de papel é sempre um sucesso." },
-                    { dia: "DOM", nome: "Cápsula do Tempo", objetivo: "Autoconhecimento e futuro", imagem: "https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Pegue uma caixa de sapato e peça para a criança guardar coisas que a representem hoje: um desenho, um brinquedo pequeno, uma carta para o 'eu do futuro'. Lacrem a caixa e combinem abri-la em 1 ou 2 anos.", objetivoDetalhado: "Promove a reflexão sobre si mesmo, a noção de passagem do tempo e cria uma memória afetiva valiosa.", dicaPais: "Escreva uma carta para seu filho ler no futuro. Será um presente emocionante." },
-                ]
-            },
-            "8-9": {
-                title: "8 a 9 anos: Grandes Desafios 👦",
-                atividades: [
-                    { dia: "SEG", nome: "Criar uma HQ", objetivo: "Criatividade e narrativa", imagem: "https://images.pexels.com/photos/163077/mario-yoschi-figures-funny-163077.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Dobre uma folha para criar quadrinhos. Peça para a criança criar um personagem e contar uma pequena história através de desenhos e balões de fala.", objetivoDetalhado: "Desenvolve a habilidade de sequenciamento narrativo, a criatividade, a escrita e o desenho.", dicaPais: "Sugira um tema inicial, como 'um super-herói com um poder esquisito' ou 'as férias de um cachorro falante'." },
-                    { dia: "TER", nome: "Desafio do Código Secreto", objetivo: "Lógica e resolução de problemas", imagem: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Crie um alfabeto codificado (ex: A=1, B=2 ou A=Z, B=Y). Escreva uma mensagem secreta usando o código e desafie a criança a decifrá-la. Depois, ela pode criar um código para você.", objetivoDetalhado: "Estimula o raciocínio lógico, o pensamento abstrato e a atenção aos detalhes.", dicaPais: "Comece com códigos simples e aumente a complexidade gradualmente." },
-                    { dia: "QUA", nome: "Experimento do Feijão", objetivo: "Biologia e paciência", imagem: "https://images.pexels.com/photos/158826/structure-leaf-veins-macro-158826.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Em um pote de vidro com algodão úmido, coloque alguns grãos de feijão. Deixe perto da luz e mantenha o algodão úmido. Observe a germinação ao longo dos dias.", objetivoDetalhado: "Ensina sobre o ciclo de vida das plantas de forma prática, além de trabalhar a paciência e a responsabilidade.", dicaPais: "Crie um 'diário de observação' para a criança anotar as mudanças a cada dia." },
-                    { dia: "QUI", nome: "Montar um Robô de Sucata", objetivo: "Criatividade e sustentabilidade", imagem: "https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Junte caixas de papelão, rolos de papel, tampinhas e outros materiais recicláveis. Use fita adesiva e cola para montar um robô ou qualquer outra escultura.", objetivoDetalhado: "Incentiva a criatividade, a visão espacial 3D e a consciência sobre reciclagem e reaproveitamento.", dicaPais: "Não dê instruções. Deixe a criatividade da criança fluir livremente na montagem." },
-                    { dia: "SEX", nome: "Mímica em Equipe", objetivo: "Expressão corporal e social", imagem: "https://images.pexels.com/photos/787961/pexels-photo-787961.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Escreva nomes de filmes, animais, profissões ou objetos em papéis. Divida a família em times. Cada jogador pega um papel e tenta fazer o time adivinhar usando apenas gestos.", objetivoDetalhado: "Melhora a comunicação não-verbal, a expressão corporal, a criatividade e a interação social.", dicaPais: "Participe ativamente e não tenha medo de parecer bobo. O riso é garantido." },
-                    { dia: "SAB", nome: "Chef por um Dia", objetivo: "Matemática e autonomia", imagem: "https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Escolha uma receita simples (bolo de caneca, brigadeiro, salada de frutas). Deixe a criança ler a receita, separar e medir os ingredientes (com sua supervisão).", objetivoDetalhado: "Trabalha a leitura, a matemática (frações, medidas), o sequenciamento de tarefas e promove a autonomia.", dicaPais: "Foque no processo e na diversão, não na perfeição da receita. E prepare-se para a limpeza em equipe!" },
-                    { dia: "DOM", nome: "Entrevista em Família", objetivo: "Comunicação e laços afetivos", imagem: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600", comoFazer: "Peça para a criança ser uma 'repórter' e entrevistar os pais, avós ou tios (pessoalmente ou por vídeo). Ajude-a a preparar perguntas como: 'Qual era sua brincadeira favorita?' ou 'Qual a sua melhor memória?'.", objetivoDetalhado: "Fortalece os laços familiares, desenvolve habilidades de comunicação e escuta, e preserva a história da família.", dicaPais: "Grave a entrevista em vídeo. Será um tesouro inestimável no futuro." }
-                ]
-            }
-        };
-
-        // --- ELEMENTOS DO DOM ---
-        const screens = document.querySelectorAll('.screen');
-        const startBtn = document.getElementById('start-btn');
-        const ageCards = document.querySelectorAll('.age-card');
-        const bottomMenu = document.getElementById('bottom-menu-nav');
-        const weeklyPlanTitle = document.getElementById('weekly-plan-title');
-        const weeklyPlanList = document.getElementById('weekly-plan-list');
-        const activityDetailContainer = document.getElementById('activity-detail-screen');
-        
-        // --- ESTADO DO APP ---
-        let currentAgeGroup = null;
-
-        // --- FUNÇÕES DE NAVEGAÇÃO ---
-        const showScreen = (screenId) => {
-            screens.forEach(screen => {
-                screen.classList.add('hidden');
-            });
-            document.getElementById(screenId).classList.remove('hidden');
-
-            if (screenId === 'weekly-plan-screen' || screenId === 'activity-detail-screen') {
-                bottomMenu.classList.remove('hidden');
-            } else {
-                bottomMenu.classList.add('hidden');
-            }
-        };
-
-        // --- FUNÇÕES DE RENDERIZAÇÃO ---
-        const renderWeeklyPlan = (ageGroup) => {
-            currentAgeGroup = ageGroup;
-            const data = brincadeiras[ageGroup];
-            
-            weeklyPlanTitle.textContent = data.title;
-            weeklyPlanList.innerHTML = ''; // Limpa a lista anterior
-            
-            data.atividades.forEach((atividade, index) => {
-                const card = document.createElement('div');
-                card.className = 'activity-day-card';
-                card.dataset.index = index; // Guarda o índice para buscar os detalhes
-                
-                card.innerHTML = `
-                    <div class="day-name">${atividade.dia}</div>
-                    <div class="activity-info">
-                        <div class="activity-name">${atividade.nome}</div>
-                        <div class="activity-objective">${atividade.objetivo}</div>
-                    </div>
-                `;
-                
-                card.addEventListener('click', () => {
-                    renderActivityDetail(ageGroup, index);
-                });
-                
-                weeklyPlanList.appendChild(card);
-            });
-
-            showScreen('weekly-plan-screen');
-            updateActiveMenu('menu-semana');
-        };
-
-        const renderActivityDetail = (ageGroup, activityIndex) => {
-            const atividade = brincadeiras[ageGroup].atividades[activityIndex];
-            
-            activityDetailContainer.innerHTML = `
-                <div class="header">
-                    <i class="fas fa-arrow-left back-button"></i>
-                    <h2 class="detail-title">${atividade.nome}</h2>
-                </div>
-                <img src="${atividade.imagem}" alt="${atividade.nome}" class="detail-image">
-                
-                <h3><i class="fas fa-magic"></i> Como fazer</h3>
-                <p>${atividade.comoFazer}</p>
-                
-                <h3><i class="fas fa-brain"></i> O que desenvolve?</h3>
-                <p>${atividade.objetivoDetalhado}</p>
-                
-                <div class="parent-tip">
-                    <strong>💡 Dica para os pais:</strong> ${atividade.dicaPais}
-                </div>
-                
-                <button class="button-primary pdf-button">
-                    <i class="fas fa-file-pdf"></i> Imprimir PDF da Semana
-                </button>
-            `;
-            
-            // Adiciona evento de clique ao botão de voltar
-            activityDetailContainer.querySelector('.back-button').addEventListener('click', () => {
-                renderWeeklyPlan(currentAgeGroup);
-            });
-            
-            showScreen('activity-detail-screen');
-        };
-        
-        const updateActiveMenu = (activeMenuId) => {
-            document.querySelectorAll('.menu-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            if (document.getElementById(activeMenuId)) {
-                document.getElementById(activeMenuId).classList.add('active');
-            }
-        }
-
-        // --- EVENT LISTENERS ---
-        startBtn.addEventListener('click', () => {
-            showScreen('age-selection-screen');
-        });
-
-        ageCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const ageGroup = card.dataset.age;
-                renderWeeklyPlan(ageGroup);
-            });
-        });
-        
-        // Menu inferior
-        document.getElementById('menu-inicio').addEventListener('click', () => {
-            showScreen('age-selection-screen');
-            updateActiveMenu('menu-inicio');
-        });
-        document.getElementById('menu-semana').addEventListener('click', () => {
-            if(currentAgeGroup) {
-                renderWeeklyPlan(currentAgeGroup);
-            } else {
-                showScreen('age-selection-screen');
-            }
-        });
-        document.getElementById('menu-idade').addEventListener('click', () => {
-            showScreen('age-selection-screen');
-            updateActiveMenu('menu-idade');
-        });
-
-    });
-    </script>
 </body>
 </html>
