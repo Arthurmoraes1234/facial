@@ -1,288 +1,493 @@
-/* --- CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
 :root {
-    --dark-blue-1: #020412; /* Azul mais escuro */
-    --dark-blue-2: #0a1128; /* Azul marinho um pouco mais claro */
-    --text-white: #f0f0f0;
-    --highlight-green: #2ecc71;
-    --highlight-blue: #3498db;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --border-color: rgba(255, 255, 255, 0.1);
+    --primary-blue: #A6E1FA; /* Azul céu */
+    --primary-yellow: #FFD700; /* Amarelo */
+    --primary-green: #90EE90; /* Verde claro */
+    --primary-purple: #DDA0DD; /* Lilás */
+    --text-dark: #333;
+    --text-light: #fff;
+    --shadow-light: rgba(0,0,0,0.1);
+    --border-radius: 15px;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(170deg, var(--dark-blue-1), var(--dark-blue-2));
-    color: var(--text-white);
-    line-height: 1.7;
+    font-family: 'Fredoka One', cursive; /* Fonte mais infantil para títulos */
+    background-color: var(--primary-blue);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Header do App */
+.app-header {
+    background-color: var(--primary-yellow);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    z-index: 1000;
 }
 
-section {
-    padding: 60px 0;
+.app-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
 }
 
-h1, h2, h3 {
-    font-weight: 700;
-    line-height: 1.3;
+.app-header h1 {
+    font-size: 1.5em;
+    color: var(--text-dark);
+    flex-grow: 1;
 }
 
-h1 {
-    font-size: 2.8rem;
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info .stars {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.btn-help {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-help:hover {
+    background-color: #7ECF7E;
+}
+
+/* Conteúdo Principal */
+.app-content {
+    flex-grow: 1;
+    padding: 20px;
+    padding-bottom: 100px; /* Espaço para a homebar */
+    overflow-y: auto;
+    background-color: #FFF; /* Fundo branco para as seções */
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    margin-top: -15px; /* Sobrepõe um pouco o header */
+    box-shadow: 0 -4px 8px var(--shadow-light);
+}
+
+.app-content section {
     text-align: center;
+    padding: 20px;
+    min-height: calc(100vh - 180px); /* Ajuste com base no header e homebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.app-content section h2 {
+    font-size: 2em;
+    color: var(--primary-purple);
     margin-bottom: 20px;
+    font-family: 'Fredoka One', cursive;
 }
 
-h2 {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-h3 {
-    font-size: 1.6rem;
+.app-content section p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
     margin-bottom: 15px;
-    color: var(--highlight-green);
+    line-height: 1.5;
 }
 
-.highlight-green { color: var(--highlight-green); }
-.highlight-blue { color: var(--highlight-blue); }
-
-/* --- HEADER E FOOTER --- */
-.static-header {
-    padding: 20px 0;
-    background-color: var(--dark-blue-1);
-}
-
-.logo {
-    display: block;
-    margin: 0 auto;
-    max-width: 180px;
-}
-
-.site-footer {
-    padding: 40px 0;
-    text-align: center;
-    background-color: var(--dark-blue-1);
-}
-
-.site-footer .logo {
-    margin-bottom: 20px;
-}
-
-.urgency-text {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-.urgency-warning {
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
-/* --- SEÇÕES ESPECÍFICAS --- */
-.subtitulo h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    max-width: 700px;
-    margin: 0 auto 20px auto;
-}
-.subtitulo p {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-}
-.full-width-image {
-    width: 100%;
+.section-illustration {
+    max-width: 80%;
     height: auto;
-    border-radius: 12px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--shadow-light);
+}
+
+/* Seções ocultas */
+.hidden-section {
+    display: none;
+}
+
+.active-section {
+    display: flex;
+}
+
+/* Homebar (Rodapé Fixo) */
+.homebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-purple);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -4px 8px var(--shadow-light);
+    z-index: 1001;
+    overflow-x: auto; /* Para permitir rolagem em telas muito pequenas */
+    -webkit-overflow-scrolling: touch; /* Melhor rolagem em iOS */
+    white-space: nowrap; /* Impede quebra de linha dos itens */
+}
+
+.homebar::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem para navegadores WebKit */
+}
+
+.homebar .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.8em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 5px 8px; /* Reduz o padding horizontal */
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 70px; /* Garante tamanho mínimo para cada item */
+}
+
+.homebar .nav-item img {
+    width: 45px; /* Ícones grandes */
+    height: 45px;
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+}
+
+.homebar .nav-item:hover,
+.homebar .nav-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Estilos para cards de conteúdo (Músicas, Vídeos, Histórias, etc.) */
+.music-list, .video-list, .activity-list, .story-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
     margin-top: 20px;
 }
 
-.oferta .offer-layout {
+.music-item, .video-item, .activity-item, .story-item {
+    background-color: var(--primary-blue);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--shadow-light);
     display: flex;
-    gap: 40px;
+    flex-direction: column;
     align-items: center;
-}
-.oferta .offer-details {
-    flex: 2;
-}
-.oferta .offer-image {
-    flex: 1;
-}
-.oferta .offer-image img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.check-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-.check-list li {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-}
-.pricing {
-    margin: 30px 0;
-    padding: 20px;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    text-align: center;
-}
-.pricing del {
-    opacity: 0.7;
-}
-.price-highlight {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--highlight-green);
-}
-.cta-button {
-    display: block;
-    width: 100%;
-    padding: 18px 20px;
-    background-color: var(--highlight-green);
-    color: var(--dark-blue-1);
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--highlight-green);
-}
-.cta-button.urgent {
-    background-color: #e74c3c;
-    color: var(--text-white);
-}
-.cta-button.urgent:hover {
-    box-shadow: 0 0 20px #e74c3c;
-}
-
-.porque-funciona { text-align: center; }
-.porque-funciona .feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-    font-size: 1.2rem;
-}
-.porque-funciona .feature-list li {
-    margin-bottom: 15px;
-}
-.final-statement {
-    font-size: 1.1rem;
-    font-weight: 700;
-    max-width: 700px;
-    margin: 20px auto 0 auto;
-}
-
-.como-usar h2 { margin-bottom: 20px; }
-.como-usar .intro-p { text-align: center; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;}
-.como-usar .steps {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    text-align: center;
-    margin: 40px 0;
-}
-.como-usar .step h3 {
-    font-size: 3rem;
-    color: var(--highlight-blue);
-}
-
-.prova-social .testimonials {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-.testimonial-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 25px;
-    border-radius: 10px;
-    flex: 1;
-}
-.testimonial-card .quote {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-.testimonial-card .author {
-    font-weight: 700;
-    color: var(--highlight-green);
-    text-align: right;
-}
-
-.faq .faq-item {
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 0;
-}
-.faq summary {
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    list-style: none; /* Remove a seta padrão */
-    display: flex;
     justify-content: space-between;
-}
-.faq summary::after {
-    content: '+';
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-}
-.faq details[open] summary::after {
-    transform: rotate(45deg);
-}
-.faq p {
-    padding: 15px 5px 0 5px;
-    background-color: var(--dark-blue-2);
-    margin-top: 10px;
-    border-radius: 5px;
+    transition: transform 0.2s ease;
 }
 
-.garantia { text-align: center; }
-.garantia h2 { margin-bottom: 20px; }
-.guarantee-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    font-size: 1.3rem;
-    font-weight: 700;
+.music-item:hover, .video-item:hover, .activity-item:hover, .story-item:hover {
+    transform: translateY(-5px);
 }
-.guarantee-list li {
+
+.music-item img, .video-item img, .activity-item img, .story-item img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    border-radius: var(--border-radius);
     margin-bottom: 10px;
 }
 
-/* --- RESPONSIVIDADE PARA CELULARES --- */
+.music-item h3, .video-item h3, .story-item h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-family: 'Fredoka One', cursive;
+}
+
+.btn-download, .play-button, .read-story, .listen-story {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Para o btn-download */
+}
+
+.btn-download:hover, .play-button:hover, .read-story:hover, .listen-story:hover {
+    background-color: #7ECF7E;
+}
+
+/* Bíblia Infantil */
+.daily-verse {
+    background-color: var(--primary-yellow);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    max-width: 600px;
+    width: 100%;
+}
+
+.daily-verse h3 {
+    color: var(--primary-purple);
+    margin-bottom: 10px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.daily-verse p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.btn-memorize {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-memorize:hover {
+    background-color: #7ECF7E;
+}
+
+/* Cartaz Diário */
+.daily-poster {
+    background-color: var(--primary-yellow);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--shadow-light);
+    max-width: 500px;
+    width: 100%;
+}
+
+.daily-poster h3 {
+    color: var(--primary-purple);
+    margin-bottom: 20px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5em;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    color: var(--text-dark);
+}
+
+.task-item input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    accent-color: var(--primary-green);
+    cursor: pointer;
+}
+
+.btn-print-poster {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-print-poster:hover {
+    background-color: #7ECF7E;
+}
+
+/* Calendário */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    max-width: 700px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--primary-blue);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--shadow-light);
+}
+
+.calendar-day {
+    background-color: #f0f0f0;
+    padding: 10px 5px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    min-height: 70px;
+}
+
+.calendar-day.active {
+    background-color: var(--primary-yellow);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.calendar-day.active:hover {
+    transform: scale(1.05);
+}
+
+.calendar-day .day-number {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 3px;
+}
+
+.calendar-day .day-event {
+    font-size: 0.8em;
+    color: var(--primary-purple);
+    text-align: center;
+}
+
+/* Gamificação */
+.ranking-list {
+    list-style: none;
+    background-color: var(--primary-blue);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--shadow-light);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.ranking-list li {
+    background-color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-print-certificate {
+    background-color: var(--primary-purple);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1em;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-print-certificate:hover {
+    background-color: #B98BC2;
+}
+
+
+/* Responsividade */
 @media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    
-    .oferta .offer-layout,
-    .prova-social .testimonials,
-    .como-usar .steps {
-        flex-direction: column;
+    .app-header {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    .oferta .offer-image {
-        margin-top: 30px;
+    .app-header h1 {
+        font-size: 1.3em;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .user-info {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .homebar .nav-item {
+        font-size: 0.7em;
+        min-width: 60px;
+        padding: 5px;
+    }
+    .homebar .nav-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .music-list, .video-list, .activity-list, .story-list {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .app-header h1 {
+        font-size: 1.1em;
+    }
+    .user-info .stars {
+        font-size: 1em;
+    }
+    .btn-help {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+    .app-content section h2 {
+        font-size: 1.8em;
+    }
+    .section-illustration {
+        max-width: 95%;
+    }
+    .homebar .nav-item {
+        font-size: 0.65em;
+        min-width: 55px;
+    }
+    .homebar .nav-item img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .music-list, .video-list, .activity-list, .story-list {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+    .daily-verse, .daily-poster, .ranking-list {
+        padding: 15px;
+    }
+    .task-item label {
+        font-size: 1em;
     }
 }
