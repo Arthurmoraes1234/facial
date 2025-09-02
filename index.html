@@ -1,193 +1,201 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube Cristão Infantil</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="img/icon-home.png" type="image/png">
-    <meta name="theme-color" content="#A6E1FA"> <!-- Cor do tema para o navegador -->
+    <title>Atividades Cristãs Infantis - Ensine valores brincando!</title>
+    
+    <!-- Importa a fonte Poppins do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Importa os ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <header class="app-header">
-        <img src="img/logo.png" alt="Clube Cristão Infantil Logo" class="app-logo">
-        <h1>Clube Cristão Infantil</h1>
-        <div class="user-info">
-            <span class="stars">⭐ 0 Estrelinhas de Fé</span>
-            <button class="btn-help">Ajuda</button>
-        </div>
-    </header>
+<body style="margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background-color: #FFF9F5; color: #5C5470;">
 
-    <main class="app-content">
-        <!-- As seções serão carregadas dinamicamente aqui ou escondidas/mostradas -->
-        <section id="home" class="active-section">
-            <h2>Bem-vindo(a) ao Clube!</h2>
-            <p>Escolha uma aventura cristã para começar!</p>
-            <img src="img/home-illustration.png" alt="Crianças brincando" class="section-illustration">
+    <!-- Container Principal -->
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;">
+
+        <!-- ============================ -->
+        <!-- Seção 1 – Hero (Topo)        -->
+        <!-- ============================ -->
+        <section id="hero" style="padding: 30px 10px;">
+            <img src="https://i.ibb.co/Xz9Rprq/Kas5-JDY.png" alt="Logo Atividades Cristãs" style="width: 150px; height: auto; margin-bottom: 25px; border-radius: 50%;">
+
+            <h1 style="font-size: 28px; line-height: 1.4; color: #352F44; font-weight: 700; margin-bottom: 20px;">
+                <i class="fa-solid fa-hand-point-right" style="color: #FFB6C1;"></i> 
+                Ensine valores cristãos ao seu filho brincando – por apenas R$1,99!
+            </h1>
+
+            <p style="font-size: 16px; line-height: 1.6; max-width: 600px; margin: 0 auto 20px;">
+                Cansada de ver seu filho preso no celular sem aprender nada de valor? 
+                <i class="fa-regular fa-face-sad-tear" style="color: #BDB2FF;"></i>
+                <br>
+                Com esse material exclusivo, você vai ocupar o tempo dele com brincadeiras educativas cristãs, que ensinam fé, amor e valores — tudo de forma leve e divertida!
+            </p>
+
+            <p style="font-size: 17px; font-weight: 600; color: #352F44; margin: 30px 0 15px 0;">
+                <i class="fa-solid fa-tv" style="color: #FFCACA;"></i> Assista ao vídeo abaixo e descubra como milhares de mães já estão transformando a rotina dos filhos:
+            </p>
+
+            <!-- Placeholder para o Vídeo VSL -->
+            <div style="background-color: #FAF0E6; border: 2px dashed #FFDAB9; border-radius: 15px; padding: 20px; margin: 0 auto 30px; max-width: 100%; box-sizing: border-box;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <!-- SUBSTITUA O 'SEU_ID_DO_VIDEO' pelo ID do seu vídeo do YouTube -->
+                    <!-- Exemplo de como ficaria: <iframe style="..." src="https://www.youtube.com/embed/dQw4w9WgXcQ" ...></iframe> -->
+                    <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #A7A2A9; font-weight: 600;">
+                        [Seu Vídeo de Vendas Ficará Aqui]
+                    </p>
+                </div>
+            </div>
+
+            <a href="#oferta" style="display: inline-block; background-color: #97E7E1; color: #352F44; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s;">
+                <i class="fa-solid fa-lock"></i> Quero garantir agora por só R$1,99
+            </a>
         </section>
 
-        <section id="musicas" class="hidden-section">
-            <h2>🎶 Músicas Cristãs Infantis</h2>
-            <img src="img/musicas-illustration.png" alt="Crianças cantando" class="section-illustration">
-            <div class="music-list">
-                <!-- Exemplo de música -->
-                <div class="music-item">
-                    <img src="img/musica-capa-1.png" alt="Capa da Música 1">
-                    <h3>Deus é Tão Bom</h3>
-                    <button class="play-button" data-youtube-id="XYZ123">Play</button>
-                </div>
-                <!-- Mais músicas aqui -->
+        <!-- Divisor fofo -->
+        <div style="height: 2px; background: linear-gradient(to right, #FFF9F5, #FFDAB9, #FFF9F5); margin: 50px 0;"></div>
+
+        <!-- ============================ -->
+        <!-- Seção 2 – O que você vai receber -->
+        <!-- ============================ -->
+        <section id="o-que-recebe" style="background-color: #E6E6FA; padding: 40px 20px; border-radius: 20px; margin-bottom: 50px;">
+             <h2 style="font-size: 24px; color: #352F44; margin-top: 0; margin-bottom: 30px;">O que você vai receber:</h2>
+             <div style="text-align: left; max-width: 450px; margin: 0 auto; font-size: 17px; line-height: 2;">
+                <p><i class="fa-solid fa-circle-check" style="color: #6A5ACD; margin-right: 10px;"></i> <strong>30 atividades cristãs</strong> educativas para crianças de 3 a 9 anos</p>
+                <p><i class="fa-solid fa-bolt" style="color: #FFD700; margin-right: 10px;"></i> <strong>Acesso imediato e vitalício</strong> – nada de esperar dias!</p>
+                <p><i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 10px;"></i> Entrega direto no seu <strong>WhatsApp</strong></p>
+                <p><i class="fa-solid fa-shield-heart" style="color: #FF69B4; margin-right: 10px;"></i> <strong>Garantia de 30 dias</strong> – se não amar, devolvemos seu dinheiro</p>
+             </div>
+        </section>
+
+        <!-- ============================ -->
+        <!-- Seção 3 – Prévia do Produto  -->
+        <!-- ============================ -->
+        <section id="previa" style="margin-bottom: 50px;">
+            <h2 style="font-size: 24px; color: #352F44;">
+                <i class="fa-solid fa-hand-point-right" style="color: #FFB6C1;"></i> Uma espiadinha no nosso material...
+            </h2>
+            <div style="border: 5px solid #F0F8FF; border-radius: 15px; padding: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                 <iframe allowfullscreen="allowfullscreen" allow="clipboard-write" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 520px; border-radius: 10px;" src="https://heyzine.com/flip-book/480aa817e0.html"></iframe>
+            </div>
+        </section>
+        
+        <!-- ============================ -->
+        <!-- Seção 4 – Depoimentos        -->
+        <!-- ============================ -->
+        <section id="depoimentos" style="margin-bottom: 50px;">
+            <h2 style="font-size: 24px; color: #352F44; margin-bottom: 30px;">O que as mamães estão dizendo:</h2>
+            
+            <div style="background-color: #FFF0F5; border-left: 5px solid #FFC0CB; border-radius: 10px; padding: 20px; margin-bottom: 20px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <p style="margin: 0; font-style: italic;">
+                    <i class="fa-solid fa-quote-left" style="color: #FFC0CB; margin-right: 8px;"></i>
+                    “Minha filha simplesmente ama! É a primeira vez que vejo ela aprender sobre a Bíblia de forma tão divertida.”
+                </p>
+                <p style="margin: 10px 0 0 0; font-weight: 600; color: #DB7093;">- Mamãe Ana P.</p>
+            </div>
+
+            <div style="background-color: #F0FFF0; border-left: 5px solid #98FB98; border-radius: 10px; padding: 20px; margin-bottom: 20px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <p style="margin: 0; font-style: italic;">
+                    <i class="fa-solid fa-quote-left" style="color: #98FB98; margin-right: 8px;"></i>
+                    “Comprei sem esperar muito, mas foi a melhor coisa! Meu filho largou o tablet e ficou animado com as atividades.”
+                </p>
+                <p style="margin: 10px 0 0 0; font-weight: 600; color: #3CB371;">- Mamãe Carla M.</p>
+            </div>
+            
+            <div style="background-color: #FDF5E6; border-left: 5px solid #FFDAB9; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <p style="margin: 0; font-style: italic;">
+                    <i class="fa-solid fa-quote-left" style="color: #FFDAB9; margin-right: 8px;"></i>
+                    “Vale cada centavo, é super baratinho e o conteúdo é top. Recomendo de olhos fechados.”
+                </p>
+                <p style="margin: 10px 0 0 0; font-weight: 600; color: #CD853F;">- Mamãe Juliana R.</p>
+            </div>
+        </section>
+        
+        <!-- ============================ -->
+        <!-- Seção 5 – Oferta Direta      -->
+        <!-- ============================ -->
+        <section id="oferta" style="background-color: #FFFFE0; border: 3px dashed #FFD700; border-radius: 20px; padding: 30px; margin-bottom: 50px;">
+            <h2 style="font-size: 26px; color: #352F44; margin-top: 0;">
+                <i class="fa-solid fa-fire" style="color: #FFA500;"></i> Oferta Exclusiva Hoje!
+            </h2>
+            <p style="font-size: 20px;">De <span style="text-decoration: line-through;">R$29,90</span> por apenas:</p>
+            <div style="font-size: 72px; font-weight: 700; color: #3CB371; margin: 10px 0;">
+                R$1,99
+            </div>
+            <p style="font-size: 14px; color: #B22222; font-weight: 600;">Mas atenção: esse valor é promocional e pode acabar a qualquer momento.</p>
+            
+            <p style="font-size: 17px; margin: 30px 0 20px 0;">
+                <i class="fa-solid fa-hand-point-right" style="color: #FFB6C1;"></i> Clique no botão abaixo e garanta já o seu acesso imediato!
+            </p>
+
+            <a href="SEU_LINK_DE_CHECKOUT_AQUI" style="display: block; background: linear-gradient(45deg, #32CD32, #98FB98); color: white; padding: 20px 30px; border-radius: 15px; text-decoration: none; font-weight: 700; font-size: 22px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); border-bottom: 4px solid #228B22;">
+                SIM! Quero o livro digital por só R$1,99!
+            </a>
+        </section>
+
+        <!-- ============================ -->
+        <!-- Seção 6 – Garantia           -->
+        <!-- ============================ -->
+        <section id="garantia" style="display: flex; align-items: center; justify-content: center; background-color: #F0F8FF; padding: 30px; border-radius: 20px; margin-bottom: 50px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 100px; max-width: 150px; padding-right: 20px;">
+                 <i class="fa-solid fa-shield-heart" style="font-size: 80px; color: #87CEEB;"></i>
+            </div>
+            <div style="flex: 2; min-width: 250px; text-align: left;">
+                <h3 style="margin-top: 0; color: #4682B4; font-size: 20px;">Compra 100% Segura</h3>
+                <p style="margin-bottom: 0; line-height: 1.6;">
+                    Você tem <strong>30 dias de garantia incondicional.</strong> Se não gostar ou se não for o que você esperava, devolvemos o seu dinheiro sem perguntas. Risco zero!
+                </p>
             </div>
         </section>
 
-        <section id="videos" class="hidden-section">
-            <h2>📺 Vídeos Cristãos</h2>
-            <img src="img/videos-illustration.png" alt="Crianças assistindo" class="section-illustration">
-            <div class="video-categories">
-                <h3>3-6 Anos</h3>
-                <div class="video-list">
-                    <div class="video-item">
-                        <img src="img/video-capa-1.png" alt="Capa do Vídeo 1">
-                        <h3>A Arca de Noé</h3>
-                        <button class="play-button" data-youtube-id="ABC456">Play</button>
-                    </div>
-                </div>
-                <h3>7-10 Anos</h3>
-                <div class="video-list">
-                    <!-- Mais vídeos aqui -->
-                </div>
+        <!-- ============================ -->
+        <!-- Seção 7 – FAQ                -->
+        <!-- ============================ -->
+        <section id="faq" style="text-align: left; max-width: 700px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 24px; color: #352F44; margin-bottom: 30px;">Perguntas Frequentes</h2>
+            
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0 0 5px 0; font-size: 18px; color: #352F44;">Como vou receber o material?</h4>
+                <p style="margin: 0; line-height: 1.6;">
+                    <i class="fa-solid fa-hand-point-right" style="color: #FFB6C1;"></i> Direto no seu WhatsApp, logo após a confirmação da compra. Simples e rápido!
+                </p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0 0 5px 0; font-size: 18px; color: #352F44;">É físico ou digital?</h4>
+                <p style="margin: 0; line-height: 1.6;">
+                    <i class="fa-solid fa-hand-point-right" style="color: #FFB6C1;"></i> É 100% digital em formato PDF + Flipbook. Você pode acessar do celular, tablet ou computador e imprimir se quiser.
+                </p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0 0 5px 0; font-size: 18px; color: #352F44;">Preciso pagar mensalidade?</h4>
+                <p style="margin: 0; line-height: 1.6;">
+                    <i class="fa-solid fa-hand-point-right" style="color: #FFB6C1;"></i> Não! É um pagamento único de R$1,99 e o acesso é seu para sempre (vitalício).
+                </p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0 0 5px 0; font-size: 18px; color: #352F44;">Serve para qualquer idade?</h4>
+                <p style="margin: 0; line-height: 1.6;">
+                    <i class="fa-solid fa-hand-point-right" style="color: #FFB6C1;"></i> As atividades foram criadas com carinho e são indicadas para crianças de 3 a 9 anos.
+                </p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0 0 5px 0; font-size: 18px; color: #352F44;">Tem garantia mesmo?</h4>
+                <p style="margin: 0; line-height: 1.6;">
+                    <i class="fa-solid fa-hand-point-right" style="color: #FFB6C1;"></i> Sim! Você tem 30 dias completos para pedir seu reembolso caso não fique 100% satisfeita. Sem burocracia.
+                </p>
             </div>
         </section>
 
-        <section id="biblia" class="hidden-section">
-            <h2>📖 Bíblia Infantil Interativa</h2>
-            <img src="img/biblia-illustration.png" alt="Criança lendo a Bíblia" class="section-illustration">
-            <div class="daily-verse">
-                <h3>Versículo do Dia:</h3>
-                <p>"Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna." - João 3:16</p>
-                <button class="btn-memorize">Memorizar Versículo (Ganhe 🌟)</button>
-            </div>
-            <div class="bible-chapters">
-                <!-- Capítulos da bíblia simplificada -->
-            </div>
-        </section>
+        <!-- Rodapé -->
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #EAE0D5;">
+            <p style="font-size: 12px; color: #8C849B;">Todos os direitos reservados © 2024</p>
+        </footer>
 
-        <section id="atividades" class="hidden-section">
-            <h2>✍️ Atividades Educativas</h2>
-            <img src="img/atividades-illustration.png" alt="Criança desenhando" class="section-illustration">
-            <div class="activity-categories">
-                <h3>Colorir</h3>
-                <div class="activity-list">
-                    <div class="activity-item">
-                        <img src="img/atividade-colorir-1.png" alt="Atividade de colorir">
-                        <h3>Jesus e os Animais</h3>
-                        <a href="pdf/colorir-jesus-animais.pdf" download class="btn-download">Baixar PDF</a>
-                    </div>
-                </div>
-                <h3>Caça-Palavras</h3>
-                <!-- Mais categorias e atividades -->
-            </div>
-        </section>
+    </div>
 
-        <section id="cartaz" class="hidden-section">
-            <h2>🎨 Cartaz Diário Cristão</h2>
-            <img src="img/cartaz-illustration.png" alt="Cartaz interativo" class="section-illustration">
-            <div class="daily-poster">
-                <h3>Meu Progresso Diário:</h3>
-                <div class="task-item">
-                    <input type="checkbox" id="task-oracao">
-                    <label for="task-oracao">Oração feita</label>
-                </div>
-                <div class="task-item">
-                    <input type="checkbox" id="task-versiculo">
-                    <label for="task-versiculo">Versículo memorizado</label>
-                </div>
-                <div class="task-item">
-                    <input type="checkbox" id="task-atividade">
-                    <label for="task-atividade">Atividade concluída</label>
-                </div>
-                <button class="btn-print-poster">Imprimir Cartaz</button>
-            </div>
-        </section>
-
-        <section id="historias" class="hidden-section">
-            <h2>📚 Histórias Cristãs para Dormir</h2>
-            <img src="img/historias-illustration.png" alt="Crianças lendo histórias" class="section-illustration">
-            <div class="story-list">
-                <div class="story-item">
-                    <img src="img/historia-capa-1.png" alt="Capa da História 1">
-                    <h3>Davi e Golias</h3>
-                    <button class="read-story">Ler História</button>
-                    <button class="listen-story">Ouvir Áudio</button>
-                </div>
-                <!-- Mais histórias -->
-            </div>
-        </section>
-
-        <section id="calendario" class="hidden-section">
-            <h2>📅 Calendário Cristão Interativo</h2>
-            <img src="img/calendario-illustration.png" alt="Crianças com calendário" class="section-illustration">
-            <div class="calendar-grid">
-                <!-- Exemplo de item do calendário -->
-                <div class="calendar-day active" data-event="Páscoa">
-                    <span class="day-number">17</span>
-                    <span class="day-event">Páscoa</span>
-                </div>
-                <!-- Mais dias -->
-            </div>
-        </section>
-
-        <section id="gamificacao" class="hidden-section">
-            <h2>🏆 Gamificação: Estrelinhas de Fé</h2>
-            <img src="img/gamificacao-illustration.png" alt="Troféu e estrelas" class="section-illustration">
-            <p>Parabéns! Você tem <span class="stars-count">0</span> Estrelinhas de Fé!</p>
-            <h3>Ranking Semanal</h3>
-            <ul class="ranking-list">
-                <li>1º Joãozinho - 50 🌟</li>
-                <li>2º Maria - 45 🌟</li>
-                <li>3º Pedrinho - 40 🌟</li>
-            </ul>
-            <button class="btn-print-certificate">Imprimir Certificado Mensal</button>
-        </section>
-    </main>
-
-    <nav class="homebar">
-        <a href="#musicas" class="nav-item" data-section="musicas">
-            <img src="img/icon-musicas.png" alt="Músicas">
-            <span>Músicas</span>
-        </a>
-        <a href="#videos" class="nav-item" data-section="videos">
-            <img src="img/icon-videos.png" alt="Vídeos">
-            <span>Vídeos</span>
-        </a>
-        <a href="#biblia" class="nav-item" data-section="biblia">
-            <img src="img/icon-biblia.png" alt="Bíblia">
-            <span>Bíblia</span>
-        </a>
-        <a href="#atividades" class="nav-item" data-section="atividades">
-            <img src="img/icon-atividades.png" alt="Atividades">
-            <span>Atividades</span>
-        </a>
-        <a href="#cartaz" class="nav-item" data-section="cartaz">
-            <img src="img/icon-cartaz.png" alt="Cartaz">
-            <span>Cartaz</span>
-        </a>
-        <a href="#historias" class="nav-item" data-section="historias">
-            <img src="img/icon-historias.png" alt="Histórias">
-            <span>Histórias</span>
-        </a>
-        <a href="#calendario" class="nav-item" data-section="calendario">
-            <img src="img/icon-calendario.png" alt="Calendário">
-            <span>Calendário</span>
-        </a>
-        <a href="#gamificacao" class="nav-item" data-section="gamificacao">
-            <img src="img/icon-gamificacao.png" alt="Gamificação">
-            <span>Gamificação</span>
-        </a>
-    </nav>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
